@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Google Map - Draggable Shape</h1>
+
+<div id="googleMap" style="width:90%;height:400px;margin:10px; float:left;"></div>
+
+<script>
+
+
+
+function myMap() {
+
+  var map = new google.maps.Map(document.getElementById('googleMap'), {
+    zoom: 4,
+    center: {lat: 28.090, lng: -74.712},
+    mapTypeId: 'terrain'
+  });
+
+
+  var redCoords = [
+    {lat: 25.774, lng: -80.190},
+    {lat: 18.466, lng: -66.118},
+    {lat: 32.321, lng: -64.757}
+  ];
+
+  // Construct a draggable red triangle with geodesic set to true.
+  new google.maps.Polygon({
+    map: map,
+    paths: redCoords,
+    strokeColor: '#FF0000',
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillColor: '#FF0000',
+    fillOpacity: 0.35,
+    draggable: true,
+    geodesic: true
+  });
+
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCKiIqCdZGrVxx06LSbe7uG3zXOq1Cz5k&callback=myMap"></script>
+</body>
+</html>

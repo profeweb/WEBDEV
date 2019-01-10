@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<style>
+		table, tr, td { 
+			border:1px solid black;
+			vertical-align: center;
+			text-align: center;
+		 }
+		 b {
+		 	display:block;
+		 }
+		 span {
+		 	color:red;
+		 	display:block;
+		 }
+	</style>
+	<script>
+	
+		var llibres = new Array();
+		
+		function Llibre(t, p, cat, col, row){
+			this.title = t;
+			this.numpag = p;
+			this.category = cat;
+			this.column = col;
+			this.row = row;
+		}
+	
+		// Retorna el llibre de la posició col - row
+		function getBook(col, row){
+			for(var i=0; i<llibres.length; i++){
+				var l = llibres[i];
+				if(l.column==col && l.row==row){
+					return l;
+				}
+			}
+			return null;
+		}
+
+		// Borra el llibre de la posició col - row
+		function removeBook(col, row){
+			for(var i=0; i<llibres.length; i++){
+				var l = llibres[i];
+				if(l.column==col && l.row==row){
+					llibres.splice(i,1);
+				}
+			}
+		}
+
+		function printTable(nc, nf){
+
+			var t = $("<table/>",{id: 'books', border:1});
+			var th = $("<tr/>");
+
+			// HEADER
+			var td1 = $("<td/>", {text: "#", width:'50px'});
+			th.append(td1);
+			
+			for(var i=0; i<nc; i++){
+				var td = $("<td/>", {text: i, width:'150px'});
+				th.append(td);
+			}
+			t.append(th);
+
+			// ROWS
+			for(var r=0; r<nf; r++){
+				var tr = $("<tr/>");
+				var td1 = $("<td/>",{text:r});
+				td1.css("verticalAling","center");
+				tr.append(td1);
+				for(var c=0; c<nc; c++){
+					var l = getBook(c, r);
+					if(l!=null){
+						var td = $("<td/>",{width:'150px'});
+						var imatge = $("<img/>",{src:l.category+".png", width:'50px'});
+						td.append(imatge);
+						var br = $("<br/>");
+						td.append(br);
+						var title = $("<b>",{text: l.title});
+						td.append(title);
+						var categ = $("<span>",{text: l.category});
+						td.append(categ);
+						var nump = $("<span>",{text: l.numpag+" pag."});
+						td.append(nump);
+						tr.append(td);
+					}
+					else {
+						var td = $("<td/>");
+						var imatge = $("<img/>",{src:"empty.png", width:'50px'});
+						td.append(imatge);
+						tr.append(td);
+					}
+				}
+				t.append(tr);
+			}
+
+			return t.html();
+		}
+
+
+	$(document).ready(function(){
+		// ADD BOOK
+		 $("#b1").click(function(){
+			var t = $("#title").val();
+			var np = $("#pages").val();
+			var cat = $("#cats").val();
+			var c = $("#col").val();
+			var r = $("#row").val();
+			l = new Llibre(t,np,cat,c,r);
+			llibres.push(l);
+			library = printTable(4,4);
+			$("#printer").html(library);
+		 });
+
+
+		 // REMOVE BOOK
+		 $("#b2").click(function(){
+			var c = $("#col").val();
+			var r = $("#row").val();
+			removeBook(c,r);
+			library = printTable(4,4);
+			$("#printer").html(library);
+		 });
+
+		// PRINT BOOKS
+		 $("#b3").click(function(){
+			txt = "";
+			var ul = $("<ul/>");
+
+			for(var i=0; i<llibres.length; i++){
+				l = llibres[i];
+				var txt = l.title + ", "+ l.numpag+", "+l.category+ ", "+ l.column+", "+l.row;
+				var li =$("<li/>", {text:txt});
+				ul.append(li);
+			}
+			$("#printer").html(ul);
+		 });
+
+		 // PRINT LIBRARY
+		 $("#b4").click(function(){
+			library = printTable(4,4);
+			$("#printer").html(library);
+		 });
+
+		 // PNUM BOOKS
+		 $("#b5").click(function(){
+			alert("NUM BOOKS: "+llibres.length);
+		 });
+
+	});
+	</script>
+	</head>
+	<body>
+		TITLE: <input type="text" id="title" /><br/>
+		NUM.PAGES: <input type="text" id="pages" /><br/>
+		CATEGORY:
+		<select id="cats">
+			<option value="CLASSIC">CLASSIC</option>
+			<option value="SCIENCE">SCIENCE</option>
+			<option value="SPORTS">SPORTS</option>
+			<option value="COMEDY">COMEDY</option>
+		</select> <br/>
+		POSITION (COL / ROW):
+		<select id="col">
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+		</select> /
+		<select id="row">
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+		</select> <br/>
+		<button id="b1">ADD BOOK</button> 
+		<button id="b2">REMOVE BOOK</button> 
+		<button id="b3">PRINT ALL BOOKS</button>
+		<button id="b4">PRINT LIBRARY</button>
+		<button id="b5">NUM BOOKS</button>
+		<hr/>
+		<div id="printer"></div>
+	</body>
+</html>

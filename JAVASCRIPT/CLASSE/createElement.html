@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CREATE ELEMENTS</title>
+		<style type="text/css">
+			h1 {
+				background-color: red;
+			}
+			h2 {
+				background-color: green;
+			}
+			h3 {
+				background-color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container"></div>
+		<hr/>
+		<button onclick="addParagraph();">ADD P</button>
+		<button onclick="addHeading(1);">ADD H1</button>
+		<button onclick="addHeading(2);">ADD H2</button>
+		<button onclick="addHeading(3);">ADD H3</button>
+		<script>
+			function addParagraph(){
+				var parent = document.getElementById('container');
+				var ps = parent.getElementsByTagName("p");
+				var num = ps.length + 1;
+				var p = document.createElement("p");
+				var txt = document.createTextNode("Paràgraf "+num);
+				p.appendChild(txt);
+				parent.appendChild(p);
+			}
+
+			function addHeading(n){
+				var parent = document.getElementById('container');
+				var h1s = parent.getElementsByTagName("h1");
+				var h2s = parent.getElementsByTagName("h2");
+				var h3s = parent.getElementsByTagName("h3");
+				var num = h1s.length + h2s.length + h3s.length + 1;
+				var h = document.createElement("h"+n);
+				var txt = document.createTextNode("Heading "+num);
+				h.appendChild(txt);
+				parent.appendChild(h);
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Example 29</title>
+</head>
+<body>
+<script type="text/javascript">
+
+ function openWindow() {
+
+ var w=open();
+
+ w.document.write("Writing in a new window.<br>");
+
+ w.document.write("Second line.");
+
+ }
+
+ 
+
+ function openWindowParameters() { 
+
+ var w=open('','','status=yes,width=400,height=250,menubar=yes'); 
+
+ w.document.write("First line.<br>"); 
+
+ }
+
+ 
+
+ function showAlert() {
+
+ alert("This is an alert window.");
+
+ }
+
+ 
+
+ function selectOption() {
+
+ var answer=confirm("Press one of the buttons");
+
+ if (answer==true)
+
+ alert("Ok pressed");
+
+ else
+
+ alert("Cancel pressed"); 
+
+ }
+
+ 
+
+ function loadString() { 
+
+ var s=prompt("Enter a string:",""); 
+
+ alert("You've entered: "+s); 
+
+ } 
+
+</script>
+
+
+<form>
+
+ <br>
+
+ <input type="button" value="Open Window" onClick="openWindow()">
+
+ <br>
+
+ <input type="button" value="Open Window with Parameters" onClick="openWindowParameters()" >
+
+ <br>
+
+ <input type="button" value="Open Alert Window" onClick="showAlert()">
+
+ <br>
+
+ <input type="button" value="Confirm Window" onClick="selectOption()">
+
+ <br>
+
+ <input type="button" value="Prompt Window" onClick="loadString()">
+
+</form>
+</body>
+
+</html>

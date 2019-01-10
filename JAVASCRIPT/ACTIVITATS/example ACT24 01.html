@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Example 24</title>
+</head>
+<body>
+ <script type="text/javascript"> 
+
+ function showSelected() {
+
+ if (document.getElementById('radio1').checked) {
+
+ alert('Option A');
+
+ }
+
+ if (document.getElementById('radio2').checked) {
+
+ alert('Option B');
+
+ }
+
+ if (document.getElementById('radio3').checked) {
+
+ alert('Option C');
+
+ }
+
+ if (document.getElementById('radio4').checked) {
+
+ alert('Option D');
+
+ }
+
+ }
+
+ </script>
+
+ <form>
+
+ <input type="radio" id="radio1" name="options">Option A <br/>
+
+ <input type="radio" id="radio2" name="options">Option B <br/>
+
+ <input type="radio" id="radio3" name="options">Option C <br/>
+
+ <input type="radio" id="radio4" name="options">Option D <br/>
+
+ <input type="button" value="Show Selected" onClick="showSelected()">
+
+ </form>
+</body>
+
+</html>

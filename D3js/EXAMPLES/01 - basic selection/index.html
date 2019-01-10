@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>D3 js</title>
+		<style>
+			.titol {
+				font-size: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Primer H1</h1>
+		<p>Paràgraf 1</p>
+		<p>Paràgraf 2</p>
+		<p>Paràgraf 3</p>
+		<script src="https://d3js.org/d3.v4.min.js"></script>
+		<script>
+
+			// Selecció i edició del primer H1
+			d3.select('h1').style('color','red')
+			.attr('class','titol')
+			.text('H1 modificat');
+
+			// Selecció de tots els paràgrafs
+			d3.selectAll('p').style('color', 'blue');
+
+			//Afegir elements
+			d3.select('body').append('h2').text('Primer H2');
+			d3.select('body').append('h2').text('Segon H2');
+			d3.select('body').append('h2').text('Tercer H2');
+
+			d3.selectAll('h2').style('color', 'green');
+		</script>
+	</body>
+</html>

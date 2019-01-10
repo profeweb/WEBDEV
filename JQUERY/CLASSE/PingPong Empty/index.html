@@ -1,0 +1,31 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>Ping Pong</title>
+		<link rel="stylesheet" href="styles.css"/>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script defer src="pingpong.js"></script>
+	</head>
+	<body>
+		<canvas id="camp" width="800" height="600"></canvas>
+
+		<script>
+
+			$(document).ready(function(){
+
+				$(document).keydown(function (event){
+					var k = event.key.toUpperCase();
+					switch(k){
+						case LEFT_UP: 	moveUpLeftStick(); break;
+						case LEFT_DOWN: moveDownLeftStick(); break;
+						case RIGHT_UP: 	moveUpRightStick(); break;
+						case RIGHT_DOWN: moveDownRightStick(); break;
+					}
+				
+				});
+
+			});
+			
+		</script>
+	</body>
+</html>

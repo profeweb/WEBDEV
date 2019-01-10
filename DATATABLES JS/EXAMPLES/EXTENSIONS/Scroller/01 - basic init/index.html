@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>DataTablesJS.</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- css -->
+  
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"/>
+
+  <link rel="stylesheet" href="https://cdn.datatables.net/scroller/1.5.1/css/scroller.dataTables.min.css"/>
+
+  <!-- js -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+
+  <script src="https://cdn.datatables.net/scroller/1.5.1/js/dataTables.scroller.min.js"></script>
+
+  <script src="https://cdn.datatables.net/select/1.2.7/js/dataTables.select.min.js"></script>
+
+</head>
+<body>
+ 
+<div class="container">
+	<h1> DataTablesJS - Scroller / Basic initialization. </h1>
+	<p>Scroller is a plug-in for DataTables which enhances DataTables' built-in scrolling features to allow large amounts of data to be rendered on page very quickly. This is done by Scroller through the use of a virtual rendering technique that will render only the part of the table that is actually required for the current view.</p>
+	<p>Note that Scroller requires that all rows are of the same height (in order to preform its positional calculations). You can use the <b>nowrap class</b> of the DataTables default stylesheet, or <b>add th, td { white-space: nowrap; } to your CSS</b>b>, to ensure that text in rows does not wrap.</p>
+	<div class="row">
+		<div class="col">
+			<table id="example" class="display nowrap" style="width:100%">
+		        <thead>
+		            <tr>
+		                <th>ID</th>
+		                <th>First name</th>
+		                <th>Last name</th>
+		                <th>ZIP / Post code</th>
+		                <th>Country</th>
+		            </tr>
+		        </thead>
+		    </table>
+		</div>
+	</div>
+</div>
+
+<script>
+	
+	$(document).ready(function() {
+	    $('#example').DataTable( {
+	        ajax:           "info.json",
+	        deferRender:    true,
+	        scrollY:        200,
+	        scrollCollapse: true,
+	        scroller:       true
+	    } );
+	} );
+
+</script>
+</body>
+</html>

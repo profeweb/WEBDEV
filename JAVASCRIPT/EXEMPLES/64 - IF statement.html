@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Display "Good day", only if the time is less than 20:00:</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    if (new Date().getHours() < 20) {
+        document.getElementById("demo").innerHTML = "Good day";
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <script type = "text/javascript" src = "https://d3js.org/d3.v4.min.js"></script>
+   </head>
+
+   <body>
+      <h3> Timer API </h3>
+      <script>
+         var timer = d3.timer(function(duration) {
+            console.log(duration);
+            if (duration > 150) timer.stop();
+         }, 100);
+      </script>
+   </body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>SHOPPING LIST</title>
+		<script>
+			function printList(){
+				var txt="";
+				for(var i=0; i<llistaCompra.length; i++){
+					txt = txt + "<li>" + llistaCompra[i]+ "</li>";
+				}
+				var u = document.getElementById("llista");
+				u.innerHTML = txt;
+			}
+
+			function afegirInici(){
+				var nou = document.getElementById("item").value;
+				if(llistaCompra.indexOf(nou)==-1){
+					llistaCompra.unshift(nou);
+					printList();
+				}
+			}
+
+			function afegirFinal(){
+				var nou = document.getElementById("item").value;
+				if(llistaCompra.indexOf(nou)==-1){
+					llistaCompra.push(nou);
+					printList();
+				}
+			}
+
+			function llevarInici(){
+				llistaCompra.shift();
+				printList();
+			}
+
+			function llevarFinal(){
+				llistaCompra.pop();
+				printList();
+			}
+
+			function ordenarAsc(){
+				llistaCompra.sort();
+				printList();
+			}
+
+			function hiHa(element){
+				var p = llistaCompra.indexOf(element);
+				if(p!=-1){
+					alert("HI HA "+element+ " A LA POSICIÓ "+p);
+				}
+				else {
+					alert("NO HI HA "+element+" A LA LLISTA.");
+				}
+			}
+
+			function ordenarDesc(){
+				llistaCompra.sort();
+				llistaCompra.reverse();
+				printList();
+			}
+
+			function quants(){
+				var n = llistaCompra.length;
+				alert("HI HA "+n+" ELEMENTS A LA LLISTA.");
+			}
+
+			function llistaMinuscules(){
+				llistaCompra.minuscules();
+				printList();
+			}
+
+			function llistaMajuscules(){
+				llistaCompra.majuscules();
+				printList();
+			}
+
+			Array.prototype.minuscules = function() {
+				for (i=0;i<this.length;i++){
+					this[i]=this[i].toLowerCase();
+				}
+			};
+
+			Array.prototype.majuscules = function() {
+				for (i=0;i<this.length;i++){
+					this[i]=this[i].toUpperCase();
+				}
+			};
+
+		</script>
+	</head>
+	<body>
+		<h3>Shopping List</h3>
+		<ul id="llista">
+		</ul>
+		<hr/>
+		ITEM:<input type="text" id="item" /><br/><br/>
+		<button onclick="afegirInici()">AFEGIR INICI</button>
+		<button onclick="afegirFinal()">AFEGIR FINAL</button>
+		<button onclick="llevarInici()">LLEVAR INICI</button>
+		<button onclick="llevarFinal()">LLEVAR FINAL</button>
+		<button onclick="ordenarAsc()">ORDENAR ASC</button>
+		<button onclick="ordenarDesc()">ORDENAR DESC</button>
+		<button onclick="hiHa('POTATOES')">HI HA 'POTATOES'?</button>
+		<button onclick="llistaMinuscules()">MINÚSCULES</button>
+		<button onclick="llistaMajuscules()">MAJÚSCULES</button>
+		<button onclick="quants()">QUANTS?</button>
+		<script>
+
+			var llistaCompra = new Array();
+			llistaCompra[0]="POTATOES";
+			llistaCompra[1]="MILK";
+			llistaCompra[2]="MEAT";
+			llistaCompra[3]="WC PAPER";
+			llistaCompra[4]="RICE";
+			llistaCompra[5]="SOAP";
+
+			printList();
+		</script>
+	</body>
+</html>

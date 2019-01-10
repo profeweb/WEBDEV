@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>CIBERMONDAY</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+    <script>
+  
+  //TABS
+  
+    $( function() {
+    		$( "#tabs" ).tabs();
+    } );
+    
+  
+  // FUNCIONS CATEGORIES
+  
+  categories = new Array();
+  
+  function addCategory(c){
+  	numC = categories.length;
+  	categories[numC] = c;
+  }
+  
+  function changeCategory(cNew, i){
+  	categories[i] = cNew;
+  }
+  
+  function removeCategory(i){
+  	categories.splice(i, 1);
+  }
+  
+  function numCategories(){
+  	return categories.length;
+  }
+  
+  // LOAD CATEGORIES
+  
+  addCategory("ELECTRONICS");
+  addCategory("HOME");
+  addCategory("FOOD");
+  addCategory("HEALTH");
+  addCategory("SPORTS");
+  
+  
+  // FUNCIONS GUI - CATEGORIES
+  
+  function updateSelectCategories(){
+  
+  	$("#cs1").empty();
+  	
+  	item = $("<option></option>");
+  	item.attr("value","0");
+  	item.text("Select one");
+  	$("#cs1").append(item);
+  	
+  	for(i=0; i<categories.length; i++){
+  		item = $("<option></option>");
+  		item.attr("value",categories[i]);
+  		item.text(categories[i]);
+  		$("#cs1").append(item);
+  	}
+  }
+  
+  
+  function updateSelectCategoriesProd(){
+  
+  	$("#ps1").empty();
+  	
+  	item = $("<option></option>");
+  	item.attr("value","0");
+  	item.text("Select one");
+  	$("#ps1").append(item);
+  	
+  	for(i=0; i<categories.length; i++){
+  		item = $("<option></option>");
+  		item.attr("value",categories[i]);
+  		item.text(categories[i]);
+  		$("#ps1").append(item);
+  	}
+  }
+  
+  function updateSelectCategoriesBuy(){
+  
+  	$("#bs0").empty();
+  	
+  	item = $("<option></option>");
+  	item.attr("value","0");
+  	item.text("Select one");
+  	$("#bs0").append(item);
+  	
+  	for(i=0; i<categories.length; i++){
+  		item = $("<option></option>");
+  		item.attr("value",categories[i]);
+  		item.text(categories[i]);
+  		$("#bs0").append(item);
+  	}
+  }
+  
+  function printAllCategories(){
+  	$("#catlist").empty();
+  	for(i=0; i<categories.length; i++){
+  		item = $("<li></li>");
+  		item.text(categories[i]);
+  		$("#catlist").append(item);
+  	}
+  }
+  
+  // FUNCIONS PRODUCTES
+  
+  productes = new Array();
+  
+  function Product(codi, nom, preu, cat){
+  	this.codi = codi;
+  	this.nom = nom;
+  	this.preu = preu;
+  	this.categoria = cat;
+  }
+  
+  function addProduct(p){
+  	numP = productes.length;
+  	productes[numP] = p;
+  }
+  
+  function changeProduct(pNew, i){
+  	productes[i].codi = pNew.codi;
+  	productes[i].nom = pNew.nom;
+  	productes[i].preu = pNew.preu;
+  	productes[i].categoria = pNew.categoria;
+  }
+  
+  function getProduct(codiP){
+  	for(var i=0; i<productes.length; i++){
+  		if(productes[i].codi == codiP){
+  			return productes[i];
+  		}
+  	}
+  }
+  
+  function removeProduct(i){
+  	productes.splice(i, 1);
+  }
+  
+  function numProductes(){
+  	return productes.length;
+  }
+  
+  
+  function updateSelectProducts(){
+  
+  	$("#ps2").empty();
+  	
+  	item = $("<option></option>");
+  	item.attr("value","0");
+  	item.text("Select one");
+  	$("#ps2").append(item);
+  	
+  	for(i=0; i<productes.length; i++){
+  		item = $("<option></option>");
+  		item.attr("value",productes[i].codi);
+  		item.text(productes[i].codi+" - "+productes[i].nom);
+  		$("#ps2").append(item);
+  	}
+  }
+  
+  function updateSelectProductsCompra(){
+  
+  	$("#bs1").empty();
+  	
+  	item = $("<option></option>");
+  	item.attr("value","0");
+  	item.text("Select one");
+  	$("#bs1").append(item);
+  	
+  	for(i=0; i<productes.length; i++){
+  		item = $("<option></option>");
+  		item.attr("value",productes[i].codi);
+  		item.text(productes[i].codi+" - "+productes[i].nom);
+  		$("#bs1").append(item);
+  	}
+  }
+  
+  function updateSelectProductsCompraFilter(cat){
+  	
+  	$("#bs1").empty();
+  	
+  	item = $("<option></option>");
+  	item.attr("value","0");
+  	item.text("Select one");
+  	$("#bs1").append(item);
+  	
+  	for(i=0; i<productes.length; i++){
+  		if(productes[i].categoria == cat){
+	  		item = $("<option></option>");
+	  		item.attr("value",productes[i].codi);
+	  		item.text(productes[i].codi+" - "+productes[i].nom);
+	  		$("#bs1").append(item);
+  		}
+  	}
+  }
+  
+  function printAllProducts(){
+  	$("#tbprods").empty();
+  	for(i=0; i<productes.length; i++){
+  		tr = $("<tr></tr>");
+  		td1 = $("<td>"+productes[i].codi+"</td>");
+  		td2 = $("<td>"+productes[i].nom+"</td>");
+  		td3 = $("<td>"+productes[i].preu+"</td>");
+  		td4 = $("<td>"+productes[i].categoria+"</td>");
+  		$(tr).append(td1, td2, td3, td4);
+  		$("#tbprods").append(tr);
+  	}
+  }
+  
+  //LOAD PRODUCTS
+  
+  addProduct(new Product(2734, "HARD DISK", 120.75, "ELECTRONICS"));
+  addProduct(new Product(3587, "MEMORY SDRAM 8GB", 70.55, "ELECTRONICS"));
+  addProduct(new Product(9856, "INKJET PRINTER", 310.25, "ELECTRONICS"));
+  addProduct(new Product(1159, "CPU INTEL i7", 99.99, "ELECTRONICS"));
+  addProduct(new Product(7951, "MONITOR LED 19inch", 275.25, "ELECTRONICS"));
+  addProduct(new Product(2956, "MONITOR LED 24inch", 475.50, "ELECTRONICS"));
+  addProduct(new Product(1729, "NIKE TRAINERS", 95.95, "SPORTS"));
+  addProduct(new Product(3917, "CHANDAL ADIDAS", 105.59, "SPORTS"));
+  addProduct(new Product(1243, "TABLE 100X100", 35.99, "HOME"));
+  
+  // FUNCIONS COMPRA
+  
+  compres = new Array();
+  
+  function Compra(codi, quant){
+  	this.codi = codi;
+  	this.quant = parseInt(quant);
+  }
+  
+  function addBuy(c){
+  	numB = compres.length;
+ 	exist = false;
+  	for(var i=0; i< numB; i++){
+  		if(compres[i].codi == c.codi){
+  			compres[i].quant += parseInt(c.quant);
+  			exist = true;
+  		}
+  	}
+  	if(!exist){
+  		compres[numB] = c;
+  	}
+  }
+  
+  function removeBuy(codiP){
+  	index = getPosition(codiP);
+  	compres.splice(index, 1);
+  }
+  
+  
+  function getPosition(codiP){
+  	for(var i=0; i< compres.length; i++){
+  		if(compres[i].codi == codiP){
+  			return i;
+  		}
+  	}
+  	return -1;
+  }
+  
+  function printAllBuys(){
+  	$("#tbbuys").empty();
+  	total = 0.0;
+  	for(i=0; i<compres.length; i++){
+  		codiP = compres[i].codi;
+  		product = getProduct(codiP);
+  		tr = $("<tr></tr>");
+  		td1 = $("<td>"+compres[i].codi+"</td>");
+  		td2 = $("<td>"+product.nom+"</td>");
+  		td3 = $("<td>"+product.preu+"</td>");
+  		td4 = $("<td>"+product.categoria+"</td>");
+  		td5 = $("<td>"+compres[i].quant+"</td>");
+  		subTotal = parseFloat(product.preu)*parseInt(compres[i].quant);
+  		total += subTotal;
+  		td6 = $("<td>"+subTotal+"</td>");
+  		$(tr).append(td1, td2, td3, td4, td5, td6);
+  		$("#tbbuys").append(tr);
+  	}
+  	
+  	trtotal = $("<tr></tr>");
+  	tdt1 = $("<td colspan='5'>TOTAL</td>");
+  	tdt2 = $("<td>"+total+"</td>");
+  	$(trtotal).append(tdt1, tdt2);
+  	$("#tbbuys").append(trtotal);
+  	
+  	
+  	desc = parseFloat($("#bt1").val());
+  	descompte = total*desc/100;
+  	trdesc = $("<tr></tr>");
+  	tddesc1 = $("<td colspan='5'>DESCOMPTE ("+desc+"%)</td>");
+  	tddesc2 = $("<td>"+descompte+"</td>");
+  	$(trdesc).append(tddesc1, tddesc2);
+  	$("#tbbuys").append(trdesc);
+  	
+  	preufinal = total-descompte;
+  	trtotal = $("<tr></tr>");
+  	tdt1 = $("<td colspan='5'>TOTAL - DESCOMPTE</td>");
+  	tdt2 = $("<td>"+(preufinal)+"</td>");
+  	$(trtotal).append(tdt1, tdt2);
+  	$("#tbbuys").append(trtotal);
+  	
+  }
+  
+  
+  // FUNCIONS GUI - BUTTONS
+  
+	$(document).ready(function(){
+	
+	printAllCategories();
+	printAllProducts();
+	printAllBuys();
+	updateSelectCategories();
+	updateSelectCategoriesProd();
+	updateSelectProducts();
+	updateSelectProductsCompra();
+	updateSelectCategoriesBuy();
+	
+	$("#ct1").val("");
+
+	//ADD CATEGORY
+	  $("#cb1").click(function(){
+		cat = $("#ct1").val();
+		addCategory(cat);
+		printAllCategories();
+		updateSelectCategories();
+		updateSelectCategoriesProd();
+	  });
+	  
+	//EDIT CATEGORY 
+	  $("#cb2").click(function(){
+	  	index = $("#cs1 option:selected").index();
+	  	txt = $("#ct1").val();
+	  	changeCategory(txt, index-1);
+	  	printAllCategories();
+		updateSelectCategories();
+		updateSelectCategoriesProd();
+	  });
+	  
+	//DELETE CATEGORY
+	  $("#cb3").click(function(){
+	  	index = $("#cs1 option:selected").index();
+	  	removeCategory(index-1);
+	  	printAllCategories();
+		updateSelectCategories();
+		updateSelectCategoriesProd();
+	  	
+	  });
+	  
+	  //CHANGE CATEGORY
+	  $("#cs1").change(function(){
+	  	index = $("#cs1 option:selected").index();
+	  	if(index>0){
+			txt = $("#cs1").val();
+			$("#ct1").val(txt);
+		}
+	  });
+	  
+	  
+	  //ADD PRODUCT
+	  $("#pb1").click(function(){
+		pCodi = $("#pt1").val();
+		pNom = $("#pt2").val();
+		pPreu = $("#pt3").val();
+		pCat = $("#ps1").val();
+		p = new Product(pCodi, pNom, pPreu, pCat);
+		addProduct(p);
+		printAllProducts();
+		updateSelectProducts();
+		updateSelectProductsCompra();
+	  });
+	  
+	  //EDIT PRODUCT 
+	  $("#pb2").click(function(){
+	  	index = $("#ps2 option:selected").index();
+	  	alert(index);
+	  	pCodi = $("#pt1").val();
+		  pNom = $("#pt2").val();
+		  pPreu = $("#pt3").val();
+		  pCat = $("#ps1").val();
+		  p = new Product(pCodi, pNom, pPreu, pCat);
+	  	changeProduct(p, index-1);
+	  	printAllProducts();
+		  updateSelectProducts();
+		  updateSelectProductsCompra();
+	  });
+	  
+	  
+	  //CHANGE PRODUCT
+	  $("#ps2").change(function(){
+	  	index = $("#ps2 option:selected").index();
+	  	if(index>0){
+	  		p = productes[index-1];
+	  		$("#pt1").val(p.codi);
+			 $("#pt2").val(p.nom);
+			 $("#pt3").val(p.preu);
+			 $("#ps1").val(p.categoria);
+		  }
+	  });
+	  
+	  //DELETE PRODUCT
+	  $("#pb3").click(function(){
+	  	index = $("#ps2 option:selected").index();
+	  	removeProduct(index-1);
+	  	printAllProducts();
+		  updateSelectProducts();
+	  	updateSelectProductsCompra();
+	  });
+	  
+	  //CHANGE CATEGORY PRODUCTS
+	  $("#bs0").change(function(){
+	  	index = $("#bs0 option:selected").index();
+	  	if(index>0){
+	  		cat = $("#bs0").val();
+	  		updateSelectProductsCompraFilter(cat);
+		  }
+	  });
+	  
+	  
+	  //ADD BUY
+	  $("#bb1").click(function(){
+	  	codiP = $("#bs1").val();
+	  	quants = $("#bs2").val();
+	  	newC = new Compra(codiP, quants);
+	  	addBuy(newC);
+	  	printAllBuys();
+	  });
+	  
+	  //REMOVE BUY
+	  $("#bb2").click(function(){
+	  	codiP = $("#bs1").val();
+	  	removeBuy(codiP);
+	  	printAllBuys();
+	  });
+	  
+	
+	//APPLY DESCOMPTE
+	  $("#bb3").click(function(){
+	  	printAllBuys();
+	  });
+	  
+	  
+	});
+ 
+  
+  
+
+  </script>
+  <style>
+  	#allcats { border:solid black 1px; margin:5px; padding:5px;}
+  	#allprods { margin:5px; padding:5px;}
+  </style>
+</head>
+<body>
+<div id="tabs" class="ui-tabs ui-corner-all ui-widget ui-widget-content">
+  <ul role="tablist" class="ui-tabs-nav ui-corner-all ui-helper-reset ui-helper-clearfix ui-widget-header">
+    <li role="tab" tabindex="0" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab ui-tabs-active ui-state-active" aria-controls="cats" aria-labelledby="ui-id-1" aria-selected="true" aria-expanded="true"><a href="cibermonday.html#cats" role="presentation" tabindex="-1" class="ui-tabs-anchor" id="ui-id-1">Categoria</a></li>
+    <li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="prods" aria-labelledby="ui-id-2" aria-selected="false" aria-expanded="false"><a href="cibermonday.html#prods" role="presentation" tabindex="-1" class="ui-tabs-anchor" id="ui-id-2">Producte</a></li>
+    <li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="buy" aria-labelledby="ui-id-3" aria-selected="false" aria-expanded="false"><a href="cybermonday.html#buy" role="presentation" tabindex="-1" class="ui-tabs-anchor" id="ui-id-3">Compra</a></li>
+  </ul>
+  
+  <!-- TAB de CATEGORIES -->
+  <div id="cats" aria-labelledby="ui-id-1" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="false">
+    CATEGORIA: <input type="text" id="ct1">
+    <button id="cb1">ADD</button> &nbsp;
+    <select id="cs1"><option value="0">Select one</option></select> 
+    <button id="cb2">SAVE</button>
+    <button id="cb3">DELETE</button>
+    <div id="allcats">
+    	<ul id="catlist"></ul>
+    </div>
+  </div>
+  
+  <!-- TAB de PRODUCTES -->
+  <div id="prods" aria-labelledby="ui-id-2" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;">
+    PRODUCTE: <br>
+    CODI: <input type="text" id="pt1"><br>
+    DESCRIPCIÓ: <input type="text" id="pt2"><br>
+    PREU: <input type="text" id="pt3"><br>
+    CATEGORIA: <select id="ps1"><option value="0">Select one</option></select> <br>
+    <button id="pb1">ADD</button> &nbsp;
+    <select id="ps2"><option value="0">Select one</option></select> 
+    <button id="pb2">SAVE</button>
+    <button id="pb3">DELETE</button><br>
+    <div>
+    		<table border="1" style="width:100%">
+    			<thead>
+    				<tr><th>CODI</th><th>PRODUCTE</th><th>PREU</th><th>CATEGORIA</th></tr>
+    			</thead>
+    			<tbody id="tbprods"></tbody>
+    		</table>
+    </div>
+  </div>
+  
+  <!-- TAB de COMPRA -->
+  <div id="buy" aria-labelledby="ui-id-3" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;">
+  	CATEGORIA:
+    <select id="bs0"><option value="0">Select one</option></select> 
+    PRODUCTE:
+    <select id="bs1"><option value="0">Select one</option></select> 
+    	QUANTITAT:
+    <select id="bs2">
+    		<option value="1">1</option>
+    		<option value="2">2</option>
+    		<option value="3">3</option>
+    		<option value="4">4</option>
+    		<option value="5">5</option>
+    	</select>
+    	<button id="bb1">ADD</button> 
+      <button id="bb2">REMOVE ALL</button><br>
+    	DESCOMPTE (%):<input type="text" id="bt1" value="0" size="5"><button id="bb3">APPLY</button><br>
+    <div>
+    		<br>
+    		<table border="1" style="width:60%">
+    			<thead>
+    				<tr><th>CODI</th><th>PRODUCTE</th><th>PREU</th><th>CATEGORIA</th><th>QUANTITAT</th><th>SUBTOTAL</th></tr>
+    			</thead>
+    			<tbody id="tbbuys"><tr><td colspan="5">TOTAL</td><td>0</td></tr><tr><td colspan="5">DESCOMPTE (0%)</td><td>0</td></tr><tr><td colspan="5">TOTAL - DESCOMPTE</td><td>0</td></tr></tbody>
+    		</table>
+    </div>
+  </div>
+</div>
+
+
+</body></html>

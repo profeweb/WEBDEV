@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+</head>
+<body>
+
+<div data-role="page" id="pageone">
+  <div data-role="header">
+    <h1>Collapsibles data-inset</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <h2>Collapsible Block WITH rounded corners:</h2>
+    <div data-role="collapsible">
+      <h1>This is a collapsible block with rounded corners</h1>
+      <p>By default, collapsibles have rounded corners with some margin, use the data-inset="false" attribute to make them full width without corners.</p>
+    </div>
+
+    <h2>Collapsible Block without rounded corners:</h2>
+    <div data-role="collapsible" data-inset="false">
+      <h1>This is a collapsible block without rounded corners</h1>
+      <p>By default, collapsibles have rounded corners with some margin, use the data-inset="false" attribute to make them full width without corners.</p>
+    </div>
+    <br>
+
+    <h2>Collapsible Set without rounded corners:</h2>
+    <div data-role="collapsibleset">
+      <div data-role="collapsible" data-inset="false">
+        <h3>Click me - I'm collapsible!</h3>
+        <p>I'm the expanded content.</p>
+      </div>
+      <div data-role="collapsible" data-inset="false">
+        <h3>Click me - I'm collapsible!</h3>
+        <p>I'm the expanded content.</p>
+      </div>
+      <div data-role="collapsible" data-inset="false">
+        <h3>Click me - I'm collapsible!</h3>
+        <p>I'm the expanded content.</p>
+      </div>
+      <div data-role="collapsible" data-inset="false">
+        <h3>Click me - I'm collapsible!</h3>
+        <p>I'm the expanded content.</p>
+      </div>
+    </div>
+  </div>
+   
+  <div data-role="footer">
+    <h1>Footer</h1>
+  </div>  
+</div> 
+
+</body>
+</html>

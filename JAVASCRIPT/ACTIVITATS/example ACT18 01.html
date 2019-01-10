@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Example 18</title>
+</head>
+<body>
+<script type="text/javascript">
+var s=prompt('Enter a string:','');
+document.write('Entered string:'+s);
+document.write('<br>');
+document.write('Number of characters:'+s.length);
+document.write('<br>');
+document.write('First character is:'+s.charAt(0));
+document.write('<br>');
+document.write('First 3 characters are:'+s.substring(0,3));
+document.write('<br>');
+if (s.indexOf('hello')!=-1)
+document.write('You entered the string hello.');
+else
+document.write('Hello not entered.');
+document.write('<br>');
+document.write('String in upper case:'+s.toUpperCase());
+document.write('<br>');
+document.write('String in lower case:'+s.toLowerCase());
+document.write('<br>');
+</script>
+</body>
+
+</html>

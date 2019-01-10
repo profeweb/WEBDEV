@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Search a string for "IESManacor", and display the position of the match:</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var str = "Visit IESManacor!"; 
+    var n = str.search(/IESManacor/i);
+    document.getElementById("demo").innerHTML = n;
+}
+</script>
+
+</body>
+</html>

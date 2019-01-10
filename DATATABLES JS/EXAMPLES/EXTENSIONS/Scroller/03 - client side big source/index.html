@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>DataTablesJS.</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- css -->
+  
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"/>
+
+  <link rel="stylesheet" href="https://cdn.datatables.net/scroller/1.5.1/css/scroller.dataTables.min.css"/>
+
+  <!-- js -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+
+  <script src="https://cdn.datatables.net/scroller/1.5.1/js/dataTables.scroller.min.js"></script>
+
+  <script src="https://cdn.datatables.net/select/1.2.7/js/dataTables.select.min.js"></script>
+
+</head>
+<body>
+ 
+<div class="container">
+	<h1> DataTablesJS - Scroller / Client-side data source (50,000 rows). </h1>
+	<p>This example is completely artificial in that the data generated is created on the client-side by just looping around a Javascript array and then passing that to DataTables. However, it does show that DataTables and Scroller can easily cope with large amounts of data on the client-side. Typically, data such as this would be Ajax sourced and server-side processing would be implemented</p>
+	<div class="row">
+		<div class="col">
+			<table id="taula" class="display nowrap" style="width:100%">
+		        <thead>
+		            <tr>
+		                <th>ID</th>
+		                <th>First name</th>
+		                <th>Last name</th>
+		                <th>ZIP / Post code</th>
+		                <th>Country</th>
+		            </tr>
+		        </thead>
+		    </table>
+		</div>
+	</div>
+</div>
+
+<script>
+	
+	$(document).ready(function() {
+	        var data = [];
+	        for ( var i=0 ; i<50000 ; i++ ) {
+	            data.push( [ i, i, i, i, i ] );
+	        }
+	         
+	        $('#taula').DataTable( {
+	            data:           data,
+	            deferRender:    true,
+	            scrollY:        200,
+	            scrollCollapse: true,
+	            scroller:       true
+	        } );
+	    } );
+
+</script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>AnimeJS Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../anime.min.js"></script>
+</head>
+<body>
+
+	<!-- CSS SELECTOR -->
+	<div id="cssSelector">
+	  <div class="line">
+	  	<h2>CSS selector </h2>
+	    <div class="square el">
+	    	<svg width="100" height="100">
+	    		<rect width="100" height="100" fill="red" />
+	    	</svg>
+	    </div>
+	  </div>
+	</div>
+	<script>
+		var cssSelector = anime({
+		  targets: '#cssSelector .el',
+		  translateX: 250
+		});
+	</script>
+
+	<!-- DOM SELECTOR -->
+	<div id="domNode">
+		<h2>DOM selector </h2>
+	  <div class="large square el">
+	  	<svg width="100" height="100">
+	  		<rect width="100" height="100" fill="red" />
+	  	</svg>
+	  </div>
+	</div>
+	<script>
+		var el = document.querySelector('#domNode .el');
+		var domNode = anime({
+		  targets: el,
+		  translateX: 250
+		});
+	</script>
+
+	<!-- NODE LIST SELECTOR -->
+	<div id="nodeList">
+	  <h2>NODE List selector </h2>
+	  <div class="line">
+	    <div class="small square el">
+	    	<svg width="100" height="100">
+	    		<rect width="100" height="100" fill="red" />
+	    	</svg>
+	    </div>
+	  </div>
+	  <div class="line">
+	    <div class="small square el">
+	    	<svg width="100" height="100">
+	    		<rect width="100" height="100" fill="green" />
+	    	</svg>
+	    </div>
+	  </div>
+	  <div class="line">
+	    <div class="small square el">
+	    	<svg width="100" height="100">
+	    		<rect width="100" height="100" fill="blue" />
+	    	</svg>
+	    </div>
+	  </div>
+	</div>
+	<script>
+		var els = document.querySelectorAll('#nodeList .el');
+
+		var nodeList = anime({
+		  targets: els,
+		  translateX: 250
+		});
+	</script>
+
+	<!-- JAVASCRIPT OBJECT SELECTOR -->
+	<div id="JSobject">
+	  <h2>JS OBJECT selector </h2>
+	  <pre>{"charged":"5%"}</pre>
+	</div>
+	<script>
+		var obj = { charged: '0%' , ready:'100%' };
+
+		var JSobject = anime({
+		  targets: obj,
+		  charged: '100%',
+		  round: 5,
+		  easing: 'linear',
+		  update: function() {
+		    var el = document.querySelector('#JSobject pre');
+		    el.innerHTML = JSON.stringify(obj);
+		  }
+		});
+	</script>
+</body>
+</html>

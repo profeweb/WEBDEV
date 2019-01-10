@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ARROW FUNCTIONS</title>
+	</head>
+	<body>
+		<h4>Negació, Suma i Producte amb Arrow Functions.</h4>
+		<p><b id="negacio"></b></p>
+		<p><b id="suma"></b></p>
+		<p><b id="producte"></b></p>
+		<script>
+			"use strict";
+			
+			var x = 15;
+			var y = 5;
+
+			var n = (x) => { return -x; };
+			document.getElementById("negacio").innerHTML = n(x);
+
+			var s = (x, y) => x+y;
+			document.getElementById("suma").innerHTML = s(x, y);
+
+			var p = (x, y) => { return x*y; };
+			document.getElementById("producte").innerHTML = p(x, y);
+		</script>
+	</body>
+</html>

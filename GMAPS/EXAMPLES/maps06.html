@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Google Map - PolyLine</h1>
+
+<div id="googleMap" style="width:90%;height:400px;margin:10px; float:left;"></div>
+
+<script>
+function myMap() {
+
+	var map = new google.maps.Map(document.getElementById('googleMap'), {
+	    zoom: 2,
+	    center: {lat: 0, lng: -180},
+	    mapTypeId: 'terrain'
+	  });
+
+	var flightPlanCoordinates = [
+	    {lat: 37.772, lng: -122.214},
+	    {lat: 21.291, lng: -157.821},
+	    {lat: -18.142, lng: 178.431},
+	    {lat: -27.467, lng: 153.027}
+	  ];
+	  
+	var flightPath = new google.maps.Polyline({
+	    path: flightPlanCoordinates,
+	    geodesic: true,
+	    strokeColor: '#FF0000',
+	    strokeOpacity: 1.0,
+	    strokeWeight: 2
+	  });
+
+	flightPath.setMap(map);
+
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCKiIqCdZGrVxx06LSbe7uG3zXOq1Cz5k&callback=myMap"></script>
+</body>
+</html>

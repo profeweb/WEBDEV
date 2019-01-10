@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+
+    function pare(sel){
+        var p = $("#"+sel).parent();
+        $("*").css("background-color", "white");
+        p.css("background-color", "red");
+    }
+
+    function pares(sel){
+        var p = $("#"+sel).parents();
+        $("*").css("background-color", "white");
+        p.css("background-color", "red");
+    }
+
+    $("button").click(function(){
+
+        var sel = $("#s1").val();
+        var fun = $("#s2").val();
+
+        switch(fun){
+            case "parent": pare(sel); break;
+            case "parents": pares(sel); break;
+        }
+    });
+
+});
+</script>
+<style>
+* { background-color:white; }
+#div1, #div2, #div3 {
+	margin: 20px;
+	padding-left: 10px;
+	border: solid 1px black;
+}
+
+#div4 {
+	width:70%;
+	margin-right: 25%;
+	margin-left: 25%;
+}
+</style>
+</head>
+<body>
+<h1>Traversing Methods.</h1>
+<div id="div1">
+	<p id="p1" class="a">This is a paragraph in the div (P1 - classe A).</p>
+	<p id="p2" class="b">This is a paragraph in the div (P2 - classe B).</p>
+	<p id="p3" class="b">This is a paragraph in the div (P3 - classe B).</p>
+	<p id="p4" class="a">This is a <b id="bold1">paragraph</b> in the div (P4 - classe A).</p>
+	<div id="div2">
+		<p id="p5" class="b">This is a paragraph in the div (P5 - classe B).</p>
+		<p id="p6" class="a">This is a <b id="bold2">paragraph</b> in the div (P6 - classe A).</p>
+		<p id="p7" class="b">This is a paragraph in the div (P7 - classe B).</p>
+		<p id="p8" class="b">This is a paragraph in the div (P8 - classe B).</p>
+	
+        <div id="div3">
+            <p id="p8" class="b">This is a paragraph in the div (P8 - classe B).</p>
+        </div>
+        <p id="p9" class="a">This is a paragraph in the div (P9 -  classe A).</p>
+    </div>
+</div>
+<hr/>
+<div id="div4">
+	<select id="s1">
+		<option value="div1">DIV1</option>
+		<option value="p1">P1</option>
+		<option value="p2">P2</option>
+		<option value="p3">P3</option>
+		<option value="p4">P4</option>
+		<option value="bold1">BOLD1</option>
+		<option value="div2">DIV2</option>
+		<option value="p5">P5</option>
+		<option value="p6">P6</option>
+		<option value="bold2">BOLD2</option>
+		<option value="p7">P7</option>
+        <option value="div3">DIV3</option>
+		<option value="p8">P8</option>
+		<option value="p9">P9</option>
+	</select>
+	<select id="s2">
+		<option value="parent">PARENT</option>
+		<option value="parents">PARENTS</option>
+		<option value="parentsUntil">PARENTS UNTIL</option>
+		<option value="children">CHILDREN</option>
+		<option value="find">FIND</option>
+		<option value="siblings">SIBLINGS</option>
+		<option value="next">NEXT</option>
+		<option value="nextAll">NEXT ALL</option>
+		<option value="nextUntil">NEXT UNTIL</option>
+		<option value="prev">PREV</option>
+		<option value="prevAll">PREV ALL</option>
+		<option value="prevUntil">PREV UNTIL</option>
+		<option value="first">FIRST P</option>
+		<option value="last">LAST P</option>
+		<option value="eq">EQ(2) P</option>
+		<option value="filter">FILTER P.A</option>
+		<option value="not">NOT P.A</option>
+	</select>
+	<button>SELECT</button>
+</div>
+</body>
+</html>

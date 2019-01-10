@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Leaflet</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- css -->
+    	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+    	   crossorigin=""/>
+    	
+    	<!-- js -->
+    	<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+    	   integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+    	   crossorigin=""></script>
+
+    	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+	</head>
+	<body>
+		<h1>LEAFLET - Fly To. </h1>
+		<div id="meuMapa" style="width:800px;height:600px;"></div>
+		<button id="b1">CENTRAR A PALMA</button>
+		<button id="b2">CENTRAR A MANACOR</button>
+		<button id="b3">CENTRAR A INCA</button>
+		<button id="b4">RUTA 1</button>
+<script>
+
+	// Grup de capa
+	var ciutats 	= L.layerGroup();
+	var coordManacor = [39.569167469384524,3.2097057711208663];
+	var coordPalma 	 = [39.5685396953947,2.6412525233238284];
+	var coordInca 	 = [39.711517283890196,2.9087695125847404];
+
+
+	// Marcadors agrupats en la capa
+	var manacor = L.marker(coordManacor).bindPopup('Manacor').addTo(ciutats);
+	var palma 	= L.marker(coordPalma).bindPopup('Palma').addTo(ciutats);
+	var inca 	= L.marker(coordInca).bindPopup('Inca').addTo(ciutats);
+
+
+	var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+				'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+				'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		mbUrl = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoicHJvZmV3ZWIiLCJhIjoiY2pwM3JxeHR3MGF6cjNrcXcwbmh0MGZtOCJ9.mxvmjOpVymwltGGlcxHx8g';
+
+	// Capes del mapa
+	var gris   = L.tileLayer(mbUrl, {id: 'mapbox.light', attribution: mbAttr});
+
+	// Mapa amb capes
+	var m = L.map('meuMapa', {
+			center: [39.56938657282553,2.9340382684379165],
+			zoom: 10,
+			layers: [gris, ciutats]
+		});
+
+	// Events
+	$("#b1").click(function(){
+		m.flyTo(coordPalma, 11);
+	});
+
+	$("#b2").click(function(){
+		m.flyTo(coordManacor, 13);
+	});
+
+	$("#b3").click(function(){
+		m.flyTo(coordInca, 15);
+	});
+
+	$("#b4").click(function(){
+		if(!m.hasLayer(ruta1)){
+			m.addLayer(ruta1);
+		}
+		else {
+			m.removeLayer(ruta1);
+		}
+	});
+
+	// LOAD JSON FILE -------------------------------------
+	$.getJSON("rutaManacorPalma.geojson").done( function( data ){
+	    ruta1 = new L.geoJson(data, {
+	        opacity: 0.6,
+	        weight:  3.5
+	    }).getLayers()[0];
+	});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+<style>
+#myBtn {
+    width: 300px;
+    padding: 10px;
+    font-size:20px;
+    position: absolute;
+    margin: 0 auto;
+    right: 0;
+    left: 0;
+    bottom: 50px;
+    z-index: 9999;
+}
+</style>
+<body>
+
+<div class="container mt-3">
+  <h2>Modal Methods</h2>
+  <p>The <strong>show</strong> method shows the modal and the <strong>hide</strong> method hides the modal.</p>
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-primary" id="myBtn">Hide Modal</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Modal Methods</h4>
+        </div>
+        <div class="modal-body">
+          <p>The <strong>show</strong> method shows the modal and the <strong>hide</strong> method hides the modal.</p>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+ 
+<script>
+$(document).ready(function(){
+    // Show the Modal on load
+    $("#myModal").modal("show");
+    
+    // Hide the Modal
+    $("#myBtn").click(function(){
+        $("#myModal").modal("hide");
+    });
+});
+</script>
+
+</body>
+</html>

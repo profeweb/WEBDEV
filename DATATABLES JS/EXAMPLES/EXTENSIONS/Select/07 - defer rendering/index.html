@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>DataTablesJS.</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- css -->
+  
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"/>
+
+  <link rel="stylesheet" href="https://cdn.datatables.net/select/1.2.7/css/select.dataTables.min.css"/>
+
+  <!-- js -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+  <script src="https://cdn.datatables.net/select/1.2.7/js/dataTables.select.min.js"></script>
+
+</head>
+<body>
+ 
+<div class="container">
+	<h1> DataTablesJS - Defer Rendering. </h1>
+	<p>This example simply shows Select being used with DataTables' <b>deferRender</b> option. Deferred rendering can be particularly useful when Ajax loading data as it allows DataTables to perform a number of performance enhancing optimisations.</p>
+	<br/><br/>
+	<div class="row">
+		<div class="col">
+			<table id="taula" class="display" style="width:100%">
+			        <thead>
+			            <tr>
+			                <th>Name</th>
+			                <th>Position</th>
+			                <th>Office</th>
+			                <th>Extn.</th>
+			                <th>Start date</th>
+			                <th>Salary</th>
+			            </tr>
+			        </thead>
+			        <tfoot>
+			            <tr>
+			                <th>Name</th>
+			                <th>Position</th>
+			                <th>Office</th>
+			                <th>Extn.</th>
+			                <th>Start date</th>
+			                <th>Salary</th>
+			            </tr>
+			        </tfoot>
+			    </table>
+		</div>
+	</div>
+</div>
+
+<script>
+	
+	$(document).ready(function() {
+	        
+	        var table = $('#taula').DataTable( {
+	            ajax: 'info.json',
+	            deferRender: true,
+	            columns: [
+	                    { data: 'name' },
+	                    { data: 'position' },
+	                    { data: 'office' },
+	                    { data: 'extn' },
+	                    { data: 'start_date' },
+	                    { data: 'salary' }
+	                ],
+	            select: true
+	           
+	        } );
+	} );
+
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Example 11</title>
+</head>
+<body> 
+<script type="text/javascript">
+
+ var value;
+
+ do {
+
+ value=prompt('Enter a number between 0 and 999:','');
+
+ value=parseInt(value);
+
+ document.write('The number '+value+' has ');
+
+ if (value<10){
+
+ document.write('1 digit.');
+
+ }
+
+ else {
+
+ if (value<100){
+
+ document.write('2 digits.');
+
+ }
+
+ else {
+
+ document.write('3 digits.');
+
+ }
+
+ }
+
+ document.write('<br>');
+
+ } while(value!=0);
+
+ 
+
+</script> 
+</body>
+
+</html>

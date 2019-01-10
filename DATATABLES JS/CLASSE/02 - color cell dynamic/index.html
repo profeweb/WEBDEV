@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>DataTablesJS.</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- css -->
+  
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"/>
+
+  <!-- js -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+
+</head>
+<body>
+ 
+<div class="container">
+	<h1> DataTablesJS - Color cell based on value. </h1>
+	<p></p>
+	<div class="row">
+		<div class="col">
+			<table id="taula" class="display" style="width:100%">
+			        <thead>
+			            <tr>
+			                <th>Name</th>
+			                <th>Position</th>
+			                <th>Office</th>
+			                <th>Age</th>
+			                <th>Start date</th>
+			                <th>Salary</th>
+			            </tr>
+			        </thead>
+			        <tfoot>
+			            <tr>
+			                <th>Name</th>
+			                <th>Position</th>
+			                <th>Office</th>
+			                <th>Extn</th>
+			                <th>Start date</th>
+			                <th>Salary</th>
+			            </tr>
+			        </tfoot>
+			    </table>
+		</div>
+	</div>
+</div>
+
+<script>
+
+	$(document).ready(function() {
+
+	    var t = $('#taula').DataTable( {
+	        "ajax": "info.json",
+	        "columns": [
+	            { "data": "name" },
+	            { "data": "position" },
+	            { "data": "office" },
+	            { "data": "extn" },
+	            { "data": "start_date" },
+	            { "data": "salary" }
+	        ]
+	    } );
+
+	    t.on( 'draw', function () {
+	        t.rows().every( function ( rowIdx, tableLoop, rowLoop ) {
+	            var data = this.data();
+	            var row = $(this.node());
+	            if(data['extn']>1000 && data['extn']<5000){
+	            	row.find('td:eq(3)').css('background-color', 'yellow');
+	            }
+	            else if(data['extn']>=5000 && data['extn']<6000){
+	            	row.find('td:eq(3)').css('background-color', 'red');
+	            }
+	            else if(data['extn']>=6000 && data['extn']<8000){
+	            	row.find('td:eq(3)').css('background-color', 'green');
+	            }
+	            else {
+	            	row.find('td:eq(3)').css('background-color', 'blue');
+	            }
+	        } );
+	    } );
+	} );
+	
+	/*$(document).ready(function() {
+	        $('#taula').DataTable({ 
+			    'rowCallback': function(row, data, index){
+
+			    if(data[3]> 20 && data[3]<30){
+			        $(row).find('td:eq(3)').css('background-color', 'red');
+			    }
+			    else if(data[3]>= 30 && data[3]<50){
+			        $(row).find('td:eq(3)').css('background-color', 'blue');
+			    }
+			    else if(data[3]>= 50 && data[3]<80){
+			        $(row).find('td:eq(3)').css('background-color', 'green');
+			    }
+			    else if(data[3]>= 80){
+			        $(row).find('td:eq(3)').css('background-color', 'magenta');
+			    }
+			    else {
+			        $(row).find('td:eq(3)').css('background-color', 'yellow');
+
+			    }
+			  }
+			});
+	} );*/
+
+</script>
+</body>
+</html>

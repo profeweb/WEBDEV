@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			var myArray = ["BANANAS", "POTATOES", "MILK"];
+
+			function printList(){
+				var txt="<ul>";
+				for(var i=0; i<myArray.length; i++){
+					txt+="<li>"+myArray[i]+"</li>";
+				}
+				txt+="</ul>";
+				document.getElementById("container").innerHTML=txt;
+			}
+
+			function sortArray(){
+				myArray.sort();
+				printList();
+			}
+
+			function unshiftArray(){
+				var txt = document.getElementById('newItem').value;
+				myArray.unshift(txt);
+				printList();
+			}
+
+			function shiftArray(){
+				myArray.shift();
+				printList();
+			}
+
+			function pushArray(){
+				var txt = document.getElementById('newItem').value;
+				myArray.push(txt);
+				printList();
+			}
+
+			function popArray(){
+				myArray.pop();
+				printList();
+			}
+		</script>
+	</head>
+<body>
+	<h1>Shopping List</h1>
+	<div id="container"></div>
+	<hr/>
+	ITEM:<input type="text" id="newItem" /><br/><br/>
+	<button onclick="sortArray()">SORT</button>
+	<button onclick="shiftArray()">SHIFT</button>
+	<button onclick="unshiftArray()">UNSHIFT</button>
+	<button onclick="pushArray()">PUSH</button>
+	<button onclick="popArray()">POP</button>
+
+<script>
+	printList();
+</script>
+</body>
+</html>

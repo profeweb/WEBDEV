@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>GET ELEMENTS BY TAG NAME</title>
+	</head>
+	<body>
+		<h1>Llista de paràgrafs.</h1>
+		<p>Paràgraf A.</p>
+		<p>Paràgraf B.</p>
+		<p>Paràgraf C.</p>
+		<p>Paràgraf D.</p>
+		<p>Paràgraf E.</p>
+		<hr/>
+		<script>
+			var ps = document.getElementsByTagName('p');
+			console.log(ps);
+			document.write("<h4>"+ps+"</h4>");
+
+			document.write("Número de Paràgrafs: "+ps.length+"<br/><br/>");
+			for(var i=0; i<ps.length; i++){
+				var p = ps.item(i);
+				document.write("<b>"+p+"</b><br/>");
+				p.style.backgroundColor="red";
+				document.write(p.innerHTML+"<br/><br/>");
+				//document.write(p.childNodes[0].data+"<br/><br/>");
+			}
+		</script>
+	</body>
+</html>

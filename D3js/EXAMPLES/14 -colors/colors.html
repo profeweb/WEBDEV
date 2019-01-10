@@ -1,0 +1,28 @@
+<html>
+   <head>
+      <script type = "text/javascript" src = "https://d3js.org/d3.v4.min.js"></script>
+   </head>
+
+   <body>
+      <h3>D3 colors API</h3>
+      <script>
+         var color = d3.color("green");
+         console.log(color);
+         console.log(color.opacity);
+         console.log(color.rgb());
+         console.log(color.toString());
+         console.log(color.displayable());
+         console.log(d3.rgb("yellow"));
+         console.log(d3.rgb(200,100,0));
+         var hsl = d3.hsl("blue");
+         console.log(hsl.h + =  90);
+         console.log(hsl.opacity = 0.5);
+         var lab = d3.lab("blue");
+         console.log(lab);
+         var hcl = d3.hcl("blue");
+         console.log(hcl);
+         var cube = d3.cubehelix("blue");
+         console.log(cube);
+      </script>
+   </body>
+</html>

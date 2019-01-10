@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Leaflet</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- css -->
+    	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+    	   crossorigin=""/>
+    	
+    	<!-- js -->
+    	<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+    	   integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+    	   crossorigin=""></script>
+
+	</head>
+	<body>
+		<h1>LEAFLET - Icon Class. </h1>
+		<div id="meuMapa" style="width:600px;height:400px;"></div>
+<script>
+
+	// Mapa centrat a latitud/longuitud i zoom
+	var m = L.map('meuMapa').setView([39.562947854718,3.2198552657492883], 15);
+
+	// Imatges del mapa (OpenStreetMap + MapBox)
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+	    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+	    maxZoom: 18,
+	    id: 'mapbox.streets',
+	    accessToken: 'pk.eyJ1IjoicHJvZmV3ZWIiLCJhIjoiY2pwM3JxeHR3MGF6cjNrcXcwbmh0MGZtOCJ9.mxvmjOpVymwltGGlcxHx8g'
+	}).addTo(m);
+
+
+	// Classe Icona
+	var iconaFruita = L.Icon.extend({
+	    options: {
+	        shadowUrl: 'img/ombra.png',
+	        iconSize:     [138, 95],
+	        shadowSize:   [150, 64],
+	        iconAnchor:   [22, 94],
+	        shadowAnchor: [4, 62],
+	        popupAnchor:  [70, -40]
+	    }
+	});
+
+
+	// Instàncies de la classe iconaFruita
+	var iconaPlatanGroc 	= new iconaFruita({iconUrl: 'img/platanGroc.png'}),
+	    iconaPlatanVerd 	= new iconaFruita({iconUrl: 'img/platanVerd.png'}),
+	    iconaPlatanVermell 	= new iconaFruita({iconUrl: 'img/platanVermell.png'});
+
+	// Marcadors sobre el mapa
+	var marker1 = L.marker([39.559599619885326,3.2157697257636073], 
+					{icon: iconaPlatanGroc}).addTo(m).bindPopup("Som un platan groc.");
+
+	var marker2 = L.marker([39.563152978616735,3.2183188956397544], 
+					{icon: iconaPlatanVerd}).addTo(m).bindPopup("Som un platan verd.");
+
+	var marker3 = L.marker([39.560856881866805,3.2243313330101273], 
+					{icon: iconaPlatanVermell}).addTo(m).bindPopup("Som un platan vermell.");
+
+</script>
+</body>
+</html>

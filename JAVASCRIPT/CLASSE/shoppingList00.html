@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>SHOPPING LIST</title>
+		<script>
+			function printList(){
+				var txt="";
+				for(var i=0; i<llistaCompra.length; i++){
+					txt = txt + "<li>" + llistaCompra[i]+ "</li>";
+				}
+				var u = document.getElementById("llista");
+				u.innerHTML = txt;
+			}
+
+			function afegirInici(){
+				var nou = document.getElementById("item").value;
+				llistaCompra.unshift(nou);
+				printList();
+			}
+		</script>
+	</head>
+	<body>
+		<h3>Shopping List</h3>
+		<ul id="llista">
+		</ul>
+		<hr/>
+		ITEM:<input type="text" id="item" /><br/><br/>
+		<button onclick="afegirInici()">AFEGIR INICI</button>
+		<script>
+
+			var llistaCompra = new Array();
+			llistaCompra[0]="POTATOES";
+			llistaCompra[1]="MILK";
+
+			printList();
+		</script>
+	</body>
+</html>

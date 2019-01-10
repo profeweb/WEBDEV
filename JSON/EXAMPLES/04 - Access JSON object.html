@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Access a JavaScript object:</p>
+
+<h1> Access by dot notation.</h1>
+<p id="objectNotation"></p>
+
+<h1> Access by array notation.</h1>
+<p id="arrayNotation"></p>
+
+<script>
+var myObj;
+myObj = { name: "John", age: 30, city: "New York" };
+
+document.getElementById("objectNotation").innerHTML = myObj.name;
+
+document.getElementById("arrayNotation").innerHTML = myObj["age"];
+</script>
+
+</body>
+</html>

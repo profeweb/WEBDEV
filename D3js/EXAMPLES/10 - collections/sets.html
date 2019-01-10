@@ -1,0 +1,16 @@
+<html>
+   <head>
+      <script type = "text/javascript" src = "https://d3js.org/d3.v4.min.js"></script>
+   </head>
+
+   <body>
+      <h3>D3 collection API</h3>
+      <script>
+         var fruits =  d3.set().add("mango").add("apple").add("orange");
+         console.log(fruits.has("grapes")); // return false.
+         console.log(fruits.remove("apple")); //true
+         console.log(fruits.size());    // size is 2
+         console.log(fruits.empty());   // false
+      </script>
+   </body>
+</html>

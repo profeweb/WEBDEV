@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Example 14</title>
+<script type="text/javascript">
+
+//class Bet
+
+function Bet(name) {
+
+	this.name=name;
+	this.number=number;
+}
+
+function number(){
+	this.number=prompt("Enter a number for "+this.name+"?","");
+}
+
+function isWinner(num){
+	
+	if (this.number==num) return true;
+	else return false;
+}
+    
+
+//class Raffle
+
+function Raffle(){
+	
+	this.number=-1;
+	this.raffle=raffle;
+}
+
+
+function raffle(){
+	
+	this.number=parseInt(Math.random()*10)+1;
+}
+
+</script>
+</head>
+<body>
+<script type="text/javascript">
+var bet1;
+bet1=new Bet("John");
+bet1.number();
+var bet2;
+bet2=new Bet("Alice");
+bet2.number();
+var Christmas;
+Christmas = new Raffle();
+Christmas.raffle();
+document.write('Winner number:' + Christmas. number + '<br>');
+document.write(bet1.name + ' chose ' + bet1.number +'<br>');
+document.write(bet2.name + ' chose ' + bet2.number +'<br>');
+if (bet1.isWinner(Christmas.number)){ 
+	document.write(bet1.name + ' is the winner. <br>'); 
+}
+if (bet2.isWinner(Christmas.number)){ 
+	document.write(bet2.name + ' is the winner. <br>'); 
+} 
+
+</script>
+</body>
+</html>

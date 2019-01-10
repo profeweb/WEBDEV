@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>DataTablesJS.</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- css -->
+  
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"/>
+
+  <link rel="stylesheet" href="https://cdn.datatables.net/scroller/1.5.1/css/scroller.dataTables.min.css"/>
+
+  <!-- js -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+
+  <script src="https://cdn.datatables.net/scroller/1.5.1/js/dataTables.scroller.min.js"></script>
+
+  <script src="https://cdn.datatables.net/select/1.2.7/js/dataTables.select.min.js"></script>
+
+</head>
+<body>
+ 
+<div class="container">
+	<h1> DataTablesJS - Scroller / Server side data source (50,000 rows). </h1>
+	<p>DataTables' server-side processing mode is a feature that naturally fits with Scroller. Server-side processing can be used to show large data sets, with the server being used to do the data processing, and Scroller optimising the display of the data in a scrolling viewport.</p>
+	<p>When using server-side processing, Scroller will wait a small amount of time to allow the scrolling to finish before requesting more data from the server (200mS by default). This prevents you from DoSing your own server!</p>
+	<div class="row">
+		<div class="col">
+			<table id="taula" class="display nowrap" style="width:100%">
+		        <thead>
+		            <tr>
+		                <th>ID</th>
+		                <th>First name</th>
+		                <th>Last name</th>
+		                <th>ZIP / Post code</th>
+		                <th>Country</th>
+		            </tr>
+		        </thead>
+		    </table>
+		</div>
+	</div>
+</div>
+
+<script>
+	
+	$(document).ready(function() {
+	    $('#taula').DataTable( {
+	        serverSide: true,
+	        ordering: false,
+	        searching: false,
+	        ajax: function ( data, callback, settings ) {
+	            var out = [];
+	 
+	            for ( var i=data.start, ien=data.start+data.length ; i<ien ; i++ ) {
+	                out.push( [ i+'-1', i+'-2', i+'-3', i+'-4', i+'-5' ] );
+	            }
+	 
+	            setTimeout( function () {
+	                callback( {
+	                    draw: data.draw,
+	                    data: out,
+	                    recordsTotal: 5000000,
+	                    recordsFiltered: 5000000
+	                } );
+	            }, 50 );
+	        },
+	        scrollY: 200,
+	        scroller: {
+	            loadingIndicator: true
+	        },
+	        stateSave: true
+	    } );
+	} );
+
+</script>
+</body>
+</html>

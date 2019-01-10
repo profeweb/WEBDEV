@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <script type = "text/javascript" src = "https://d3js.org/d3.v4.min.js"></script>
+   </head>
+
+   <body>
+      <h3>D3 collection API</h3>
+      <script>
+         var month = d3.map([{name: "jan"}, {name: "feb"}], 
+            function(d) { return d.name; });
+         console.log(month.get("jan")); // {"name": "jan"}
+         console.log(month.get("apr")); // undefined
+         console.log(month.has("feb")); // true
+         
+         var map =  d3.map().set("fruit", "mango");
+         console.log(map.get("fruit")); // mango
+         console.log(map.remove("fruit")); // remove key and return true.
+         console.log(map.size());    // size is 0 because key removed.
+         console.log(map.empty());   // true
+      </script>
+   </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+  <div data-role="header">
+  <h1>Select Menus</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <form method="post" action="demoform.asp">
+      <fieldset>
+        <label for="day">Select As Many Days As You'd Like:</label>
+        <select name="day" id="day" multiple="multiple" data-native-menu="false">
+          <option>Day</option>
+          <option value="mon">Monday</option>
+          <option value="tue">Tuesday</option>
+          <option value="wed">Wednesday</option>
+          <option value="thu">Thursday</option>
+          <option value="fri">Friday</option>
+          <option value="sat">Saturday</option>
+          <option value="sun">Sunday</option>
+        </select>
+      </fieldset>
+      <input type="submit" data-inline="true" value="Submit">
+    </form>
+    <p>Tip: To give a title to the list, insert an option element without the value attribute (In this example, "Day").</p>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<html>
+   <head>
+      <script type = "text/javascript" src = "https://d3js.org/d3.v4.min.js"></script>
+   </head>
+
+   <body>
+      <h3>D3 array API</h3>
+      <script>
+         console.log(d3.cross([10, 20], ["a", "b"]));
+         console.log(d3.merge([[10], [30]]));
+         console.log(d3.pairs([10, 20, 30, 40]));
+         var object = {fruit:"mango", color: "yellow"},
+         fields = ["fruit", "color"];
+         console.log(d3.permute(object, fields)); 
+         console.log(d3.zip([10, 20], [30, 40]));
+      </script>
+   </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>JSON Data Types:</p>
+
+<h1> String.</h1>
+<p id="t1"></p>
+
+<h1> Number.</h1>
+<p id="t2"></p>
+
+<h1> Object.</h1>
+<p id="t3"></p>
+
+<h1> Array.</h1>
+<p id="t4"></p>
+
+<h1> Boolean.</h1>
+<p id="t5"></p>
+
+<h1> Null.</h1>
+<p id="t6"></p>
+
+<script>
+
+var myObj;
+
+myObj = { "name":"John"};
+document.getElementById("t1").innerHTML = myObj.name;
+
+myObj = {"age":30};
+document.getElementById("t2").innerHTML = myObj.age;
+
+myObj = { "employee":{ "name":"John", "age":30, "city":"New York" }};
+document.getElementById("t3").innerHTML = myObj.employee.city;
+
+myObj = {"employees":[ "John", "Anna", "Peter" ]};
+document.getElementById("t4").innerHTML = myObj.employees[2];
+
+myObj = { "sale":true };
+document.getElementById("t5").innerHTML = myObj.sale;
+
+myObj = { "job":null };
+if(myObj.job==null){
+	document.getElementById("t6").innerHTML = "null";
+}
+
+</script>
+
+</body>
+</html>

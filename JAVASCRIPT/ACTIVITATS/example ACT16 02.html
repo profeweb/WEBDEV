@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Example 16</title>
+<script type="text/javascript">
+
+function showNumDaysMonth(months,days)
+
+{
+
+var num;
+
+num=prompt('Enter month number:','');
+
+num=parseInt(num);
+
+document.write(num+'º month is '+months[num-1]+'.');
+
+document.write('<br>');
+
+document.write('It has '+days[num-1]+' days.');
+
+}
+
+var months;
+
+months=new Array(12);
+
+months[0]='January';
+
+months[1]='February';
+
+months[2]='March';
+
+months[3]='April';
+
+months[4]='May';
+
+months[5]='June';
+
+months[6]='July';
+
+months[7]='August';
+
+months[8]='September';
+
+months[9]='October';
+
+months[10]='November';
+
+months[11]='December';
+
+ 
+
+var days;
+
+days=new Array(12);
+
+days[0]=31;
+
+days[1]=28;
+
+days[2]=31;
+
+days[3]=30;
+
+days[4]=31;
+
+days[5]=30;
+
+days[6]=31;
+
+days[7]=31;
+
+days[8]=30;
+
+days[9]=31;
+
+days[10]=30;
+
+days[11]=31;
+
+showNumDaysMonth(months,days);
+
+</script>
+</head>
+<body> 
+</body>
+
+</html>

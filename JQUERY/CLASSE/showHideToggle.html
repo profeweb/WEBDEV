@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#b1").click(function(){
+    $("p").hide("slow");
+  });
+  $("#b2").click(function(){
+    $("p").show("fast");
+  });
+  $("#b3").click(function(){
+    $("p").toggle(5000);
+  });
+  $("#b4").click(function(){
+    $("p").toggle(10000, function(){ alert("CALLBACK");});
+  });
+});
+</script>
+</head>
+<body>
+<p>If you click on the "Hide" button, I will disappear.</p>
+<button id="b1">Hide Slow</button>
+<button id="b2">Show Fast</button>
+<button id="b3">Toggle 5seg</button>
+<button id="b4">Toggle Callback</button>
+</body>
+</html>

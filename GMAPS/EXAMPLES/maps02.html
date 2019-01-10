@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Some Google Maps</h1>
+
+<div id="googleMap1" style="width:30%;height:400px;margin:10px; float:left;"></div>
+<div id="googleMap2" style="width:30%;height:400px;margin:10px; float:left;"></div>
+<div id="googleMap3" style="width:30%;height:400px;margin:10px; float:left;"></div>
+
+<script>
+function myMap() {
+
+	var mapOptions1= {
+	  center:new google.maps.LatLng(51.508742,-0.120850),
+	  zoom:3,
+	};
+
+	var mapOptions2= {
+	  center:new google.maps.LatLng(51.508742,-0.120850),
+	  zoom:5,
+	};
+
+	var mapOptions3= {
+	  center:new google.maps.LatLng(39.3847,16.9272),
+	  zoom:10,
+	};
+
+
+	var map1 = new google.maps.Map(document.getElementById("googleMap1"), mapOptions1);
+	var map2 = new google.maps.Map(document.getElementById("googleMap2"), mapOptions2);
+	var map3 = new google.maps.Map(document.getElementById("googleMap3"), mapOptions3);
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCKiIqCdZGrVxx06LSbe7uG3zXOq1Cz5k&callback=myMap"></script>
+</body>
+</html>

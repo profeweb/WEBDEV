@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Leaflet</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- css -->
+    	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+    	   crossorigin=""/>
+    	
+    	<!-- js -->
+    	<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+    	   integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+    	   crossorigin=""></script>
+
+	</head>
+	<body>
+		<h1>LEAFLET - Tile Layers. </h1>
+		<div id="meuMapa" style="width:800px;height:600px;"></div>
+<script>
+
+	var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+				'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+				'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		mbUrl = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoicHJvZmV3ZWIiLCJhIjoiY2pwM3JxeHR3MGF6cjNrcXcwbmh0MGZtOCJ9.mxvmjOpVymwltGGlcxHx8g';
+
+	// Capes del mapa
+	var gris   = L.tileLayer(mbUrl, {id: 'mapbox.light', attribution: mbAttr});
+	var obscur  = L.tileLayer(mbUrl, {id: 'mapbox.dark',   attribution: mbAttr});
+	var contrast  = L.tileLayer(mbUrl, {id: 'mapbox.high-contrast',   attribution: mbAttr});
+	var carrers  = L.tileLayer(mbUrl, {id: 'mapbox.streets',   attribution: mbAttr});
+	var carrers2  = L.tileLayer(mbUrl, {id: 'mapbox.streets-basic',   attribution: mbAttr});
+	var carrers3  = L.tileLayer(mbUrl, {id: 'mapbox.streets-satellite',   attribution: mbAttr});
+	var satelit  = L.tileLayer(mbUrl, {id: 'mapbox.satellite',   attribution: mbAttr});
+	var outdoors  = L.tileLayer(mbUrl, {id: 'mapbox.outdoors',   attribution: mbAttr});
+	var comic  = L.tileLayer(mbUrl, {id: 'mapbox.comic',   attribution: mbAttr});
+	var llapis  = L.tileLayer(mbUrl, {id: 'mapbox.pencil',   attribution: mbAttr});
+	var emerald  = L.tileLayer(mbUrl, {id: 'mapbox.emerald',   attribution: mbAttr});
+	var pirates  = L.tileLayer(mbUrl, {id: 'mapbox.pirates',   attribution: mbAttr});
+	var triatlo = L.tileLayer(mbUrl, {id: 'mapbox.run-bike-hike',   attribution: mbAttr});
+	var wheatpaste = L.tileLayer(mbUrl, {id: 'mapbox.wheatpaste',   attribution: mbAttr});
+
+	// grup de capes base
+	var layersBase = {
+		"Clar": gris,
+		"Obscur": obscur,
+		"Alt Contrast" : contrast,
+		"Carrers": carrers,
+		"Carrers bàsic": carrers2,
+		"Carrers i satél·lit": carrers3,
+		"Satél·lit": satelit,
+		"Outdoors": outdoors,
+		"Comic": comic,
+		"Llàpis": llapis,
+		"Emerald": emerald,
+		"Pirates": pirates,
+		"Triatló": triatlo,
+		"Wheatpaste": wheatpaste
+	};
+
+
+	/*
+		mapbox.streets-basic
+
+	*/
+	
+
+	// Mapa amb capes
+	var m = L.map('meuMapa', {
+			center: [39.562947854718,3.2198552657492883],
+			zoom: 10,
+			layers: [gris]
+		});
+
+	
+
+	// Control per visualitzar capes del mapa
+	L.control.layers(layersBase).addTo(m);
+
+</script>
+</body>
+</html>

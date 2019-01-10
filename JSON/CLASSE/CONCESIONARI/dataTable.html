@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>DataTablesJS.</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- css -->
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css"/>
+
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css"/>
+
+  <link rel="stylesheet" href="https://cdn.datatables.net/select/1.2.7/css/select.bootstrap4.min.css"/>
+
+  <!-- js -->
+
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+  <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+
+  <script src="https://cdn.datatables.net/select/1.2.7/js/dataTables.select.min.js"></script>
+
+</head>
+<body>
+ 
+<div class="container">
+	<h1> Exemple DataTablesJS - AJAX, Select & Bootrap 4. </h1>
+	<p>Selecciona per editar una fila de la taula.</p>
+	<div id="alert_message"></div>
+	<div class="row">
+		<div class="col">
+			<button type="button" class="btn btn-outline-primary" id="b1">COMENÇA AMB S</button>
+			<button type="button" class="btn btn-outline-danger" id="b2">TOTS</button>
+			<button type="button" class="btn btn-outline-danger" id="b3">ID VISIBLE</button>
+			<button type="button" class="btn btn-outline-danger" id="b4">MODAL EDIT</button>
+			<button type="button" class="btn btn-outline-danger" id="b5">MODAL DELETE</button>
+		</div>
+	</div>
+	<br/>
+	<div class="row">
+		<div class="col">
+			<table id="taula" class="table table-striped table-bordered">
+			        <thead>
+			            <tr>
+			                <th>Id</th>
+			                <th>Nom</th>
+			            </tr>
+			        </thead>
+			    </table>
+		</div>
+	</div>
+	<br/>
+</div>
+
+<!-- Modal Edita Marca -->
+
+<div id="modalEditaMarca" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+
+            <!-- header modal -->
+
+            <div class="modal-header">
+              <h5 class="modal-title">Edita Marca</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+
+            <!-- body modal -->
+
+
+            <div class="modal-body">
+              <form role="form" name="formEdita">
+                  <div class="row">
+                      <div class="col-md-6">
+                          <label>Id:</label>
+                          <input id="idc" type="text" class="form-control" placeholder="Id Marca" readonly="readonly" name="id">
+                      </div>
+                      <div class="col-md-6">
+                          <label>Nom:</label>
+                          <input id="nomc" type="text"class="form-control" placeholder="Nom Marca" name="nom" required>
+                      </div>
+                  </div>
+              </form>
+            </div>
+
+
+            <!-- footer modal -->
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Tancar</button>
+              <button id="bEditaMarca" type="button" class="btn btn-primary">Guardar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!-- fi modal edit -->
+
+<!-- Modal Delete Marca -->
+<div id="modalDeleteMarca" class="modal fade" tabindex="-3" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+              <h5 class="modal-title">Delete Marca</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+			
+			<div class="modal-body">
+	            <div id="deleteBody" class="modal-body">
+	            	<p>Segur que vols eliminar la marca <span id="infoMarca"></span>?</p>
+	            </div>
+	        </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Tancar</button>
+                <button type="button" class="btn btn-primary" id="btnDelete">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!---->
+
+
+<script>
+	
+	$(document).ready(function() {
+	    var t = $('#taula').DataTable( {
+	    	ajax: {
+		    	 url: 'marques.php',
+		    	 dataSrc: '',
+		    	 type:"POST",
+		    	 },
+	    	 columns:  [
+				 { data: 'id' },
+				 { data:'nom' }
+				],
+			language: {
+                url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/Catalan.json"
+            },
+		    select: true
+		} );
+
+
+		function loadData(){
+			t = $('#taula').DataTable( {
+				    	ajax: {
+					    	 url: 'marques.php',
+					    	 dataSrc: '',
+					    	 type:"POST",
+					    	 },
+				    	 columns:  [
+							 { data: 'id' },
+							 { data:'nom' }
+							],
+						language: {
+			                url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/Catalan.json"
+			            },
+					    select: true
+					} );
+		}
+
+		t.column(0).visible(false);
+
+
+	    $("#b1").click(function(){
+	    	t.search("S").draw();
+	    });
+
+	    $("#b2").click(function(){
+	    	t.search("").draw();
+	    });
+
+	    $("#b3").click(function(){
+	    	var b = t.column(0).visible();
+	    	t.column(0).visible(!b);
+	    });
+
+	    $("#b4").click(function(){
+
+	    	var d = t.rows({selected:true}).data();
+	    	var num = t.rows( { selected: true }).count();
+	    	if(num>0){
+	    		//alert("DATA:"+d[0]['id']+" "+d[0]['nom']); 
+	    		modalEditaMarca(d[0]['id']);
+	    	}
+	    	else {
+	    		alert("NO HI HA RES SELECCIONAT.");
+	    	}
+	    });
+
+
+	    function modalEditaMarca(idMarca) {
+	      var xhttp = new XMLHttpRequest();
+	      xhttp.onreadystatechange = function() {
+	        if (this.readyState == 4 && this.status == 200) {
+	          var item = JSON.parse(this.responseText)[0];
+	          //console.log(item);
+	          $("#idc").val(item.id);
+	          $("#nomc").val(item.nom);
+
+	          $("#modalEditaMarca").modal();
+	        }
+	      };
+	      xhttp.open("GET", "marca.php?id="+idMarca, true);
+	      xhttp.send();
+	    }
+
+
+	    $("#b5").click(function(){
+
+	    	var d = t.rows({selected:true}).data();
+	    	var num = t.rows( { selected: true }).count();
+	    	if(num>0){
+	    		//alert("DATA:"+d[0]['id']+" "+d[0]['nom']); 
+	    		modalDeleteMarca(d[0]['id']);
+	    	}
+	    	else {
+	    		alert("NO HI HA RES SELECCIONAT.");
+	    	}
+	    });
+
+	    function modalDeleteMarca(idMarca) {
+	      var xhttp = new XMLHttpRequest();
+	      xhttp.onreadystatechange = function() {
+	        if (this.readyState == 4 && this.status == 200) {
+	          var item = JSON.parse(this.responseText)[0];
+	          console.log(item);
+	          $("#infoMarca").html(item.nom);
+	          $("#modalDeleteMarca").modal();
+	        }
+	      };
+	      xhttp.open("GET", "marca.php?id="+idMarca, true);
+	      xhttp.send();
+	    }
+
+
+	    $('#bEditaMarca').click(function() {
+	    	
+	    	var id = $("#idc").val();
+	    	var nom =$("#nomc").val();
+
+	    	$.ajax({
+	    	     url:"editaMarca.php",
+	    	     method:"POST",
+	    	     data:{id:id, nom:nom},
+	    	     success:function(data){
+	    	      $('#alert_message').html('<div class="alert alert-success">'+data+'</div>');
+	    	      t.destroy();
+	    	      $("#modalEditaMarca").modal('hide');
+	    	      loadData();
+	    	     }
+	    	    });
+
+	    	    setInterval(function(){
+	    	     $('#alert_message').html('');
+	    	    }, 5000);
+
+	    });
+
+	} );
+
+</script>
+</body>
+</html>

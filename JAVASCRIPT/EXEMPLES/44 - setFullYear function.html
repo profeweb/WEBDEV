@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to display a date after changing the year, month, and day.</p>
+
+<p>Remember that JavaScript counts months from 0 to 11. Month 10 is November.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var d = new Date();
+    d.setFullYear(2020, 10, 3);
+    document.getElementById("demo").innerHTML = d;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+[
+  {
+    "0": "1",
+    "1": "papas",
+    "2": "34",
+    "code": "1",
+    "description": "potatoes",
+    "price": "34"
+  },
+  {
+    "0": "2",
+    "1": "apples",
+    "2": "23.5",
+    "code": "2",
+    "description": "apples",
+    "price": "23.5"
+  },
+  {
+    "0": "3",
+    "1": "bananas",
+    "2": "31",
+    "code": "3",
+    "description": "bananas",
+    "price": "31"
+  }
+]

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+  <div data-role="header">
+  <h1>Select Menus</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <form method="post" action="demoform.asp">
+        <fieldset data-role="controlgroup">
+          <legend>In this example, we have changed the icon position to the left side of the select menu (default is right).</legend>
+            <label for="day">Select Day</label>
+            <select name="day" id="day" data-iconpos="left">
+              <option value="mon">Monday</option>
+              <option value="tue">Tuesday</option>
+            </select>
+        </fieldset>
+      <input type="submit" data-inline="true" value="Submit">
+    </form>
+  </div>
+</div>
+
+</body>
+</html>
+

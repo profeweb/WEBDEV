@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<style>
+		.red {
+			color:red;
+		}
+		.green {
+			color:green;
+		}
+		.blue {
+			color:blue;
+		}
+		.courier {
+			font-family:Courier;
+		}
+		.arial {
+			font-family:Arial;
+		}
+		.verdana {
+			font-family:Verdana;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<fieldset><legend>EDIT STYLES</legend>
+			<textarea cols="150" rows="10" id="txt"></textarea><br/>
+			FONT:
+			<select id="selfont">
+					<option value="courier">Courier</option>
+					<option value="verdana">Verdana</option>
+					<option value="arial">Arial</option>
+			</select> &nbsp;
+			COLOR:
+			<select id="selcolor">
+					<option value="red">Red</option>
+					<option value="green">Green</option>
+					<option value="blue">Blue</option>
+			</select> &nbsp;
+			SIZE:
+			<input type="text" value="10" id="txtsize" size="4"/>
+			<button type="button" id="b1">APPLY STYLES</button>&nbsp;
+			<button type="button" id="b2">RESET STYLES</button>&nbsp;
+		</fieldset>
+	</form>
+	<hr/>
+	<div>
+	<p id="myText"></p>
+	</div>
+
+	<script>
+		$(document).ready(function(){
+
+			function resetColors(){
+				$("#myText").removeClass("red");
+				$("#myText").removeClass("green");
+				$("#myText").removeClass("blue");
+			}
+
+			function resetFonts(){
+				$("#myText").removeClass("courier");
+				$("#myText").removeClass("arial");
+				$("#myText").removeClass("verdana");
+			}
+
+			$("#b1").click(function () {
+				var t = $("#txt").val();
+
+				var c = $("#selcolor").val();
+				var f = $("#selfont").val();
+				var s = $("#txtsize").val();
+				
+				resetColors();
+				resetFonts();
+				$("#myText").text(t).addClass(c).addClass(f);
+				$("#myText").css("fontSize", s+"px");
+			});
+
+			$("#b2").click(function(){
+				resetColors();
+				resetFonts();
+				$("#myText").css("fontSize","10px");
+			});
+			
+		});
+	</script>
+</body>
+</html>

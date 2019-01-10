@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<style>
+		.red {
+			color:red;
+		}
+		.green {
+			color:green;
+		}
+		.blue {
+			color:blue;
+		}
+		.courier {
+			font-family:Courier;
+		}
+		.arial {
+			font-family:Arial;
+		}
+		.verdana {
+			font-family:Verdana;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<fieldset><legend>EDIT STYLES</legend>
+			<textarea cols="150" rows="10" id="txt"></textarea><br/>
+			FONT:
+			<select id="selfont">
+					<option value="courier">Courier</option>
+					<option value="verdana">Verdana</option>
+					<option value="arial">Arial</option>
+			</select> &nbsp;
+			COLOR:
+			<select id="selcolor">
+					<option value="red">Red</option>
+					<option value="green">Green</option>
+					<option value="blue">Blue</option>
+			</select> &nbsp;
+			SIZE:
+			<input type="text" value="10" id="txtsize" size="4"/>
+			<button type="button" id="b1">NEW P</button>&nbsp;
+			<button type="button" id="b2">EDIT P</button>&nbsp;
+			<button type="button" id="b3">DELETE P</button>&nbsp;
+			<span id="infoSelection"></span>
+		</fieldset>
+	</form>
+	<hr/>
+	<div id="container">
+	</div>
+
+	<script>
+
+		// Array de paragrafs
+		var paragraphs = new Array();
+
+		// Número de paràgrafs creats
+		var numPs = 0;
+
+		// Id del paràgraf seleccionat
+		var pSelected = null;
+
+
+		$(document).ready(function(){
+
+			// Afegeix els paragrafs de l'array al DIV container
+			function showParagraphs(){
+				$("#container").empty();
+				for(var i=0; i<paragraphs.length; i++){
+					var p = paragraphs[i].createP();
+					$("#container").append(p);
+				}
+			}
+
+			// Borra el paragraph amb id igual a idP
+			function removeP(idP){
+				for(var i=0; i<paragraphs.length; i++){
+					var p = paragraphs[i];
+					if(p.id==idP){
+						paragraphs.splice(i, 1);
+						break;
+					}
+				}
+				showParagraphs();
+			}
+
+			// Actualitza el paragraph amb id igual a idP
+			function updateP(idP){
+				for(var i=0; i<paragraphs.length; i++){
+					var p = paragraphs[i];
+					if(p.id==idP){
+						var t = $("#txt").val();
+						var c = $("#selcolor").val();
+						var f = $("#selfont").val();
+						var s = $("#txtsize").val();
+						p.update(t,s,f,c);
+						break;
+					}
+				}
+				showParagraphs();
+			}
+
+
+			// Afegeix paragraf a l'array
+			$("#b1").click(function () {
+
+				var t = $("#txt").val();
+				var c = $("#selcolor").val();
+				var f = $("#selfont").val();
+				var s = $("#txtsize").val();
+
+				numPs++;
+				var idP = "p"+numPs;
+				var newP = new Paragraph(idP, t, s, f, c);
+				paragraphs.push(newP);
+
+				showParagraphs();
+			});
+
+
+			// Actualitza les propietats del paragraf seleccionat
+			$("#b2").click(function(){
+				if(pSelected!=null){
+					updateP(pSelected);
+				}
+			});
+
+
+			// Elimina el paràgraf seleccionat de l'array
+			$("#b3").click(function(){
+				if(pSelected!=null){
+					removeP(pSelected);
+					pSelected=null;
+					showParagraphs();
+				}
+			});
+			
+		});
+
+
+
+
+		// Classe Paragraph
+		function Paragraph(i, t, m, f, c){
+			
+			//Propietats
+			this.id = i;
+			this.texte = t;
+			this.mida = m;
+			this.font = f;
+			this.color = c;
+
+			//Mètodes
+			this.setColor = setColor;
+			this.setFont = setFont;
+			this.setText = setText;
+			this.setMida = setMida;
+			this.update = update
+			this.createP = createP;
+
+			function setColor(c){
+				this.color = c;
+			}
+
+			function setFont(f){
+				this.font = f;
+			}
+
+			function setText(t){
+				this.texte = t;
+			}
+
+			function setMida(m){
+				this.mida = m;
+			}
+
+			function update(t, m, f, c){
+				this.texte = t;
+				this.mida = m;
+				this.font = f;
+				this.color = c;
+			}
+
+			function createP(){
+				var newP = $("<p/>",{id:this.id, text:this.texte, click:function(){
+						pSelected = this.id;
+						$("#infoSelection").text("P seleccionat és "+pSelected);
+					}
+				});
+				newP.addClass(this.color).addClass(this.font);
+				newP.css("fontSize", this.mida+"px");
+				return newP;
+			}
+		}
+	</script>
+</body>
+</html>

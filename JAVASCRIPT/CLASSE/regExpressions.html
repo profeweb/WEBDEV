@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			
+			function testConteParaula(){
+				var m = document.getElementById("entrada").value;
+				var er = /HOLA/;
+				if(er.test(m)){
+				    alert("Conté Paraula 'HOLA'.");
+				} else {
+				    alert("No compleix expressió regular.");
+				}
+			}
+
+			function testParaula(){
+				var m = document.getElementById("entrada").value;
+				var er = /^HOLA$/;
+				if(er.test(m)){
+				    alert("Paraula 'HOLA'.");
+				} else {
+				    alert("No compleix expressió regular.");
+				}
+			}
+
+			function test5Lletres(){
+				var m = document.getElementById("entrada").value;
+				var er = /^[A-z]{5}$/;
+				if(er.test(m)){
+				    alert("Texte de 5 lletres.");
+				} else {
+				    alert("No compleix expressió regular.");
+				}
+			}
+
+			function testCP(){
+				var m = document.getElementById("entrada").value;
+				var er = /^[0-9]{5}$/;
+				if(er.test(m)){
+				    alert("Codi Postal correcte.");
+				} else {
+				    alert("No compleix expressió regular.");
+				}
+			}
+
+			function testTelefon(){
+				var m = document.getElementById("entrada").value;
+				var er = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+				  
+				if(er.test(m)){
+				    alert("El teléfon és correcte.");
+				} else {
+				    alert("No compleix l'expressió regular.");
+				}
+			}
+
+			function testMatricula(){
+				var m = document.getElementById("entrada").value;
+				var er = /^[0-9]{4}[A-Z]{3}$/;
+				  
+				if(er.test(m)){
+				    alert("La matricula és correcta.");
+				} else {
+				    alert("No compleix l'expressió regular.");
+				}
+			}
+
+			function testEmail(){
+				var m = document.getElementById("entrada").value;
+				var er = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+				  
+				if(er.test(m)){
+				    alert("Email és correcte.");
+				} else {
+				    alert("No compleix l'expressió regular.");
+				}
+			}
+
+			function testData(){
+				var m = document.getElementById("entrada").value;
+				var er =  /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
+				  
+				if(er.test(m)){
+				    alert("La data és correcta.");
+				} else {
+				    alert("No compleix l'expressió regular.");
+				}
+			}
+
+		</script>
+	</head>
+<body>
+	<h1>Regular Expressions</h1>
+	TEXTE: <input type="text" id="entrada" /><br/><br/>
+	<button onclick="testConteParaula()">CONTÉ PARAULA 'HOLA'</button> ('HOLA'). </br></br>
+	<button onclick="testParaula()">PARAULA 'HOLA'</button> ('HOLA'). </br></br>
+	<button onclick="test5Lletres()">5 LLETRES</button> (5 lletres). </br></br>
+	<button onclick="testCP()">CODI POSTAL</button> (5 números). </br></br>
+	<button onclick="testTelefon()">TELÈFON</button> (XXX-XXX-XXXX o XXX.XXX.XXXX o XXX XXX XXXX ). </br></br>
+	<button onclick="testMatricula()">MATRICULA</button> (4n números i 3 lletres). </br></br>
+	<button onclick="testEmail()">EMAIL</button> (xxxxxx@xxxxxx.xx). </br></br>
+	<button onclick="testData()">DATA</button> (DD/MM/YYYY o DD-MM-YYYY). </br></br>
+	
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Leaflet</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		
+		<!-- css -->
+		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+		<link rel="stylesheet" href="MarkerCluster.css" />
+    	
+    	<!-- js -->
+    	<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+		<script src="leaflet.markercluster.js"></script>
+		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+	</head>
+	<body>
+		<h1>LEAFLET - GeoJSON Advanced 2 Layers. </h1>
+		<div id="meuMapa" style="width:800px;height:600px;"></div>
+<script>
+
+	// Inicialitza el mapa
+	var map = L.map('meuMapa').setView([42.35, -71.08], 13);
+
+	// Defineix permisos i autoria
+	var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+				'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+				'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		mbUrl = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoicHJvZmV3ZWIiLCJhIjoiY2pwM3JxeHR3MGF6cjNrcXcwbmh0MGZtOCJ9.mxvmjOpVymwltGGlcxHx8g';
+
+	// Capa base del mapa
+	L.tileLayer(mbUrl, {
+			id: 'mapbox.light', attribution: mbAttr,
+	      	maxZoom: 17,
+	      	minZoom: 9
+	    }).addTo(map);
+
+	// Carregar dades del GeoJSON dels barris
+	$.getJSON("barris.geojson", function(bdata){
+		L.geoJson( bdata, {
+	      style: function(feature){
+	        var fillColor,
+	            density = feature.properties.density;
+	        if ( density > 80 ) fillColor = "#006837";
+	        else if ( density > 40 ) fillColor = "#31a354";
+	        else if ( density > 20 ) fillColor = "#78c679";
+	        else if ( density > 10 ) fillColor = "#c2e699";
+	        else if ( density > 0 ) fillColor = "#ffffcc";
+	        else fillColor = "#f7f7f7";  // no data
+	        return { color: "#999", weight: 1, fillColor: fillColor, fillOpacity: .6 };
+	      },
+	      onEachFeature: function( feature, layer ){
+	        layer.bindPopup( "<strong>" + feature.properties.Name + "</strong><br/>" + feature.properties.density + " rates per km quadrat" )
+	      }
+	    }).addTo(map);
+	});
+	 
+	// Carrega GeoJSON des d'un fitxer extern
+	$.getJSON("rates.geojson",function(rdata){
+
+		// Defineix icona
+	    var ratIcon = L.icon({
+	      iconUrl: 'rat.png',
+	      iconSize: [60,50]
+	    });
+
+	    // Accions sobre les dades
+	    var rates = L.geoJson(rdata,{
+	      pointToLayer: function(feature,latlng){
+	      	// Crea marcador per a cada dada amb popUp
+	        var marker = L.marker(latlng,{icon: ratIcon});
+	        marker.bindPopup(feature.properties.Location + '<br/>' + feature.properties.OPEN_DT);
+	        return marker;
+	      }
+	    }).addTo(map);
+
+	    // Cluster de marcadors
+	    var clusters = L.markerClusterGroup();
+	    clusters.addLayer(rates);
+	    map.addLayer(clusters);
+	    
+	  });
+
+	
+
+</script>
+</body>
+</html>

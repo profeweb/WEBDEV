@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Function SUMA</title>
+		<script>
+			function suma(a, b){
+				
+				return a+b;
+			}
+
+			function calculadora(){
+				var x = parseInt(document.getElementById("op1").value);
+				var y = parseInt(document.getElementById("op2").value);
+				var z = suma(x, y);
+				document.getElementById("resultat").innerHTML=z;
+			}
+
+			function resetear(){
+				document.getElementById("op1").value=0;
+				document.getElementById("op2").value=0;
+				document.getElementById("resultat").innerHTML="";
+			}
+
+		</script>
+	</head>
+	<body>
+		Operando 1:
+		<input type="text" id="op1" value="0" /><br/>
+		Operando 2:
+		<input type="text" id="op2" value="0" /><br/>
+		<button onclick="calculadora()">SUMA</button>
+		<button onclick="resetear()">RESET</button>
+		<br/>
+		<p id="resultat"></p>
+	</body>
+</html>

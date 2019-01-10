@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+</head>
+<body>
+
+<div data-role="page" id="pageone">
+  <div data-role="header">
+    <h1>Filter Collapsible Lists</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <form>
+      <input data-type="search" id="filterCollapsibles">
+    </form>
+    <div data-role="collapsibleset" data-filter="true" data-inset="true" id="myFilter" data-input="#filterCollapsibles">
+      <div data-role="collapsible" data-filtertext="Cities">
+        <h3>Cities</h3>
+        <ul data-role="listview" data-inset="false">
+          <li>Copenhagen</li>
+          <li>Mexico City</li>
+          <li>Oslo</li>
+          <li>Paris</li>
+        </ul>
+        </div>
+        <div data-role="collapsible" data-filtertext="Countries">
+          <h3>Countries</h3>
+          <ul data-role="listview" data-inset="false">
+            <li>Denmark</li>
+            <li>France</li>
+            <li>Mexico</li>
+            <li>Norway</li>
+          </ul>
+        </div>
+        <div data-role="collapsible" data-filtertext="Days">
+          <h3>Days</h3>
+          <ul data-role="listview" data-inset="false">
+            <li>Monday</li>
+            <li>Tuesday</li>
+            <li>Wednesday</li>
+          </ul>
+        </div>
+        <div data-role="collapsible" data-filtertext="Months">
+          <h3>Months</h3>
+          <ul data-role="listview" data-inset="false">
+            <li>January</li>
+            <li>February</li>
+            <li>March</li>
+          </ul>
+        </div>
+    </div>
+  </div>
+
+  <div data-role="footer">
+    <h1>Insert Footer Text Here</h1>
+  </div>
+</div> 
+
+</body>
+</html>
+

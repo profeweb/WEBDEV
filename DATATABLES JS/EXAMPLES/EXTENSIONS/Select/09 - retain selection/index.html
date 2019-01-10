@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>DataTablesJS.</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- css -->
+  
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"/>
+
+  <link rel="stylesheet" href="https://cdn.datatables.net/select/1.2.7/css/select.dataTables.min.css"/>
+
+  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.css"/>
+
+  <!-- js -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+  <script src="https://cdn.datatables.net/select/1.2.7/js/dataTables.select.min.js"></script>
+
+  <script src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
+
+</head>
+<body>
+ 
+<div class="container">
+	<h1> DataTablesJS - Retain Selection. </h1>
+	<p>DataTables has the ability to use a property in the data source for each row as that row's unique identifier through the <b>rowId </b>option. This is typically used in DataTables to assign an id attribute to the tr elements in the table, but it can also be used by Select and other libraries to retain a unique identifier for each row over data reloads.</p>
+	<p>Select uses this information to be able to retain row selection over a data reload. Generally, if a table is reloaded, the state of each row is lost (since the old rows are deleted and new rows added), but this can be undesirable, particularly if performing frequent data updates. Setting the rowId option of DataTables will address this.</p>
+	<br/><br/>
+	<div class="row">
+		<div class="col">
+			<table id="taula" class="display" style="width:100%">
+			        <thead>
+			            <tr>
+			                <th>Name</th>
+			                <th>Position</th>
+			                <th>Office</th>
+			                <th>Extn.</th>
+			                <th>Start date</th>
+			                <th>Salary</th>
+			            </tr>
+			        </thead>
+			        <tfoot>
+			            <tr>
+			                <th>Name</th>
+			                <th>Position</th>
+			                <th>Office</th>
+			                <th>Extn.</th>
+			                <th>Start date</th>
+			                <th>Salary</th>
+			            </tr>
+			        </tfoot>
+			    </table>
+		</div>
+	</div>
+</div>
+
+<script>
+	
+	$(document).ready(function() {
+	    var table = $('#taula').DataTable( {
+	        ajax: 'info.json',
+	        deferRender: true,
+	        columns: [
+	            { data: 'name' },
+	            { data: 'position' },
+	            { data: 'office' },
+	            { data: 'extn' },
+	            { data: 'start_date' },
+	            { data: 'salary' }
+	        ],
+	        rowId: 'extn',
+	        select: true,
+	        dom: 'Bfrtip',
+	        buttons: [
+	            {
+	                text: 'Reload table',
+	                action: function () {
+	                    table.ajax.reload();
+	                }
+	            }
+	        ]
+	    } );
+	} );
+
+</script>
+</body>
+</html>

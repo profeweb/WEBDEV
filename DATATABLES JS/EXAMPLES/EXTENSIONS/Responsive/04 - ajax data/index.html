@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>DataTablesJS.</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- css -->
+  
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"/>
+
+  <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css"/>
+
+  <!-- js -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+
+  <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+
+</head>
+<body>
+ 
+<div class="container">
+	<h1> DataTablesJS - Responsive / Ajax data. </h1>
+	<p>This example shows the Responsive extension working with Ajax sourced data in the DataTable. Note that no special initialisation is required. Responsive is enabled by adding the responsive class to the table element.</p>
+	<div class="row">
+		<div class="col">
+			<table id="taula" class="display responsive nowrap" style="width:100%">
+			        <thead>
+			            <tr>
+			                <th>Name</th>
+			                <th>Position</th>
+			                <th>Office</th>
+			                <th>Age</th>
+			                <th>Start date</th>
+			                <th>Salary</th>
+			            </tr>
+			        </thead>
+			        <tfoot>
+			            <tr>
+			                <th>Name</th>
+			                <th>Position</th>
+			                <th>Office</th>
+			                <th>Age</th>
+			                <th>Start date</th>
+			                <th>Salary</th>
+			            </tr>
+			        </tfoot>
+			    </table>
+		</div>
+	</div>
+</div>
+
+<script>
+	
+	$(document).ready(function() {
+	    $('#taula').DataTable( {
+	        "ajax": "info.json",
+	        "columns": [
+	            { "data": "name" },
+	            { "data": "position" },
+	            { "data": "office" },
+	            { "data": "extn" },
+	            { "data": "start_date" },
+	            { "data": "salary" }
+	        ]
+	    } );
+	} );
+
+</script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>DataTablesJS.</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- css -->
+  
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"/>
+
+  <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css"/>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+  <!-- js -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+
+  <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+
+</head>
+<body>
+ 
+<div class="container">
+	<h1> DataTablesJS - Responsive / Assigned class control. </h1>
+	<p>This example exactly matches the functionality of the class control example but in this case the classes are assigned using the columns.className option.</p>
+	<div class="row">
+		<div class="col" style="width:80%">
+			<table id="taula" class="display responsive" width="100%">
+			        <thead>
+			            <tr>
+			                <th class="all">Name</th>
+			                <th class="min-phone-l">Position</th>
+			                <th class="min-tablet">Office</th>
+			                <th class="never">Start date</th>
+			                <th class="desktop">Salary</th>
+			                <th class="none">Extn.</th>
+			            </tr>
+			        </thead>
+			        <tfoot>
+			            <tr>
+			                <th>Name</th>
+			                <th>Position</th>
+			                <th>Office</th>
+			                <th>Start date</th>
+			                <th>Salary</th>
+			                <th>Extn.</th>
+			            </tr>
+			        </tfoot>
+			    </table>
+		</div>
+	</div>
+</div>
+
+<script>
+	
+	$(document).ready(function() {
+	    $('#taula').DataTable( {
+	        "ajax": "info.json",
+	        "columns": [
+	            { "data": "name",       className: "all" },
+	            { "data": "position",   className: "min-phone-l" },
+	            { "data": "office",     className: "min-tablet" },
+	            { "data": "start_date", className: "never" },
+	            { "data": "salary",     className: "desktop" },
+	            { "data": "extn",       className: "none" }
+	        ]
+	    } );
+	} );
+
+</script>
+</body>
+</html>

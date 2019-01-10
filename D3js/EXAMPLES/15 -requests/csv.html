@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <script type = "text/javascript" src = "https://d3js.org/d3.v4.min.js"></script>
+   </head>
+
+   <body>
+      <h3> D3.js request API</h3>
+      <script>
+         d3.csv("lang.csv", function(d) {
+            return {
+               year: new Date(+d.Year, 0, 1), // convert "Year" column to Date
+               language: d.Language,
+               author: d.Author,
+            };
+         }, function(error, rows) {
+            console.log(error);
+            console.log(rows[0].year);
+         });
+      </script>
+   </body>
+</html>

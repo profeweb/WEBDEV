@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <script type = "text/javascript" src = "https://d3js.org/d3.v4.min.js"></script>
+   </head>
+
+   <body>
+      <h3>Simple transitions</h3>
+      <script>
+         d3.select("body").style("background-color", "lightblue") 
+         // make the background-color lightblue.transition()
+         .transition("background-color", "gray");
+         // make the background-color gray
+      </script>
+   </body>
+</html>

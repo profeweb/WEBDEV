@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>D3 js</title>
+		<style>
+			.titol {
+				font-size: 50px;
+			}
+		</style>
+	</head>
+	<body>
+
+		<script src="https://d3js.org/d3.v4.min.js"></script>
+		<script>
+
+			// dades
+			var dataset = [1, 2, 3, 4, 5];
+
+			//Afegir elements
+			d3.select('body').selectAll('p').
+				data(dataset).
+				enter().
+				append('p').
+				text(function(d){
+					return "Paragraf "+d;
+				});
+		</script>
+	</body>
+</html>

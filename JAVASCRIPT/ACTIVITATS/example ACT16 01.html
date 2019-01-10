@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Example 16</title>
+<script type="text/javascript">
+
+function load(salaries) {
+
+var f;
+
+for(f=0;f<salaries.length;f++) {
+
+var v;
+
+v=prompt('Enter a salary:','');
+
+salaries[f]=parseInt(v);
+
+}
+
+}
+
+function calculateSum(salaries) {
+
+var total=0;
+
+var f;
+
+for(f=0;f<salaries.length;f++) {
+
+total=total+salaries[f];
+
+}
+
+document.write('Salary List<br>');
+
+for(f=0;f<salaries.length;f++) {
+
+document.write(salaries[f]+'<br>');
+
+}
+
+document.write('Total Salaries Sum:'+total);
+
+}
+
+var salaries;
+
+salaries=new Array(5);
+
+load(salaries);
+
+calculateSum(salaries);
+
+</script>
+</head>
+<body> 
+</body>
+
+</html>

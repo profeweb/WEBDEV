@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>FETCH</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Fetch Method - TXT</h1>
+      <button class="btn btn-info">FER FETCH</button>
+      <br/>
+      <p id="demo"></p>
+    </div>
+
+    <script>
+      $(document).ready(function(){
+
+        $("button").click(function(){
+          meuFetch();
+        });
+
+        
+        function  meuFetch(){
+          fetch('marques.txt')
+            .then(ajaxOK)
+            .catch(showError);
+        }
+
+        function showError(err) { 
+          console.log('Error: ', err);
+        }
+
+        function ajaxOK(response) {
+          console.log('Resposta Ok: ', response.ok);
+          if(response.ok) {
+            response.text().then(showResult);
+          } else {
+            showError('status code: ' + response.status);
+            return false;
+          }
+        }
+
+        function showResult(txt) {
+          console.log('Resposta: ', txt);
+          $("#demo").text(txt);
+        }
+
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<style>
+		.red {
+		color:red;
+		}
+		.green {
+		color:green;
+		}
+		.blue {
+		color:blue;
+		}
+		.courier {
+		font-family:Courier;
+		}
+		.arial {
+		font-family:Arial;
+		}
+		.verdana {
+			font-family:Verdana;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<fieldset><legend>EDIT STYLES</legend>
+			<textarea cols="150" rows="10" id="txt"></textarea><br/>
+			FONT:
+			<select id="selfont">
+					<option value="courier">Courier</option>
+					<option value="verdana">Verdana</option>
+					<option value="arial">Arial</option>
+			</select> &nbsp;
+			COLOR:
+			<select id="selcolor">
+					<option value="red">Red</option>
+					<option value="green">Green</option>
+					<option value="blue">Blue</option>
+			</select> &nbsp;
+			SIZE:
+			<input type="text" value="10" id="txtsize" size="4"/>
+			<button id="b1">APPLY STYLES</button>&nbsp;
+			<button id="b2">RESET STYLES</button>&nbsp;
+		</fieldset>
+	</form>
+	<hr/>
+	<div>
+	<p id="myText"></p>
+	</div>
+
+	<script>
+	function resetStyles(){
+		$("#myText").removeClass("red");
+		$("#myText").removeClass("green");
+		$("#myText").removeClass("blue");
+		$("#myText").removeClass("arial");
+		$("#myText").removeClass("courier");
+		$("#myText").removeClass("verdana");
+		$("#myText").css("fontSize", "10px");
+	}
+
+	$(document).ready(function(){
+		 $("#b1").click(function(){
+			resetStyles();
+			var myText = $("#txt").val();
+			$("#myText").text(myText);
+			var myColor = $("#selcolor").val();
+			switch(myColor) {
+				case "red": $("#myText").addClass("red"); break;
+				case "green": $("#myText").addClass("green"); break;
+				case "blue": $("#myText").addClass("blue"); break;
+			}
+			var myFont = $("#selfont").val();
+			switch(myFont) {
+				case "courier": $("#myText").addClass("courier"); break;
+				case "verdana": $("#myText").addClass("verdana"); break;
+				case "arial": $("#myText").addClass("arial"); break;
+			}
+			var mySize= $("#txtsize").val()+"px";
+			$("#myText").css("fontSize", mySize);
+	 	});
+	 
+	 	$("#b2").click(function(){
+			resetStyles();
+			var myText = $("#txt").val();
+			$("#myText").text(myText);
+	 	});
+	});
+	</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Leaflet</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- css -->
+    	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+    	   crossorigin=""/>
+    	
+    	<!-- js -->
+    	<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+    	   integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+    	   crossorigin=""></script>
+
+	</head>
+	<body>
+		<h1>LEAFLET - Markers with Icons. </h1>
+		<div id="meuMapa" style="width:600px;height:400px;"></div>
+<script>
+
+	// Mapa centrat a latitud/longuitud i zoom
+	var m = L.map('meuMapa').setView([39.562947854718,3.2198552657492883], 15);
+
+	// Imatges del mapa (OpenStreetMap + MapBox)
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+	    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+	    maxZoom: 18,
+	    id: 'mapbox.streets',
+	    accessToken: 'pk.eyJ1IjoicHJvZmV3ZWIiLCJhIjoiY2pwM3JxeHR3MGF6cjNrcXcwbmh0MGZtOCJ9.mxvmjOpVymwltGGlcxHx8g'
+	}).addTo(m);
+
+
+	// Icona asociada al marcador
+
+	var icona = L.icon({
+
+	    iconUrl: 'img/icona.png', 		// url de la imatge de la icona
+	    shadowUrl: 'img/ombra.png',	// url de l'ombra de la icona
+
+	    iconSize:     [138, 95], // dimensons de la icona
+	    shadowSize:   [150, 64], // dimensions de l'ombra
+	    iconAnchor:   [22, 94], // centre de la posició de la icona i del marcador
+	    shadowAnchor: [4, 62],  // centre de la posició de l'ombra i del marcador
+	    popupAnchor:  [-3, -76] // posició relativa del popup respecte iconAnchor
+	});
+
+	// Marcador sobre el mapa
+	var marker = L.marker([39.559599619885326,3.2157697257636073], {icon: icona}).addTo(m);
+
+</script>
+</body>
+</html>

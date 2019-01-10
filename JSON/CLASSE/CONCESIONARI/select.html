@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"/>
+      <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <title>Select JSON</title>
+  </head>
+  <body>
+      <div class="container">
+        <h1>Select JSON</h1>
+        <form>
+          <div class="form-group">
+            <select id="meuSelect" class="form-control">
+              <option value="0">Selecciona</option>
+            </select>
+          </div>
+        </form>
+        <br/>
+        <h4>Contingut del fitxer JSON:</h4>
+        <p id="demo"></p>
+      </div>
+
+    <script>
+      $(document).ready(function(){
+
+
+        function loadCarroceria() {
+          var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              $("#demo").html(this.responseText);
+              var carroceries = JSON.parse(this.responseText);
+              for (c in carroceries) {
+                var idCarro = carroceries[c].id;
+                var nomCarro = carroceries[c].nom;
+                var item = $("<option/>", {value:idCarro, text:nomCarro});
+                $("#meuSelect").append(item);
+              }
+            }
+          };
+          xhttp.open("GET", "carroceries.php", true);
+          xhttp.send();
+        }
+
+        loadCarroceria();
+
+      });
+    </script>
+  </body>
+</html>

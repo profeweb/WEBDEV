@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Example 13</title>
+</head>
+<body> 
+<script type="text/javascript">
+function convertEnglish(x){
+if (x==1) return "one";
+else if (x==2) return "two";
+else if (x==3) return "three";
+else if (x==4) return "four";
+else if (x==5) return "five";
+else return "wrong value";
+}
+
+var value;
+value=prompt("Enter a value between 1 and 5: ","");
+value=parseInt(value);
+var r;
+r=convertEnglish(value);
+document.write(r);
+</script>
+</body>
+
+</html>

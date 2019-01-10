@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Google Map - Click on Marker Event</h1>
+
+<div id="googleMap" style="width:90%;height:400px;margin:10px; float:left;"></div>
+
+<script>
+function myMap() {
+
+	var mapOptions= {
+	  center:new google.maps.LatLng(39.3847,16.9272),
+	  zoom:10,
+	};
+
+
+	var map = new google.maps.Map(document.getElementById("googleMap"), mapOptions);
+	var myPosition = {lat: 39.3847, lng: 16.9272};
+	var marker = new google.maps.Marker({position: myPosition});
+
+	marker.setMap(map);
+
+	var infowindow = new google.maps.InfoWindow({
+	  content:"Hello World!"
+	});
+
+	google.maps.event.addListener(marker, 'click', function() {
+	  infowindow.open(map,marker);
+	});
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCKiIqCdZGrVxx06LSbe7uG3zXOq1Cz5k&callback=myMap"></script>
+</body>
+</html>

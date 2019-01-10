@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>DataTablesJS.</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- css -->
+  
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"/>
+
+  <link rel="stylesheet" href="https://cdn.datatables.net/scroller/1.5.1/css/scroller.dataTables.min.css"/>
+
+  <!-- js -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+
+  <script src="https://cdn.datatables.net/scroller/1.5.1/js/dataTables.scroller.min.js"></script>
+
+  <script src="https://cdn.datatables.net/select/1.2.7/js/dataTables.select.min.js"></script>
+
+	<style>
+		/* Forza x-scrolling fent table-width més petit */
+		div.dataTables_wrapper {
+		    width: 75%;
+		    margin: 0 auto;
+		}
+	</style>
+</head>
+<body>
+ 
+<div class="container">
+	<h1> DataTablesJS - Scroller / FixedColumn integration. </h1>
+	<p>This example shows Scroller operating with FixedColumns. FixedColumns has the ability to "freeze" columns and the left and right of a scrolling table in place. Initialisation is exactly the same as normal and all of the standard options are available for both FixedColumns and Scroller. They will automatically detect if they are being used together.</p>
+	<div class="row">
+		<div class="col">
+			<table id="taula" class="display nowrap" style="width:100%">
+		        <thead>
+		            <tr>
+		                <th>ID</th>
+		                <th>First name</th>
+		                <th>Last name</th>
+		                <th>ZIP / Post code</th>
+		                <th>Country</th>
+		            </tr>
+		        </thead>
+		    </table>
+		</div>
+	</div>
+</div>
+
+<script>
+
+	$(document).ready(function() {
+	    var t = $('#taula').DataTable( {
+	        ajax:           "info.json",
+	        deferRender:    true,
+	        scrollY:        200,
+	        scrollX:        true,
+	        scrollCollapse: true,
+	        scroller:       true
+	    } );
+	 
+	    new $.fn.dataTable.FixedColumns( t );
+	} );
+
+</script>
+</body>
+</html>

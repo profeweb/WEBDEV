@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Example 21</title>
+</head>
+<body>
+<script type="text/javascript">
+
+function check(){
+
+var pass=document.getElementById('pass').value;
+
+if (pass.length<5){
+
+alert('Password must have 5 characters at least!!!');
+
+}
+
+else {
+
+alert('Right password lenght.');
+
+}
+
+}
+
+</script>
+
+<form>
+
+Enter a password: <input type="password" id="pass"><br/>
+
+<input type="button" value="Check" onClick="check()">
+
+</form>
+</body>
+
+</html>

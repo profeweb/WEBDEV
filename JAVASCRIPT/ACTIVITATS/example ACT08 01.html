@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Example 08</title>
+</head>
+<body> 
+<script type="text/javascript">
+
+ var num1,num2,num3;
+ num1=prompt('Enter the 1st number:','');
+ num2=prompt('Enter the 2nd number:','');
+ num3=prompt('Enter the 3rd number:','');
+
+ num1=parseInt(num1);
+ num2=parseInt(num2);
+ num3=parseInt(num3);
+
+ if(num1>num2 && num1>num3) {
+
+ document.write('The maximum is '+num1);
+
+ } else {
+
+ if (num2>num3) {
+  document.write('The maximum is '+num2);  
+
+ } else {
+
+ document.write('The maximum is '+num3); 
+
+ } 
+
+ }
+
+
+</script>
+</body>
+
+</html>

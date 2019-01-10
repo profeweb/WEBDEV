@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script>
+
+		var llibres = new Array();
+
+		$(document).ready(function(){
+
+			$("#b1").click(function(){
+
+				var t = $("#title").val();
+				var p = $("#pages").val();
+				var c = $("#cats").val();
+				var col = $("#col").val();
+				var fil = $("#row").val();
+
+				var ocupat = false;
+				for(var i=0; i<llibres.length; i++){
+					var l = llibres[i];
+					if(l.columna == col && l.fila == fil){
+						ocupat=true;
+						break;
+					}
+				}
+
+				if(!ocupat){
+					var nouLlibre = new Llibre(t,p,c,col,fil);
+					llibres.push(nouLlibre);
+				}
+				else {
+					alert("POSICIÓ OCUPADA.");
+				}
+			});
+
+			$("#b2").click(function(){
+
+				var col = $("#col").val();
+				var fil = $("#row").val();
+
+				for(var i=0; i<llibres.length; i++){
+					var l = llibres[i];
+					if(l.columna==col && l.fila ==fil){
+						llibres.splice(i,1);
+						break;
+					}
+				}
+
+			});
+
+			$("#b3").click(function(){
+				var mevaOL = $("<ol/>");
+				for(var i=0; i<llibres.length; i++){
+					var l = llibres[i];
+					var info = l.titol+" "+l.numpagines+ " "+l.categoria;
+					var nouLI = $("<li/>",{text:info});
+					mevaOL.append(nouLI);
+				}
+				$("#printer").html(mevaOL);
+			});
+
+			$("#b5").click(function () {
+				alert("NUM. LLIBRES: "+llibres.length);
+			});
+
+			$("#b4").click(function () {
+				creaTaula();
+			});
+
+
+		});
+
+
+		function getLlibre(col, fil){
+			for(var i=0; i<llibres.length; i++){
+				var l = llibres[i];
+				if(l.columna==col && l.fila ==fil){
+					return l;
+				}
+			}
+			return null;
+		}
+
+
+		function creaTaula(){
+			var taula = $("<table/>");
+			var tr = $("<tr/>");
+
+			// TABLE HEADER
+			var th = $("<th/>",{text:"#"});
+			tr.append(th);
+			for(var i=0; i<=3; i++){
+				th = $("<th/>", {text:i});
+				tr.append(th);
+			}
+			taula.append(tr);
+
+			for(var f=0; f<=3; f++){
+				tr = $("<tr/>");
+				var th = $("<th/>",{text:f});
+					tr.append(th);
+				for(var c=0; c<=3; c++){
+					var l = getLlibre(c, f);
+					var info;
+					if(l!=null){
+						info = l.titol;
+						var img = $("<img/>",{src:l.categoria+".png", width:"50px"});
+						var b = $("<p/>", {text:l.titol});
+						var s = $("<p/>",{text:l.numpagines+" pagines"});
+						td = $("<td/>");
+						td.append(img, b, s);
+					}
+					else {
+						var img = $("<img/>",{src:"empty.png", width:"50px"});
+						td = $("<td/>");
+						td.append(img);
+					}
+					tr.append(td);
+				}
+				taula.append(tr);
+			}
+
+			$("#printer").html(taula);
+		}
+
+		function Llibre(t, nump, categ, col, f){
+
+			this.titol = t;
+			this.numpagines = nump;
+			this.categoria = categ;
+			this.columna = col;
+			this.fila = f;
+
+			this.mostrar = mostraLlibre;
+
+			function mostraLlibre(){
+				alert(this.titol+" "+this.numpagines);
+			}
+		}
+
+
+	</script>
+	</head>
+	<style>
+		td, th { text-align:center; border: 1px solid black;}
+	</style>
+	<body>
+		TITLE: <input type="text" id="title" /><br/>
+		NUM.PAGES: <input type="text" id="pages" /><br/>
+		CATEGORY:
+		<select id="cats">
+			<option value="CLASSIC">CLASSIC</option>
+			<option value="SCIENCE">SCIENCE</option>
+			<option value="SPORTS">SPORTS</option>
+			<option value="COMEDY">COMEDY</option>
+		</select> <br/>
+		POSITION (COL / ROW):
+		<select id="col">
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+		</select> /
+		<select id="row">
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+		</select> <br/>
+		<button id="b1">ADD BOOK</button> 
+		<button id="b2">REMOVE BOOK</button> 
+		<button id="b3">PRINT ALL BOOKS</button>
+		<button id="b4">PRINT LIBRARY</button>
+		<button id="b5">NUM BOOKS</button>
+		<hr/>
+		<div id="printer"></div>
+	</body>
+</html>

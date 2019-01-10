@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<h2 class="a">This is a heading (A) </h2>
+		<p id="p1" class="a">This is a paragraph (p1, A).</p>
+		<p class="b">This is another paragraph. (B)</p>
+		<p class="a">This is another paragraph. (A) </p>
+		<a href="http://www.google.com">GOOGLE</a>
+		<a>YOUTUBE</a>
+		<input type="text" value="" />
+		<table border="1" width="100%">
+			<tr><td>0</td></tr>
+			<tr><td>1</td></tr>
+			<tr><td>2</td></tr>
+			<tr><td>3</td></tr>
+			<tr><td>4</td></tr>
+			<tr><td>5</td></tr>
+			<tr><td>6</td></tr>
+			<tr><td>7</td></tr>
+			<tr><td>8</td></tr>
+		</table>
+		<br/>
+		<button id="b1"> HIDE ALL Ps</button>
+		<button id="b2"> HIDE P1</button>
+		<button id="b3"> HIDE CLASS A</button>
+		<button id="b4"> HIDE ALL (*)</button>
+		<button id="b5"> HIDE FIRST P</button>
+		<button id="b6"> HIDE HREFs</button>
+		<button id="b7"> HIDE TR EVEN</button>
+		<button id="b8"> HIDE TR ODD</button>
+		<script>
+			$(document).ready(function(){
+
+			  $("#b1").click(function(){
+			    $("p").hide();
+			  });
+
+			  $("#b2").click(function(){
+			    $("#p1").hide();
+			  });
+
+			  $("#b3").click(function(){
+			    $(".a").hide();
+			  });
+
+			  $("#b4").click(function(){
+			    $("*").hide();
+			  });
+
+			  $("p").dblclick(function(){
+			    $(this).hide();
+			  });
+
+			  $("#b5").click(function(){
+			    $("p:first").hide();
+			  });
+
+			  $("#b6").click(function(){
+			    $("[href]").hide();
+			  });
+
+			  $("#b7").click(function(){
+			    $("tr:even").hide();
+			  });
+
+			  $("#b8").click(function(){
+			    $("tr:odd").hide();
+			  });
+
+			  $("table").mouseenter(function(){
+			    alert("SOBRE TAULA");
+			  });
+
+			  $("table").mouseleave(function(){
+			    alert("FORA DE TAULA");
+			  });
+
+			  $("input").focus(function(){
+				$(this).css("background-color","red");
+			  }); 
+
+			  $("input").blur(function(){
+				$(this).css("background-color","white");
+			  }); 
+
+			});
+		</script>
+	</body>
+</html>

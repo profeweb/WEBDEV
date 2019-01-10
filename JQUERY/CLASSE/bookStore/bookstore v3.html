@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	</head>
+	<style>
+		td, th { text-align:center; border: 1px solid black;}
+	</style>
+	<body>
+		TITLE: <input type="text" id="title" /><br/>
+		NUM.PAGES: <input type="text" id="pages" /><br/>
+		CATEGORY:
+		<select id="cats">
+			<option value="CLASSIC">CLASSIC</option>
+			<option value="SCIENCE">SCIENCE</option>
+			<option value="SPORTS">SPORTS</option>
+			<option value="COMEDY">COMEDY</option>
+		</select> <br/>
+		POSITION (COL / ROW):
+		<select id="col">
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+		</select> /
+		<select id="row">
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+		</select> <br/>
+		<button id="b1">ADD BOOK</button> 
+		<button id="b2">REMOVE BOOK</button> 
+		<button id="b3">PRINT ALL BOOKS</button>
+		<button id="b4">PRINT LIBRARY</button>
+		<button id="b5">NUM BOOKS</button>
+		<hr/>
+		<div id="printer"></div>
+	</body>
+</html>

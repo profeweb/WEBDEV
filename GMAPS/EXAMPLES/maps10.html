@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Google Map - Editable Shape</h1>
+
+<div id="googleMap" style="width:90%;height:400px;margin:10px; float:left;"></div>
+
+<script>
+
+
+
+function myMap() {
+
+  var map = new google.maps.Map(document.getElementById('googleMap'), {
+    zoom: 8,
+    center: {lat: 44.090, lng: -78.712},
+    mapTypeId: 'terrain'
+  });
+
+
+  var bounds = {
+    north: 44.599,
+    south: 44.490,
+    east: -78.443,
+    west: -78.649
+  };
+
+  // Define a rectangle and set its editable property to true.
+  var rectangle = new google.maps.Rectangle({
+    bounds: bounds,
+    editable: true
+  });
+
+  rectangle.setMap(map);
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCKiIqCdZGrVxx06LSbe7uG3zXOq1Cz5k&callback=myMap"></script>
+</body>
+</html>

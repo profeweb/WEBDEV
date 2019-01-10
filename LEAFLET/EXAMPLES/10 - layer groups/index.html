@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Leaflet</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- css -->
+    	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+    	   crossorigin=""/>
+    	
+    	<!-- js -->
+    	<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+    	   integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+    	   crossorigin=""></script>
+
+	</head>
+	<body>
+		<h1>LEAFLET - Layer Groups. </h1>
+		<div id="meuMapa" style="width:800px;height:600px;"></div>
+<script>
+
+	// Grup de capa
+	var ciutats 	= L.layerGroup();
+	var alqueries 	= L.layerGroup();
+
+	// Icones
+	var iconaVerda = new L.Icon({
+	  iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+	  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+	  iconSize: [25, 41],
+	  iconAnchor: [12, 41],
+	  popupAnchor: [1, -34],
+	  shadowSize: [41, 41]
+	});
+
+	var iconaVermella = new L.Icon({
+	  iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+	  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+	  iconSize: [25, 41],
+	  iconAnchor: [12, 41],
+	  popupAnchor: [1, -34],
+	  shadowSize: [41, 41]
+	});
+
+	// Marcadors agrupats en la capa
+	var manacor = L.marker([39.569167469384524,3.2097057711208663], {icon: iconaVerda}).bindPopup('Manacor, city.').addTo(ciutats);
+	var soncarrio = L.marker([39.58737317223971,3.320187008182188], {icon: iconaVerda}).bindPopup('Son Carrió, city.').addTo(ciutats);
+	var petra = L.marker([39.61218661300884,3.1144679888958535], {icon: iconaVerda}).bindPopup('Petra, city.').addTo(ciutats);
+
+
+
+	var sonnegre = L.marker([39.58224008257449,3.2403987498829565], {icon: iconaVermella}).bindPopup('Son Negre, village.').addTo(alqueries);
+	var casconcos = L.marker([39.541002572857366,3.2305241547089736], {icon: iconaVermella}).bindPopup('Cas Concos, village.').addTo(alqueries);
+
+	var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+				'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+				'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		mbUrl = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoicHJvZmV3ZWIiLCJhIjoiY2pwM3JxeHR3MGF6cjNrcXcwbmh0MGZtOCJ9.mxvmjOpVymwltGGlcxHx8g';
+
+	// Capes del mapa
+	var gris   = L.tileLayer(mbUrl, {id: 'mapbox.light', attribution: mbAttr});
+	var carrers  = L.tileLayer(mbUrl, {id: 'mapbox.streets',   attribution: mbAttr});
+
+	// Mapa amb capes
+	var m = L.map('meuMapa', {
+			center: [39.562947854718,3.2198552657492883],
+			zoom: 10,
+			layers: [gris, ciutats, alqueries]
+		});
+
+	// capes base
+	var layersBase = {
+		"Gris": gris,
+		"Carrers": carrers
+	};
+
+	// capes top
+	var layerTop = {
+		"Ciutats": ciutats,
+		"Alqueries": alqueries
+	};
+
+	// Control per visualitzar capes del mapa
+	L.control.layers(layersBase, layerTop).addTo(m);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Function SUMA</title>
+		<script>
+			function suma(a, b){
+				return a+b;
+			}
+
+			function resta(a, b){
+				return a-b;
+			}
+
+			function calculadora(operacio){
+
+				var x = parseInt(document.getElementById("op1").value);
+				var y = parseInt(document.getElementById("op2").value);
+				
+				if(operacio=='suma'){
+					var z = suma(x, y);
+				}
+				else if(operacio=='resta'){
+					var z = resta(x, y);
+				}
+
+				document.getElementById("resultat").innerHTML=z;
+			}
+
+			function resetear(){
+				document.getElementById("op1").value=0;
+				document.getElementById("op2").value=0;
+				document.getElementById("resultat").innerHTML="";
+			}
+
+		</script>
+	</head>
+	<body>
+		Operando 1:
+		<input type="text" id="op1" value="0" /><br/>
+		Operando 2:
+		<input type="text" id="op2" value="0" /><br/><br/>
+		<button onclick="calculadora('suma')">SUMA</button>
+		<button onclick="calculadora('resta')">RESTA</button>
+		<button onclick="resetear()">RESET</button>
+		<br/>
+		<p id="resultat"></p>
+	</body>
+</html>

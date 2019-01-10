@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>DataTablesJS.</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- css -->
+  
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"/>
+
+  <link rel="stylesheet" href="https://cdn.datatables.net/scroller/1.5.1/css/scroller.dataTables.min.css"/>
+
+  <!-- js -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+
+  <script src="https://cdn.datatables.net/scroller/1.5.1/js/dataTables.scroller.min.js"></script>
+
+  <script src="https://cdn.datatables.net/select/1.2.7/js/dataTables.select.min.js"></script>
+
+</head>
+<body>
+ 
+<div class="container">
+	<h1> DataTablesJS - Scroller / Select integration. </h1>
+	<p>This example demonstrates the integration between Scroller and the Select extension for DataTables. For the most part these two extensions provide orthogonal features (i.e. they don't overlap), but the one area that they do is the table's information element.</p>
+	<div class="row">
+		<div class="col">
+			<table id="taula" class="display nowrap" style="width:100%">
+		        <thead>
+		            <tr>
+		                <th>ID</th>
+		                <th>First name</th>
+		                <th>Last name</th>
+		                <th>ZIP / Post code</th>
+		                <th>Country</th>
+		            </tr>
+		        </thead>
+		    </table>
+		</div>
+	</div>
+</div>
+
+<script>
+
+	$(document).ready(function() {
+	    var t = $('#taula').DataTable( {
+	        ajax:           "info.json",
+	        deferRender:    true,
+	        scrollY:        200,
+	        scrollX:        true,
+	        scrollCollapse: true,
+	        scroller:       true,
+	        select: true
+	    } );
+	 
+	    new $.fn.dataTable.FixedColumns( t );
+	} );
+
+</script>
+</body>
+</html>

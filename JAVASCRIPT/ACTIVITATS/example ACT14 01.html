@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Example 14</title>
+<script type="text/javascript">
+
+function Client(name,money){
+
+	this.name=name;
+	this.money=money;
+	this.insert=insert;
+	this.extract=extract;
+}     
+
+function insert(quantity){
+	
+	this.money=this.money+quantity;
+}
+
+      
+function extract(quantity){
+
+	this.money=this.money-quantity;  
+}
+
+</script>
+</head>
+<body>
+<script type="text/javascript">
+var client1;
+client1=new Client('Peter',1200);
+document.write('Client name:'+client1.name+'<br>');
+document.write('Client money:'+client1.money+'<br>');
+client1.insert(120);
+document.write('Money after inserting $120---->'+client1.money+'<br>');
+client1.extract(1000);
+document.write('Money after extracting $1000---->'+client1.money+'<br>');
+</script> 
+ 
+</body>
+
+</html>

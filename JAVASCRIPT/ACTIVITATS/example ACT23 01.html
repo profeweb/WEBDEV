@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Example 23</title>
+</head>
+<body> 
+<script type="text/javascript"> 
+
+ function countSelected() {
+
+ var n=0;
+
+ if (document.getElementById('checkbox1').checked) {
+
+ n++;
+
+ }
+
+ if (document.getElementById('checkbox2').checked) {
+
+ n++;
+
+ }
+
+ if (document.getElementById('checkbox3').checked) {
+
+ n++;
+
+ }
+
+ if (document.getElementById('checkbox4').checked) {
+
+ n++;
+
+ }
+
+ alert('You master ' + n + ' languages.');
+
+ }
+
+ </script> 
+
+<form>
+
+ <input type="checkbox" id="checkbox1">JavaScript
+
+ <br>
+
+ <input type="checkbox" id="checkbox2">PHP
+
+ <br>
+
+ <input type="checkbox" id="checkbox3">JSP
+
+ <br>
+
+ <input type="checkbox" id="checkbox4">VB.Net
+
+ <br>
+
+ <input type="button" value="Count" onClick="countSelected()">
+
+ </form>
+</body>
+
+</html>

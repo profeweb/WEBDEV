@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>GET ELEMENTS BY CLASS NAME</title>
+	</head>
+	<body>
+		<p class="ok">Paràgraf A. (OK)</p>
+		<p>Paràgraf B.</p>
+		<p class="ok">Paràgraf C.(OK)</p>
+		<p>Paràgraf D.</p>
+		<p>Paràgraf E.</p>
+		<h4 class="ok">Header 4. (OK)</h4>
+		<b class="ok">B (OK)</b>
+		<hr/>
+		<script>
+			var ps = document.getElementsByClassName('ok');
+			console.log(ps);
+			document.write("<h4>"+ps+"</h4>");
+
+			document.write("Número d'Elements de classe 'ok': "+ps.length+"<br/><br/>");
+			for(var i=0; i<ps.length; i++){
+				var e = ps.item(i);
+				document.write("<b>"+e+"</b><br/>");
+				e.style.backgroundColor="red";
+				document.write(e.innerHTML+"<br/><br/>");
+			}
+		</script>
+	</body>
+</html>
