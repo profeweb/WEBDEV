@@ -1,0 +1,41 @@
+.Modal {
+	background: #3E363F;
+	border-radius: 2px;
+	padding: 20px;
+	width: 200px;
+}
+
+
+button {
+	align-items: center;
+	background: #DD403A;
+	border: 0;
+	border-radius: 3px;
+	color: white;
+	display: flex;
+	
+	font-family: $font;
+	font-size: 13px;
+	font-weight: 500;
+	justify-content: center;
+	margin-top: 20px;
+	outline: none;
+	padding: 10px 9px 10px 11px;
+	text-transform: uppercase;
+	width: 100%;
+}
+
+button.fa {
+	font-size: 12px;
+	margin-left: auto;
+	position: relative;
+	top: 1px;
+}
+	
+button:hover {
+	transform: scale(1.02);
+}
+	
+button:active {
+	transform: scale(.99);
+}

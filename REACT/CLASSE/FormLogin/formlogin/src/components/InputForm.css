@@ -1,0 +1,20 @@
+@import 'https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900';
+
+.Input {
+	border-bottom: 1px solid #FFFCE8;
+	padding-bottom: 3px;
+	margin-bottom: 5px;
+}
+
+
+input {
+	outline: none;
+	border: 0;
+	color: #FFFCE8;
+	background: transparent;
+	font-family: 'Lato', sans-serif;
+	flex: 1 0 auto;
+	font-size: 14px;
+	font-weight: 300;
+	margin-left: 10px;
+}

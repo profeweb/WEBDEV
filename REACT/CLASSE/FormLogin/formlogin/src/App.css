@@ -1,0 +1,32 @@
+
+.App {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+  position: absolute;
+  top: 0; left: 0;
+}
+
+.example-enter {
+  margin-top: 30px;
+  opacity: .01;
+}
+
+.example-enter .example-enter-active {
+    margin-top: 0px;
+    opacity: 1;
+    transition: opacity .5s ease, margin .5s ease;
+}
+
+.example-leave {
+  margin-top: 0px;  
+  opacity: 1;
+}
+  
+.example-leave .example-leave-active {
+    margin-top: -30px;
+    opacity: .01;
+    transition: opacity .3s ease, margin .5s ease;
+}
