@@ -1,0 +1,17 @@
+  
+ header {
+    display: block;
+    color: white;
+    background: gray;
+    text-transform: uppercase;
+    width: 100%;
+    padding: 1rem;
+    margin: .5rem 1rem;
+    text-align: center;
+}
+
+header:hover {
+      box-shadow: 0 0 2rem gray;
+      color:black;
+      background: white;
+    }

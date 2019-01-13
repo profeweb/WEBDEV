@@ -1,0 +1,17 @@
+html {
+  font-size: 100%;
+}
+
+html,
+body {
+  min-height: 100%;
+  min-height: 100vh;
+}
+
+body {
+  font: 16px 'Roboto', Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  background: #f6f6f6;
+}
