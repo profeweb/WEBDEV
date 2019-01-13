@@ -6,7 +6,7 @@ class Content extends React.Component {
     render() {
       return (
         <content>
-          CONTENT
+          {this.props.title}
         </content>
       );
     }
