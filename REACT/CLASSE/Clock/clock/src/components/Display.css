@@ -1,0 +1,25 @@
+
+.display {
+    align-items: center;
+    background-color: #282C34;
+    border: 1rem solid #32363E;
+    border-radius: 50%;    
+    display: flex;
+    flex-direction: column;
+    height: 14rem;
+    justify-content: center;
+    margin: 1rem auto;    
+    width: 14rem;
+}
+
+.display-date {
+    color: #61DAFB;
+    font-size: 14px;
+    font-weight: 300;    
+}
+
+.display-time {
+    color: #61DAFB;
+    font-size: 42px;
+    font-weight: 600;
+}

@@ -1,26 +1,25 @@
 import React, { Component } from 'react';
+
+import Clock from './components/Clock';
+import Header from './components/Header';
+
 import './App.css';
 
-import Header from './components/Header';
-import Clicker from './components/Clicker';
-
 class App extends Component {
-    
+
     constructor() {
         super();
 
         this.state = {
-            title: 'React Clicker'
+            title: 'React Clock'
         };
-     }
+    }
 
     render() {
         return (
             <div>
                 <Header title={this.state.title} />
-                <div className="mt-5">
-                    <Clicker />
-                </div>
+                <Clock />
             </div>
         );
     }
