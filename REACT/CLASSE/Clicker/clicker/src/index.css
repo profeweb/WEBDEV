@@ -1,0 +1,8 @@
+body {    
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+.btn {
+    border-radius: 0 !important;
+    cursor: pointer;
+}
