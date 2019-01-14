@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import './Clicker.css';
 
@@ -55,10 +54,6 @@ class Clicker extends Component {
 
 Clicker.defaultProps = {
     count: 0
-};
-
-Clicker.propTypes = {
-    count: PropTypes.number
 };
 
 export default Clicker;
