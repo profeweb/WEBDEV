@@ -1,0 +1,1473 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"margin",
+				"margin-left\tproperty"
+			],
+			[
+				"Calc",
+				"CalcDisplay"
+			],
+			[
+				"Ca",
+				"CalcDispay"
+			],
+			[
+				"t",
+				"t"
+			],
+			[
+				"trigin",
+				"trigonometric"
+			],
+			[
+				"dire",
+				"directions"
+			],
+			[
+				"show",
+				"showDots"
+			],
+			[
+				"max",
+				"maxAngle"
+			],
+			[
+				"get",
+				"getNumSteps"
+			],
+			[
+				"label",
+				"labelAlignment"
+			],
+			[
+				"labe",
+				"labelAlignment"
+			],
+			[
+				"displa",
+				"displayNotebook"
+			],
+			[
+				"po",
+				"positions"
+			],
+			[
+				"setS",
+				"setStudies"
+			],
+			[
+				"goo",
+				"googleMap"
+			],
+			[
+				"go",
+				"googleMap"
+			],
+			[
+				"goa",
+				"goalsRight"
+			],
+			[
+				"st",
+				"stickWidth"
+			],
+			[
+				"le",
+				"leftStickX"
+			],
+			[
+				"fie",
+				"fieldWidth"
+			],
+			[
+				"ri",
+				"rightStickY"
+			],
+			[
+				"in",
+				"incY"
+			],
+			[
+				"dra",
+				"drawRightStick"
+			],
+			[
+				"ini",
+				"initSticks"
+			],
+			[
+				"righ",
+				"rightStickY"
+			],
+			[
+				"rig",
+				"rightStickX"
+			],
+			[
+				"leftS",
+				"leftStickY"
+			],
+			[
+				"stic",
+				"stickWidth"
+			],
+			[
+				"fiel",
+				"fieldHeight"
+			],
+			[
+				"trans",
+				"translate"
+			],
+			[
+				"i",
+				"i"
+			],
+			[
+				"d",
+				"d"
+			],
+			[
+				"data",
+				"dataset"
+			],
+			[
+				"selec",
+				"selectAll"
+			],
+			[
+				"fon",
+				"font-size\tproperty"
+			],
+			[
+				"coord",
+				"coordManacor"
+			],
+			[
+				"coor",
+				"coordManacor"
+			],
+			[
+				"geo",
+				"geojsonInfo"
+			],
+			[
+				"ge",
+				"geojsonFeature"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"carr",
+				"carrers2"
+			],
+			[
+				"sate",
+				"satelite2"
+			],
+			[
+				"layers",
+				"layersBase"
+			],
+			[
+				"b",
+				"background\tproperty"
+			],
+			[
+				"fo",
+				"font-family\tproperty"
+			],
+			[
+				"txt",
+				"txtsize"
+			],
+			[
+				"sel",
+				"selcolor"
+			],
+			[
+				"cate",
+				"categoria"
+			],
+			[
+				"num",
+				"numpagines"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"carre",
+				"carroceries"
+			],
+			[
+				"drop",
+				"dropdown-item"
+			],
+			[
+				"soun",
+				"soundOn"
+			],
+			[
+				"point",
+				"pointSound"
+			],
+			[
+				"lef",
+				"leftPoints"
+			],
+			[
+				"left",
+				"leftPoints"
+			],
+			[
+				"inc",
+				"incX"
+			],
+			[
+				"update",
+				"updateSticks"
+			],
+			[
+				"drae",
+				"drawLeftStick"
+			],
+			[
+				"se",
+				"stickSeparation"
+			],
+			[
+				"draw",
+				"drawBall"
+			],
+			[
+				"arra",
+				"arrayNotation"
+			],
+			[
+				"object",
+				"objectNotation"
+			],
+			[
+				"text",
+				"text-align\tproperty"
+			],
+			[
+				"val",
+				"vertical-align\tproperty"
+			],
+			[
+				"vSe",
+				"vSelect2"
+			],
+			[
+				"vS",
+				"vSelect1"
+			],
+			[
+				"vSele",
+				"vSelect1"
+			],
+			[
+				"mar",
+				"margin-left\tproperty"
+			],
+			[
+				"paddin",
+				"padding-left\tproperty"
+			],
+			[
+				"llista",
+				"llistaCompra"
+			],
+			[
+				"ba",
+				"background-color\tproperty"
+			],
+			[
+				"pro",
+				"producte"
+			],
+			[
+				"oper",
+				"operando2"
+			],
+			[
+				"op",
+				"operando1"
+			],
+			[
+				"border",
+				"border-width\tproperty"
+			],
+			[
+				"min",
+				"numMinColors"
+			],
+			[
+				"ign",
+				"ignoreWhite"
+			],
+			[
+				"qua",
+				"quality"
+			],
+			[
+				"sta",
+				"startX"
+			],
+			[
+				"fileN",
+				"fileNames"
+			],
+			[
+				"create",
+				"createAllPalettes"
+			],
+			[
+				"ke",
+				"key\tkeyPressed"
+			],
+			[
+				"colo",
+				"color_1_003"
+			],
+			[
+				"dis",
+				"displayAllPalettes"
+			],
+			[
+				"un",
+				"unsortMap"
+			],
+			[
+				"loa",
+				"loadpixels\tloadPixels"
+			],
+			[
+				"hex",
+				"hexColor"
+			],
+			[
+				"Arra",
+				"ArrayList"
+			],
+			[
+				"Colo",
+				"ColorImage"
+			],
+			[
+				"crea",
+				"createRandomPalette"
+			],
+			[
+				"col",
+				"ColorImage"
+			],
+			[
+				"scene",
+				"sceneWidth"
+			],
+			[
+				"sce",
+				"sceneWidth"
+			],
+			[
+				"displ",
+				"displayCentroid"
+			],
+			[
+				"cen",
+				"centroid"
+			],
+			[
+				"OUTBAC",
+				"OUTBACK"
+			],
+			[
+				"INBA",
+				"INBACK"
+			],
+			[
+				"OUTELA",
+				"OUTELASTIC"
+			],
+			[
+				"INEL",
+				"INELASTIC"
+			],
+			[
+				"line",
+				"lineLength"
+			],
+			[
+				"mag",
+				"magnitude"
+			],
+			[
+				"INOUTELAS",
+				"INOUTELASTIC"
+			],
+			[
+				"im",
+				"imageName"
+			],
+			[
+				"load",
+				"loadimage\tloadImage"
+			],
+			[
+				"sclae",
+				"scale\tscale"
+			],
+			[
+				"rad",
+				"radt"
+			],
+			[
+				"cons",
+				"constrain\tconstrain"
+			],
+			[
+				"c_",
+				"c_a"
+			],
+			[
+				"he",
+				"height"
+			],
+			[
+				"w",
+				"width"
+			],
+			[
+				"G",
+				"GeneticGradient"
+			],
+			[
+				"set",
+				"setValue"
+			],
+			[
+				"mutat",
+				"mutateRate"
+			],
+			[
+				"Mut",
+				"Mutation"
+			],
+			[
+				"mu",
+				"Mutation"
+			],
+			[
+				"mut",
+				"mutateRate"
+			],
+			[
+				"stop",
+				"stopEvolution"
+			],
+			[
+				"top",
+				"topScoreAngleTarget"
+			],
+			[
+				"va",
+				"value"
+			],
+			[
+				"topSC",
+				"topScoreEquilateral"
+			],
+			[
+				"topS",
+				"topScoreDistCentroide"
+			],
+			[
+				"score",
+				"topScoreAngle"
+			],
+			[
+				"ang",
+				"angleTarget"
+			],
+			[
+				"angle",
+				"angleTartget"
+			],
+			[
+				"sco",
+				"scoreEquilateral"
+			],
+			[
+				"disa",
+				"distances"
+			],
+			[
+				"len",
+				"length-1"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "REACT/CLASSE/MovieCards/moviecards/src/services/movies.json",
+			"settings":
+			{
+				"buffer_size": 1940,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "REACT/CLASSE/MovieCards/moviecards/src/components/MovieCard.js",
+			"settings":
+			{
+				"buffer_size": 1318,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "REACT/EXAMPLES/react00 - template/src/App.js",
+			"settings":
+			{
+				"buffer_size": 636,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					""
+				],
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					"Re-run sketch"
+				],
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					"Run sketch (Processing 3 only)"
+				],
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					"Run sketch fullscreen"
+				],
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					"Export sketch as application"
+				],
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					"Kill running sketches"
+				]
+			],
+			[
+				"Packages/Processing/Build Systems/Processing.sublime-build",
+				"Run sketch (Processing 3 only)"
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"inst\ta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 157.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/D/GITHUB/WEBDEV/WEBDEV",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/MovieCards",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/MovieCards/moviecards",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/MovieCards/moviecards/src",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/MovieCards/moviecards/src/images",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/MovieCards/moviecards/src/services"
+	],
+	"file_history":
+	[
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/MovieCards/moviecards/build/index.html",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/MovieCards/moviecards/src/components/Header.css",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/MovieCards/moviecards/src/components/MovieCard.css",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/MovieCards/moviecards/src/components/MovieCard.js",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/MovieCards/moviecards/src/services/movies.json",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/MovieCards/moviecards/src/App.css",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/MovieCards/moviecards/src/index.css",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/MovieCards/moviecards/public/index.html",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/MovieCards/moviecards/src/components/MovieList.js",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/MovieCards/moviecards/src/components/Movies.js",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/MovieCards/moviecards/src/components/StarRating.js",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/MovieCards/moviecards/src/services/MovieService.js",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/MovieCards/moviecards/src/components/StarRating.css",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/MovieCards/moviecards/src/components/Header.js",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/MovieCards/moviecards/src/components/Movies.css",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/MovieCards/moviecards/src/App.js",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/Clock/clock/src/components/Panel.js",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/Clock/clock/src/components/Header.js",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/Clicker/clicker/src/components/Clicker.js",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/Clock/clock/src/components/Display.js",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/Clock/clock/public/index.html",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/Clicker/clicker/src/components/Header.js",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/Clock/clock/src/components/Panel.css",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/Clock/clock/src/components/Clock.js",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/Clock/clock/src/App.js",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/Clock/clock/src/components/Display.css",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/Clock/clock/src/components/Header.css",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/Clock/clock/src/lib/DateTime.js",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/Clicker/clicker/src/App.js",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/Clicker/clicker/src/components/Clicker.css",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/Clicker/clicker/src/components/Header.css",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/Clicker/clicker/public/index.html",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/Clicker/clicker/src/App.css",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/Clicker/clicker/src/index.css",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/FormLogin/formlogin/src/components/InputForm.js",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/FormLogin/formlogin/src/components/Modal.js",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/FormLogin/formlogin/src/App.css",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/FormLogin/formlogin/src/App.js",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/FormLogin/formlogin/src/components/Modal.css",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/FormLogin/formlogin/src/components/InputForm.css",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/FormLogin/formlogin/src/index.css",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/FormLogin/formlogin/public/index.html",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/FormLogin/formlogin/public/manifest.json",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/FormLogin/formlogin/src/index.js",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/WebTemplate/webtemplate/src/components/Header.js",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/WebTemplate/webtemplate/src/App.js",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/WebTemplate/webtemplate/src/components/Content.js",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/WebTemplate/webtemplate/src/components/Footer.js",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/WebTemplate/webtemplate/src/components/Content.css",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/WebTemplate/webtemplate/src/components/Header.css",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/WebTemplate/webtemplate/src/components/Footer.css",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/WebTemplate/webtemplate/src/App.css",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/WebTemplate/webtemplate/src/index.css",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/Calculator/calculator/src/components/CalcButton.js",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/Calculator/calculator/src/components/CalcDisplay.js",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/Calculator/calculator/src/App.js",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/Calculator/calculator/src/index.css",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/Calculator/calculator/src/CalcDisplay.js",
+		"/D/GITHUB/WEBDEV/WEBDEV/REACT/CLASSE/Calculator/calculator/public/index.html",
+		"/C/Users/ToniMitjanit/Desktop/recalc-complete/recalc.css",
+		"/C/Users/ToniMitjanit/Desktop/recalc-complete/recalc.html",
+		"/C/wamp/www/D3/ScatterPlot step by step/01-intro/index.html",
+		"/C/wamp/www/D3/ScatterPlot step by step/02-svg/index.html",
+		"/C/wamp/www/D3/ScatterPlot step by step/04-making/index.html",
+		"/C/wamp/www/D3/ScatterPlot step by step/05-scales/index.html",
+		"/C/wamp/www/D3/ScatterPlot step by step/06-axes/index.html",
+		"/C/wamp/www/D3/ScatterPlot step by step/07-animation/index.html",
+		"/C/wamp/www/D3/ScatterPlot step by step/08-interactivity/index.html",
+		"/C/wamp/www/D3/ScatterPlot step by step/04-making/boston-housing.csv",
+		"/C/wamp/www/D3/ScatterPlot step by step/09-onelastthing/index.html",
+		"/D/GITHUB/WEBDEV/WEBDEV/D3js/CLASSE/php2csv.php",
+		"/C/wamp/www/D3/15 - requests/data.csv",
+		"/C/wamp/www/D3/16 - timer/timer.html",
+		"/C/wamp/www/D3/17 - full example/index.html",
+		"/C/wamp/www/D3/17 - full example/data.csv",
+		"/C/wamp/www/D3/15 - requests/csv.html",
+		"/C/wamp/www/D3/15 - requests/csvParse.html",
+		"/C/wamp/www/D3/11 - paths/paths.html",
+		"/C/wamp/www/D3/12 - scales/scales.html",
+		"/C/wamp/www/D3/13 - axis/axis.html",
+		"/C/wamp/www/D3/14 - colors/colors.html",
+		"/C/wamp/www/D3/15 - requests/requests.html",
+		"/C/wamp/www/D3/15 - requests/sample.csv",
+		"/C/wamp/www/D3/15 - requests/lang.csv",
+		"/C/wamp/www/D3/10 -collections/objects.html",
+		"/C/wamp/www/D3/10 -collections/maps.html",
+		"/C/wamp/www/D3/10 -collections/sets.html",
+		"/C/wamp/www/D3/10 -collections/nests.html",
+		"/C/wamp/www/D3/09 - array api/arrayAPI.html",
+		"/D/GITHUB/FROMA2B/FromAtoB/froma2b 33 - sea wave/build 01/build/Motion.pde",
+		"/D/GITHUB/FROMA2B/FromAtoB/froma2b 33 - sea wave/build 01/build/Mover.pde",
+		"/D/GITHUB/FROMA2B/FromAtoB/froma2b 32 - peanut/build 01/build/PeanutMotion.pde",
+		"/D/GITHUB/FROMA2B/FromAtoB/froma2b 07 - tri wave/build 01/build/build.pde",
+		"/D/GITHUB/FROMA2B/FromAtoB/froma2b 32 - peanut/build 01/build/Motion.pde",
+		"/D/GITHUB/FROMA2B/FromAtoB/froma2b 32 - peanut/build 01/build/Mover.pde",
+		"/D/GITHUB/FROMA2B/FromAtoB/froma2b 32 - peanut/build 01/build/build.pde",
+		"/D/GITHUB/FROMA2B/FromAtoB/froma2b 31 - hash/build 01/build/HashMotion.pde",
+		"/D/GITHUB/FROMA2B/FromAtoB/froma2b 31 - hash/build 01/build/build.pde",
+		"/D/GITHUB/FROMA2B/FromAtoB/froma2b 31 - hash/build 01/build/Motion.pde",
+		"/D/GITHUB/FROMA2B/FromAtoB/froma2b 31 - hash/build 01/build/Mover.pde",
+		"/D/GITHUB/FROMA2B/FromAtoB/froma2b 30 - boomeran/build 01/build/BoomeranMotion.pde",
+		"/D/GITHUB/FROMA2B/FromAtoB/froma2b 30 - boomeran/build 01/build/build.pde",
+		"/D/GITHUB/FROMA2B/FromAtoB/froma2b 30 - boomeran/build 01/build/Motion.pde",
+		"/D/GITHUB/FROMA2B/FromAtoB/froma2b 30 - boomeran/build 01/build/Mover.pde",
+		"/D/GITHUB/FROMA2B/FromAtoB/froma2b 29 - bicorn/build 01/build/BicornMotion.pde",
+		"/D/GITHUB/FROMA2B/FromAtoB/froma2b 29 - bicorn/build 01/build/Motion.pde",
+		"/D/GITHUB/FROMA2B/FromAtoB/froma2b 29 - bicorn/build 01/build/Mover.pde",
+		"/D/GITHUB/FROMA2B/FromAtoB/froma2b 29 - bicorn/build 01/build/build.pde",
+		"/D/GITHUB/FROMA2B/FromAtoB/froma2b 28 - epitrochoid/build 01/build/EpitrochoidMotion.pde",
+		"/D/GITHUB/FROMA2B/FromAtoB/froma2b 28 - epitrochoid/build 01/build/Motion.pde",
+		"/D/GITHUB/FROMA2B/FromAtoB/froma2b 28 - epitrochoid/build 01/build/Mover.pde",
+		"/D/GITHUB/FROMA2B/FromAtoB/froma2b 28 - epitrochoid/build 01/build/build.pde",
+		"/D/GITHUB/FROMA2B/FromAtoB/froma2b 27 - piriform/build 01/build/PiriformMotion.pde",
+		"/D/GITHUB/FROMA2B/FromAtoB/froma2b 27 - piriform/build 01/build/Mover.pde",
+		"/D/GITHUB/FROMA2B/FromAtoB/froma2b 27 - piriform/build 01/build/Motion.pde",
+		"/D/GITHUB/FROMA2B/FromAtoB/froma2b 27 - piriform/build 01/build/build.pde",
+		"/D/GITHUB/FROMA2B/FromAtoB/froma2b 26 - tricuspoid/build 01/build/TricuspoidMotion.pde",
+		"/D/GITHUB/FROMA2B/FromAtoB/froma2b 26 - tricuspoid/build 01/build/build.pde",
+		"/D/GITHUB/FROMA2B/FromAtoB/froma2b 26 - tricuspoid/build 01/build/Motion.pde",
+		"/D/GITHUB/FROMA2B/FromAtoB/froma2b 26 - tricuspoid/build 01/build/Mover.pde",
+		"/D/GITHUB/FROMA2B/FromAtoB/froma2b 25 - lissajous/build 01/build/LissajousMotion.pde",
+		"/D/GITHUB/FROMA2B/FromAtoB/froma2b 25 - lissajous/build 01/build/Motion.pde",
+		"/D/GITHUB/FROMA2B/FromAtoB/froma2b 25 - lissajous/build 01/build/Mover.pde",
+		"/D/GITHUB/FROMA2B/FromAtoB/froma2b 25 - lissajous/build 01/build/build.pde",
+		"/D/GITHUB/FROMA2B/FromAtoB/froma2b 24 - hypocycloid/build 01/build/HypocycloidMotion.pde",
+		"/D/GITHUB/FROMA2B/FromAtoB/froma2b 24 - hypocycloid/build 01/build/Motion.pde",
+		"/D/GITHUB/FROMA2B/FromAtoB/froma2b 24 - hypocycloid/build 01/build/build.pde",
+		"/D/GITHUB/FROMA2B/FromAtoB/froma2b 24 - hypocycloid/build 01/build/Mover.pde"
+	],
+	"find":
+	{
+		"height": 38.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "REACT/CLASSE/MovieCards/moviecards/src/services/movies.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1940,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								329,
+								329
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.clone_locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										1947,
+										1948
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/square_bracket.png",
+										"region.bluish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										0,
+										1
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.clone_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										368,
+										369
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/double_quote.png",
+										"region.greenish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										326,
+										327
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "REACT/CLASSE/MovieCards/moviecards/src/components/MovieCard.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1318,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								130,
+								130
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.clone_locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.clone_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										157,
+										158
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/single_quote.png",
+										"region.greenish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										128,
+										129
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "REACT/EXAMPLES/react00 - template/src/App.js",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 636,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								72,
+								42
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.clone_locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.clone_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 38.0
+	},
+	"input":
+	{
+		"height": 84.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 64.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/Processing/Build Systems/Processing.sublime-build",
+	"project": "webdev.sublime-project",
+	"replace":
+	{
+		"height": 72.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"D:\\GITHUB\\DotSystem\\DotSystem\\dotsystem-project.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 354.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

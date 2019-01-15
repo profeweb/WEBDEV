@@ -11,10 +11,11 @@ class MovieCard extends Component {
 
 
 	render() {
+
 	    return (
 	    	<div className="movie-card">
 	    	    <div className="movie-card card">
-	    	        <img className="card-img-top" src={this.props.movie.imageUrl} alt="dddd" />
+	    	        <img className="card-img-top" src={this.props.movie.imageUrl} alt="" />
 	    	        <div className="card-body">
 	    	            <h4 className="card-title">{this.props.movie.title}</h4>
 	    	            <h6 className="card-subtitle mb-2 text-muted">{this.props.movie.subtitle}</h6>
