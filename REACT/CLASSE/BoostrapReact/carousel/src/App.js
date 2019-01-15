@@ -38,7 +38,7 @@ class App extends Component {
                   </Carousel.Caption>
                 </Carousel.Item>
               </Carousel>
-              </Col>
+            </Col>
           </Row>
         </Grid>
       </div>
