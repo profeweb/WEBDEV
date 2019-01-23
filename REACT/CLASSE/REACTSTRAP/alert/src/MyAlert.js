@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Alert } from 'reactstrap';
 
-class App extends Component {
+class MyAlert extends Component {
 
   render() {
     return (
@@ -14,4 +14,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default MyAlert;
