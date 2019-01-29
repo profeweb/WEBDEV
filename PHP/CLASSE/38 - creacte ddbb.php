@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Date</title>
+	<title>Data Base</title>
 	<style>
 		* {
 			margin-left:20px;
@@ -23,6 +23,21 @@
 	}
 
 	// Operate over Data Base
+	// ......................................//
+
+	// Create database 
+	$nomBBDD = "prova2019";
+	$sql="CREATE DATABASE ".$nomBBDD; 
+	if (mysqli_query($con,$sql))  {  
+		echo "Database".$nomBBDD." created successfully";  
+	} else  {  
+		echo "Error creating database: " . mysqli_error($con);  
+	} 
+
+
+
+
+	// ......................................//
 
 
 	mysqli_close($con);

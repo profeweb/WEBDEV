@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Date</title>
+	<title>Data Base</title>
 	<style>
 		* {
 			margin-left:20px;
@@ -23,8 +23,22 @@
 	}
 
 	// Operate over Data Base
+	// ......................................//
 
+	// Select 
+	echo "<select>";
+	$sql="SELECT nom, llinatges, edat FROM treballadors"; 
+	$rs = mysqli_query($con,$sql);
+	while($row=mysqli_fetch_array($rs)){
+		echo "<option value='".$row['edat']."'>";
+			echo $row['nom']." ".$row['llinatges'];
+		echo "</option>";
+	}
+	echo "</select>";
 
+	// ......................................//
+
+	// Close connection
 	mysqli_close($con);
 
 	?>

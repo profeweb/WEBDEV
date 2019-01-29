@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Date</title>
+	<title>Data Base</title>
 	<style>
 		* {
 			margin-left:20px;
@@ -23,6 +23,20 @@
 	}
 
 	// Operate over Data Base
+	// ......................................//
+
+	// Insert table 
+	$sql="INSERT INTO treballadors (nom, llinatges, edat) values ('PACO', 'PEREZ', '33')"; 
+	if (mysqli_query($con,$sql))  {  
+		echo "Inserted row successfully";  
+	} else  {  
+		echo "Error inserting row: " . mysqli_error($con);  
+	} 
+
+
+
+
+	// ......................................//
 
 
 	mysqli_close($con);

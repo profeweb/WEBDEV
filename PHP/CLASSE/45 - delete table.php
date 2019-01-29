@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Date</title>
+	<title>Data Base</title>
 	<style>
 		* {
 			margin-left:20px;
@@ -9,7 +9,7 @@
 	</style>
 </head>
 <body>
-	<h1>Connect Data Base (PHP).</h1>
+	<h1>Delete from DataBase (PHP).</h1>
 	<?php
 	// Create connection 
 	$con=mysqli_connect("localhost","root","password","asix2018"); 
@@ -23,6 +23,20 @@
 	}
 
 	// Operate over Data Base
+	// ......................................//
+
+	// Delete from table 
+	$sql="DELETE FROM treballadors WHERE edat=22"; 
+	if (mysqli_query($con,$sql))  {  
+		echo "Deleted rows successfully";  
+	} else  {  
+		echo "Error deleting rows: " . mysqli_error($con);
+	} 
+
+
+
+
+	// ......................................//
 
 
 	mysqli_close($con);

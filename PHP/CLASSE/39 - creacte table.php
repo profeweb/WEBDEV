@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Date</title>
+	<title>Data Base</title>
 	<style>
 		* {
 			margin-left:20px;
@@ -23,6 +23,20 @@
 	}
 
 	// Operate over Data Base
+	// ......................................//
+
+	// Create table 
+	$sql="CREATE TABLE treballadors (nom VARCHAR(30), llinatges VARCHAR(30), edat INT)"; 
+	if (mysqli_query($con,$sql))  {  
+		echo "Database created successfully";  
+	} else  {  
+		echo "Error creating database: " . mysqli_error($con);  
+	} 
+
+
+
+
+	// ......................................//
 
 
 	mysqli_close($con);
