@@ -3,7 +3,7 @@ import { Formik } from 'formik';
 
 const Basic = () => (
   <div>
-    <h1>Basic Formik</h1>
+    <h1>React Forms with FORMIK (1)</h1>
     <Formik
       initialValues={{ email: '', password: '' }}
       validate={values => {
