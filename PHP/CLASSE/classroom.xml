@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<class>
+	<student>
+		<name>PETER</name>
+		<age>35</age>
+		<mark>8</mark>
+	</student>
+	<student>
+		<name>MARY</name>
+		<age>28</age>
+		<mark>7</mark>
+	</student>
+	<student>
+		<name>STEVE</name>
+		<age>41</age>
+		<mark>3</mark>
+	</student>
+	<student>
+		<name>JAMES</name>
+		<age>22</age>
+		<mark>6</mark>
+	</student>
+</class>
