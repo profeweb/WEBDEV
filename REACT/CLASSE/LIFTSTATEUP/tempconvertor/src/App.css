@@ -1,0 +1,18 @@
+.App {
+  text-align: center;
+}
+
+.temp {
+    height: 100px;
+    width: 400px;
+    margin: 15px auto;
+    overflow: hidden;
+    border-radius: 5px;
+    background-color: lightgrey;
+}
+
+.verdict {
+    width: 400px;
+    margin: 15px auto;
+    overflow: hidden;
+}
