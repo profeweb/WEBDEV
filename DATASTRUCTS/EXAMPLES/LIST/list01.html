@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Data Structs - List</title>
+	<script src="list01.js"></script>
+</head>
+<body>
+	<h1>Data Structs - List 01</h1>
+	<p>Basic use of append, remove and toString.</p>
+	<script>
+		var names = new List();
+
+		// append som items to the list
+		names.append("Cynthia");
+		names.append("Raymond");
+		names.append("Barbara");
+
+		// print content of the list
+		console.log(names.toString());
+
+		// remove an item from the list
+		names.remove("Raymond");
+
+		// print content of the list
+		console.log(names.toString());
+	</script>
+</body>
+</html>

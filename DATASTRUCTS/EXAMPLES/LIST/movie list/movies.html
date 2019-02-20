@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Data Structs - List</title>
+	<script src="list01c.js"></script>
+</head>
+<body>
+	<h1>Movies List v1</h1>
+	<p>Example of List Class Implementation.</p>
+	<input type="file" id="fileinput" />
+	<script type="text/javascript">
+	  function readSingleFile(evt) {
+	    var f = evt.target.files[0]; 
+
+	    if (f) {
+	      var r = new FileReader();
+	      r.readAsText(f);
+	      return r;
+	    } else { 
+	      alert("Failed to load file");
+	      return null;
+	    }
+	  }
+
+	  document.getElementById('fileinput').addEventListener('change', readSingleFile, false);
+	</script>
+
+</body>
+</html>
