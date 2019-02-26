@@ -1,7 +1,7 @@
 class HashTable {
 
    constructor(){
-      this.table = new Array(13);
+      this.table = new Array(23);
       this.buildChains();
    }
 
