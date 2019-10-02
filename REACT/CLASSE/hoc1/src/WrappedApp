@@ -1,0 +1,17 @@
+import React, { Component } from 'react';
+import './App.css';
+
+function wrapWithUser(Component) {
+  
+  var userInfo = {
+    name: 'Pedro',
+    age: '33'
+  };
+  
+  return function(props) {
+    return <Component user={userInfo} {...props} />
+  }
+ 
+}
+
+export var WrappedApp = wrapWithUser(App);

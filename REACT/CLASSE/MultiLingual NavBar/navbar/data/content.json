@@ -1,0 +1,68 @@
+[
+  {
+    "lang": "en",
+    "page": {
+      "menu": {
+        "home": "Home",
+        "about": "About"
+      },
+      "home": {
+        "header": "Getting started with React and Redux",
+        "text": "This is a very basic example how to create multilingual React website using Redux. You can take this code as a base and build on it, replacing current content retrieval from JSON with calls to APIs, extending functionality, etc.",
+        "goUp": "Go up"
+      },
+      "about": {
+        "header": "About the solution",
+        "subheader": "Technological stack",
+        "text": "This Website is created using React version 1.14. Using Redux as a pattern for dealing with changes. This solution is left as clean as possible, just using pure Bootstrap, no styling, no addition JavaScript. Tests are written in Mocha, using Chai as assertion library and Sinon as a mocking/spying/faking helper. There it is beneficial - ES2015 syntax is being used. Gulp is used for task automation. React code is being transpiled using Babel version 6, Babel is used for ES2015 code transformation as well. For these two transformations Babel presets are being used.",
+        "forMore": "For more information, please visit",
+        "url": "http://www.bebetterdeveloper.com/react-redux-example",
+        "goUp": "Go up"
+      }
+    }
+  },
+  {
+    "lang": "ca",
+    "page": {
+      "menu": {
+        "home": "Inici",
+        "about": "Sobre"
+      },
+      "home": {
+        "header": "Començant amb React i Redux",
+        "text": "Aquest és un exemple bàsic de com crear una web multi-idioma en Rect emprant Redux. ",
+        "goUp": "Pujar"
+      },
+      "about": {
+        "header": "Sobre la solució",
+        "subheader": "Pila Tecnològica",
+        "text": "Aquesta web està creada amb React versió 1.14. Utilitza Redux com a pattern per manejar els canvis.",
+        "forMore": "Per a més informació, per favor visita",
+        "url": "http://www.iesmanacor.cat",
+        "goUp": "Pujar"
+      }
+    }
+  },
+  {
+    "lang": "es",
+    "page": {
+      "menu": {
+        "home": "Inicio",
+        "about": "Sobre"
+      },
+      "home": {
+        "header": "Comenzando con React y Redux",
+        "text": "Este es un ejemplo básico de como crear una web multi-idioma en Rect usando Redux. ",
+        "goUp": "Subir"
+      },
+      "about": {
+        "header": "Sobre la solució",
+        "subheader": "Pila Tecnològica",
+        "text": "Esta web está creada con React versión 1.14. Utiliza Redux como pattern para manejar los cambios.",
+        "forMore": "Para más información, por favor visita",
+        "url": "http://www.iesmanacor.cat",
+        "goUp": "Subir"
+      }
+    }
+  }
+]

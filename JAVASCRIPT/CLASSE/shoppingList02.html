@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>SHOPPING LIST</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<script>
+			function printList(){
+				var txt="";
+				for(var i=0; i<llistaCompra.length; i++){
+					txt = txt + "<li class='list-group-item'>" +"<span class='badge badge-primary badge-pill'>"+i+"</span> "+ llistaCompra[i]+ "</li>";
+				}
+				var u = document.getElementById("llista");
+				u.innerHTML = txt;
+			}
+
+			function afegirInici(){
+				var nou = document.getElementById("item").value;
+				if(llistaCompra.indexOf(nou)==-1){
+					llistaCompra.unshift(nou);
+					printList();
+				}
+			}
+
+			function afegirFinal(){
+				var nou = document.getElementById("item").value;
+				if(llistaCompra.indexOf(nou)==-1){
+					llistaCompra.push(nou);
+					printList();
+				}
+			}
+
+			function llevarInici(){
+				llistaCompra.shift();
+				printList();
+			}
+
+			function llevarFinal(){
+				llistaCompra.pop();
+				printList();
+			}
+
+			function ordenarAsc(){
+				llistaCompra.sort();
+				printList();
+			}
+
+			function hiHa(element){
+				var p = llistaCompra.indexOf(element);
+				if(p!=-1){
+					alert("HI HA "+element+ " A LA POSICIÓ "+p);
+				}
+				else {
+					alert("NO HI HA "+element+" A LA LLISTA.");
+				}
+			}
+
+			function ordenarDesc(){
+				llistaCompra.sort();
+				llistaCompra.reverse();
+				printList();
+			}
+
+			function quants(){
+				var n = llistaCompra.length;
+				alert("HI HA "+n+" ELEMENTS A LA LLISTA.");
+			}
+
+			function llistaMinuscules(){
+				llistaCompra.minuscules();
+				printList();
+			}
+
+			function llistaMajuscules(){
+				llistaCompra.majuscules();
+				printList();
+			}
+
+			Array.prototype.minuscules = function() {
+				for (i=0;i<this.length;i++){
+					this[i]=this[i].toLowerCase();
+				}
+			};
+
+			Array.prototype.majuscules = function() {
+				for (i=0;i<this.length;i++){
+					this[i]=this[i].toUpperCase();
+				}
+			};
+
+		</script>
+	</head>
+	<body>
+		<br/>
+	<div class="container-fluid">
+		<div class="card">
+		  <h5 class="card-header">Shopping List App</h5>
+		  <div class="card-body">
+		  	<h5 class="card-title">Items</h5>
+			<ul id="llista"  class="list-group">
+			</ul>
+		  </div>
+		  <div class="card-body">
+		<label for="item">Item:</label>
+		<input  class="form-control" type="text" id="item" /><br/><br/>
+		<button  type="button" class="btn btn-primary" onclick="afegirInici()">AFEGIR INICI</button>
+		<button  type="button" class="btn btn-primary" onclick="afegirFinal()">AFEGIR FINAL</button>
+		<button  type="button" class="btn btn-danger" onclick="llevarInici()">LLEVAR INICI</button>
+		<button  type="button" class="btn btn-danger" onclick="llevarFinal()">LLEVAR FINAL</button>
+		<button  type="button" class="btn btn-success" onclick="ordenarAsc()">ORDENAR ASC</button>
+		<button  type="button" class="btn btn-success" onclick="ordenarDesc()">ORDENAR DESC</button>
+		<button  type="button" class="btn btn-secondary" onclick="hiHa('POTATOES')">HI HA 'POTATOES'?</button>
+		<button  type="button" class="btn btn-warning" onclick="llistaMinuscules()">MINÚSCULES</button>
+		<button  type="button" class="btn btn-warning" onclick="llistaMajuscules()">MAJÚSCULES</button>
+		<button  type="button" class="btn btn-info" onclick="quants()">QUANTS?</button>
+		</div>
+		</div>
+	</div>
+		<script>
+
+			var llistaCompra = new Array();
+			llistaCompra[0]="POTATOES";
+			llistaCompra[1]="MILK";
+			llistaCompra[2]="MEAT";
+			llistaCompra[3]="WC PAPER";
+			llistaCompra[4]="RICE";
+			llistaCompra[5]="SOAP";
+
+			printList();
+		</script>
+	</body>
+</html>

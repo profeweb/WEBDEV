@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Favorite Colors!</title>
+    <script src="https://unpkg.com/redux@latest/dist/redux.js"></script>
+  </head>
+  <body>
+  	<h1>Favorite Colors!</h1>
+
+    <script>
+
+		// ACTION CREATORS
+
+		// Retorna l'objecte action en afegir un color
+    	function addColor(value) {
+    	  return {
+    	    type: "ADD",
+    	    color: value
+    	  }
+    	}
+    	 
+    	// Retorna l'objecte action en eliminar un color
+    	function removeColor(value) {
+    	  return {
+    	    type: "REMOVE",
+    	    color: value
+    	  }
+    	}
+
+
+    	//REDUCER
+    	// 1) Accés a l'estat original del STORE
+		// 2) Inspeccionar l'acció actualment executada
+		// 3) Establir el nou estat del STORE
+
+    	function favoriteColors(state, action) {
+    	  
+    	  // Si l'objecte estat no existeix, initialitza com un array buit. 
+    	  if (state === undefined) {
+    	    state = [];
+    	  }
+    	 
+    	  // Si el tipus d'acció és ADD, afegeix el color (especificat per la propietat color de l'objecte action) a l'array de l'estat. 
+    	  if (action.type === "ADD") {
+    	    return state.concat(action.color);
+    	  } 
+    	  // Si el tipus d'acció és REMOVE, elimina el color (especificat per la propietat color de l'objecte action) de l'array de l'estat.  
+    	  else if (action.type === "REMOVE") {
+    	    return state.filter(function(item) {
+    	      return item !== action.color;
+    	    });
+    	  } 
+    	  // En altre cas, retorna la informació de l'estat
+    	  else {
+    	    return state;
+    	  }
+    	}
+
+
+    	// STORE
+    	// Enllaça les accions i el reducer amb l' store! 
+    	var store = Redux.createStore(favoriteColors);
+
+    	//El mètode subscribe permet indicar una funció (listener) que es cridat cada vegada que l' store es modificat. 
+    	store.subscribe(render);
+
+
+    	// Afegim (i eliminam) colors a l' store. Per fer-ho, empram el mètode dispatch de l'objecte store que agafa una acció com argument. 
+    	store.dispatch(addColor("blue"));
+    	store.dispatch(addColor("yellow"));
+    	store.dispatch(addColor("green"));
+    	store.dispatch(addColor("red"));
+    	store.dispatch(addColor("gray"));
+    	store.dispatch(addColor("orange"));
+    	store.dispatch(removeColor("gray"));
+
+    	// Mostra l'estat de l' store.
+    	function render() {
+    	  console.log("STORE: "+store.getState());
+    	}
+   
+    </script>
+  </body>
+</html>

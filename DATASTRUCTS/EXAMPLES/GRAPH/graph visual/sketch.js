@@ -20,6 +20,7 @@ function setup() {
   	g = new Graph(vertices);
 
  	g.addEdge('A','B');
+ 	g.addEdge('B','E');
  	g.addEdge('A','C');
  	g.addEdge('B','D');
  	g.addEdge('C','E');
@@ -60,7 +61,12 @@ function windowResized(){
 
 function draw() {
 	background(255);
-  	g.display();
+	fill(255, 0, 0);
+	stroke(255, 0, 255);
+	strokeWeight(5);
+	rectMode(CENTER);
+	rect(mouseX, mouseY, 200, 50);
+  	//g.display();
 }
 
 function dfs(){

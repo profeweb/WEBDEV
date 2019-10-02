@@ -1,27 +1,30 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+const UserPage = props => (
+  <div class="user-container">
+    <p>My name is {props.user}!</p>
+  </div>
+);
+
+export default withUser(UserPage);
 
 class App extends Component {
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+    if (this.props.user) {
+      return (
+        <div className="App">
+            <p>Logged in as {this.props.user.name}</p>
+        </div>
+      );
+    }
+    else {
+      return (
+        <div className="App">
+          <p>You need to login</p>
+        </div>
+      );
+    }
   }
 }
 
