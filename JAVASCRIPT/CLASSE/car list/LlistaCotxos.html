@@ -9,11 +9,15 @@
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 		<script src="Cotxo.js"></script>
 		<script>
+
+			// Mostra l'array de cotxes en una llista
 			function printList(){
 				var txt="";
 				for(var i=0; i<list.length; i++){
 					var info=list[i].info();
-					txt = txt + "<li class='list-group-item'>" +"<span class='badge badge-primary badge-pill'>"+i+"</span> "+ info + ".</li>";
+					txt = txt + "<li class='list-group-item'>" +
+						"<span class='badge badge-primary badge-pill'>"+
+						i+"</span> "+ info + ".</li>";
 				}
 				var u = document.getElementById("llista");
 				u.innerHTML = txt;
@@ -21,6 +25,8 @@
 				var n = document.getElementById("numCars");
 				n.innerText = list.length;
 			}
+
+			// Crea un objecte cotxo amb la infor. dels camps del formulari.
 			function nouCotxo(){
 				var mat = document.getElementById("matricula").value;
 				var mod = document.getElementById("model").value;
@@ -29,30 +35,47 @@
 				var c = new Car(mat, mod, col, pre);
 				return c;
 			}
+
+			// Afegeix un nou objecte Cotxo a l'inici de l'array.
 			function afegirInici(){
 				var c = nouCotxo();
 				list.unshift(c);
 				printList();
 			}
+
+			// Afegeix un nou objecte Cotxo al final de l'array
 			function afegirFinal(){
 				
 				var c = nouCotxo();
 				list.push(c);
 				printList();
 			}
+
+			// Elimina l'objecte de l'inici de l'array
 			function llevarInici(){
 				list.shift();
 				printList();
 			}
+
+			// Elimina l'objecte al final de l'array
 			function llevarFinal(){
 				list.pop();
 				printList();
 			}
+
+			// Ordena l'array per la propietat preu ascendentment
 			function ordenarAsc(){
-				console.log("Ordenant Ascencent per Preu");
 				list.sort(function(a,b){ return (a.preu>b.preu)?1:-1;});
 				printList();
 			}
+
+			// Ordena l'array per la propietat preu descendentment
+			function ordenarDesc(){
+				list.sort(function(a,b){ return (a.preu>b.preu)?-1:1;});
+				printList();
+			}
+
+			// Determina si hi ha algun cotxo del model indicat
 			function hiHaModel(mod){
 				for(c of list){
 					if(c.marca.indexOf(mod)!=-1){
@@ -62,6 +85,7 @@
 				return false;
 			}
 
+			//Mostra un missatge en funció de si el model és a l'array
 			function hiHa(mod){
 				if(hiHaModel(mod)){
 					alert("Sí! Hi ha models "+mod+".");
@@ -70,11 +94,8 @@
 					alert("No! No ho hi cap model "+mod+".");
 				}
 			}
-			function ordenarDesc(){
-				console.log("Ordenant Descencent per Preu");
-				list.sort(function(a,b){ return (a.preu>b.preu)?-1:1;});
-				printList();
-			}
+			
+			// Determina quants cotxos tenen el color indicat com paràmetre.
 			function quantsColor(col){
 				var n = 0;
 				for( c of list){
@@ -84,12 +105,16 @@
 				}
 				alert("HI HA "+n+" COTXOS DEL COLOR "+col+".");
 			}
+
+			// Actualitza el preu dels cotxos en euros.
 			function llistaEuros(){
 				for (c of list){
 					c.convertToEuros();
 				}
 				printList();
 			}
+
+			// Actualitza el preu dels cotxos en dolars.
 			function llistaDolars(){
 				for (c of list){
 					c.convertToDolars();
@@ -101,60 +126,66 @@
 	</head>
 	<body>
 		<br/>
-	<div class="container-fluid">
-		<div class="card">
-		  <h5 class="card-header"><i class="fa fa-car" aria-hidden="true"></i> Venda de Cotxes 2a Mà - BugApp</h5>
-		  <div class="card-body">
-		  	<h5 class="card-title">
-		  		<span id="numCars" class='badge badge-danger'></span>
-		  			Cotxes</h5>
-			<ul id="llista"  class="list-group">
-			</ul>
-		  </div>
-		  <div class="card-body">
-		  	<form class="form-inline">
-		  		<div class="form-row">
-    				<div class="col">
-						<label for="item">Matrícula: </label>
-						<input  class="form-control" type="text" id="matricula" />
+		<div class="container-fluid">
+			<div class="card">
+			  <h5 class="card-header"><i class="fa fa-car" aria-hidden="true"></i> Venda de Cotxes 2a Mà - BugApp</h5>
+			  <div class="card-body">
+			  	<h5 class="card-title">
+			  		<span id="numCars" class='badge badge-danger'></span>
+			  			Cotxes</h5>
+				<ul id="llista"  class="list-group">
+				</ul>
+			  </div>
+			  <div class="card-body">
+			  	<form class="form-inline">
+			  		<div class="form-row">
+	    				<div class="col">
+							<label for="item">Matrícula: </label>
+							<input  class="form-control" type="text" id="matricula" />
+						</div>
+						<div class="col">
+							<label for="item">Model: </label>
+							<input  class="form-control" type="text" id="model" />
+						</div>
+						<div class="col">
+							<label for="item">Color: </label>
+							<input  class="form-control" type="text" id="color" />
+						</div>
+						<div class="col">
+							<label for="item">Preu (€): </label>
+							<input  class="form-control" type="text" id="preu" />
+						</div>
 					</div>
-					<div class="col">
-						<label for="item">Model: </label>
-						<input  class="form-control" type="text" id="model" />
-					</div>
-					<div class="col">
-						<label for="item">Color: </label>
-						<input  class="form-control" type="text" id="color" />
-					</div>
-					<div class="col">
-						<label for="item">Preu (€): </label>
-						<input  class="form-control" type="text" id="preu" />
-					</div>
+				</form>
+			  </div>
+				<div class="card-footer">
+					<button  type="button" class="btn btn-primary" onclick="afegirInici()">AFEGIR INICI</button>
+					<button  type="button" class="btn btn-primary" onclick="afegirFinal()">AFEGIR FINAL</button>
+					<button  type="button" class="btn btn-danger" onclick="llevarInici()">LLEVAR INICI</button>
+					<button  type="button" class="btn btn-danger" onclick="llevarFinal()">LLEVAR FINAL</button>
+					<button  type="button" class="btn btn-success" onclick="ordenarAsc()">ORDENAR ASC PREU</button>
+					<button  type="button" class="btn btn-success" onclick="ordenarDesc()">ORDENAR DESC PREU</button>
+					<button  type="button" class="btn btn-secondary" onclick="hiHa('SEAT')">HI HA 'SEAT'?</button>
+					<button  type="button" class="btn btn-warning" onclick="llistaEuros()">EUROS</button>
+					<button  type="button" class="btn btn-warning" onclick="llistaDolars()">DOLARS</button>
+					<button  type="button" class="btn btn-info" onclick="quantsColor('red')">QUANTS VERMELLS?</button>
 				</div>
-			</form>
-		  </div>
-			<div class="card-footer">
-				<button  type="button" class="btn btn-primary" onclick="afegirInici()">AFEGIR INICI</button>
-				<button  type="button" class="btn btn-primary" onclick="afegirFinal()">AFEGIR FINAL</button>
-				<button  type="button" class="btn btn-danger" onclick="llevarInici()">LLEVAR INICI</button>
-				<button  type="button" class="btn btn-danger" onclick="llevarFinal()">LLEVAR FINAL</button>
-				<button  type="button" class="btn btn-success" onclick="ordenarAsc()">ORDENAR ASC PREU</button>
-				<button  type="button" class="btn btn-success" onclick="ordenarDesc()">ORDENAR DESC PREU</button>
-				<button  type="button" class="btn btn-secondary" onclick="hiHa('SEAT')">HI HA 'SEAT'?</button>
-				<button  type="button" class="btn btn-warning" onclick="llistaEuros()">EUROS</button>
-				<button  type="button" class="btn btn-warning" onclick="llistaDolars()">DOLARS</button>
-				<button  type="button" class="btn btn-info" onclick="quantsColor('red')">QUANTS VERMELLS?</button>
 			</div>
 		</div>
-	</div>
 		<script>
+			
+			// Crea l'array inicialment buit
 			var list = [];
+			
+			// Afegeix 6 cotxes emprant el constructor
 			list[0]= new Car("12345BCL", "SEAT LEON", "red", 15200);
 			list[1]= new Car("22567HFL", "FORD FESTA", "grey", 17250);
 			list[2]= new Car("78378CKK", "KIA SPORTAGE", "green", 25100);
 			list[3]= new Car("98366ACL", "SEAT IBIZA", "yellow", 12850);
 			list[4]= new Car("36372GHH", "TOYOTA COROLA", "blue", 15200);
 			list[5]= new Car("29271ASK", "VW GOLF", "black", 24800);
+
+			// Mostra l'array en una llista 
 			printList();
 		</script>
 	</body>

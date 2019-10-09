@@ -9,10 +9,6 @@ class Car {
 	}
 
 	info(){
-		return this.matricula+", "+this.marca+", "+this.color+", "+this.preu+this.divisa;
-	}
-
-	info(){
 		return this.matricula+", "+this.marca+", <i class='fa fa-car' style='color:"+this.color+"'></i>, "+this.preu+this.divisa;
 	}
 
