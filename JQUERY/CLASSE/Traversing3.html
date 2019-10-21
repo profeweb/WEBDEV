@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function(){
+
+  $("button").click(function(){
+
+  	$("div, p, b, h1").css({"background-color":"white"});
+    
+    var vSelect1 = $("#s1").val();
+    var vSelect2 = $("#s2").val();
+
+    var eSeleccionat = $("#"+vSelect1);
+    var eTraversing;
+    
+    if(vSelect2=="parent"){
+    	eTraversing = eSeleccionat.parent();
+    }
+    else if(vSelect2=="parents"){
+    	eTraversing = eSeleccionat.parents();
+    }
+    else if(vSelect2=="parentsUntil"){
+    	eTraversing = eSeleccionat.parentsUntil("div");
+    }
+    else if(vSelect2=="children"){
+    	eTraversing = eSeleccionat.children();
+    }
+    else if(vSelect2=="find"){
+    	eTraversing = eSeleccionat.find("*");
+    }
+    else if(vSelect2=="siblings"){
+    	eTraversing = eSeleccionat.siblings();
+    }
+    else if(vSelect2=="next"){
+    	eTraversing = eSeleccionat.next();
+    }
+    else if(vSelect2=="nextAll"){
+    	eTraversing = eSeleccionat.nextAll();
+    }
+    else if(vSelect2=="nextUntil"){
+    	eTraversing = eSeleccionat.nextUntil("div");
+    }
+    else if(vSelect2=="prev"){
+    	eTraversing = eSeleccionat.prev();
+    }
+    else if(vSelect2=="prevAll"){
+    	eTraversing = eSeleccionat.prevAll();
+    }
+    else if(vSelect2=="prevUntil"){
+    	eTraversing = eSeleccionat.prevUntil();
+    }
+    else if(vSelect2=="first"){
+    	eTraversing = $("p").first();
+    }
+    else if(vSelect2=="last"){
+    	eTraversing = $("p").last();
+    }
+    else if(vSelect2=="eq"){
+    	eTraversing = $("p:eq(2)").last();
+    }
+    else if(vSelect2=="filter"){
+    	eTraversing = $("p").filter(".a");
+    }
+    else if(vSelect2=="not"){
+    	eTraversing = $("p").not(".a");
+    }
+    eTraversing.css({"background-color":"red"});
+
+  });
+});
+</script>
+	<style>
+
+		* { background-color:white; }
+	    
+	    #div1, #div2 {
+	        margin: 0px;
+	        padding: 20px;
+	        border: dotted 4px black;
+	        border-radius: 10px;
+	    }
+	    
+	</style>
+</head>
+<body>
+	<div class="container-fluid">
+	<h1><i class="fa fa-sitemap" aria-hidden="true"></i> Traversing Methods.</h1>
+	<hr/>
+	<div id="div1">
+	        	<p id="p1" class="a">This is a paragraph in the div DIV1 (id P1 - classe A).</p>
+	        	<p id="p2" class="b">This is a paragraph in the div DIV1 (id P2 - classe B).</p>
+	        	<p id="p3" class="b">This is a paragraph in the div DIV1 (id P3 - classe B).</p>
+	        	<p id="p4" class="a">This is a <b id="bold1">paragraph</b> in the div DIV1 (id P4 - classe A).</p>
+	        	
+	            <div id="div2">
+	        		<p id="p5" class="b">This is a paragraph in the div DIV2 (id P5 - classe B).</p>
+	        		<p id="p6" class="a">This is a <b id="bold2">paragraph</b> in the div DIV2 ( id P6 - classe A).</p>
+	        		<p id="p7" class="b">This is a paragraph in the div DIV2 (id P7 - classe B).</p>
+	                
+	                <div id="div3">
+	            		<p id="p8" class="b">This is a paragraph in the div DIV3 (id P8 - classe B).</p>
+	                </div>
+
+	        	</div>
+
+	        	<p id="p9" class="a">This is a paragraph in the div DIV1 (id P9 -  classe A).</p>
+	<hr/>
+	<div id="div3">
+		<div class="row">
+		    <div class="form-group col-md-4">
+		    	 <label><i class="fa fa-arrows"></i> <b>SELECTOR:</b></label>
+				<select id="s1"  class="form-control mb-2">
+					<option value="div1">DIV1</option>
+					<option value="p1">P1</option>
+					<option value="p2">P2</option>
+					<option value="p3">P3</option>
+					<option value="p4">P4</option>
+					<option value="bold1">BOLD1</option>
+					<option value="div2">DIV2</option>
+					<option value="p5">P5</option>
+					<option value="p6">P6</option>
+					<option value="bold2">BOLD2</option>
+					<option value="p7">P7</option>
+					<option value="p8">P8</option>
+					<option value="p9">P9</option>
+				</select>
+			</div>
+			<div class="form-group col-md-4">
+				 <label><i class="fa fa-cubes"></i> <b>TRAVERSING:</b></label>
+				<select id="s2"  class="form-control mb-2">
+					<option value="parent">PARENT</option>
+					<option value="parents">PARENTS</option>
+					<option value="parentsUntil">PARENTS UNTIL</option>
+					<option value="children">CHILDREN</option>
+					<option value="find">FIND</option>
+					<option value="siblings">SIBLINGS</option>
+					<option value="next">NEXT</option>
+					<option value="nextAll">NEXT ALL</option>
+					<option value="nextUntil">NEXT UNTIL</option>
+					<option value="prev">PREV</option>
+					<option value="prevAll">PREV ALL</option>
+					<option value="prevUntil">PREV UNTIL</option>
+					<option value="first">FIRST P</option>
+					<option value="last">LAST P</option>
+					<option value="eq">EQ(2) P</option>
+					<option value="filter">FILTER P.A</option>
+					<option value="not">NOT P.A</option>
+				</select>
+				<button class="btn btn-info">SELECT</button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
