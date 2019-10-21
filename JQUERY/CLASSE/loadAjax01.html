@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+	<h1>Load AJAX.</h1>
+	<hr/>
+	<div id="info">
+	</div>
+	<hr/>
+	<div>
+		<div>
+		    <div>
+		    	<label><b>File:</b></label>
+				<select id="s1">
+					<option value="1">FILE1.TXT</option>
+					<option value="2">FILE2.TXT</option>
+				</select>
+				<button>LOAD FILE</button>
+			</div>
+		</div>
+	</div>
+	<script>
+	$(document).ready(function(){
+
+	  $("button").click(function(){
+	    
+	    var vSelect = $("#s1").val();
+
+	    if(vSelect=="1"){
+	    	$("#info").load("file1.txt", function() {
+  				alert( "Loaded File 1 inside DIV.");});
+	    }
+	    else if(vSelect=="2"){
+	    	$("#info").load("file2.txt", function() {
+  				alert( "Loaded File 2 inside DIV.");});
+	    }
+
+	  });
+	});
+	</script>
+</body>
+</html>
