@@ -19,16 +19,38 @@
 			</select><br/>
 	PVP: <input type="number" id="inputpvp"/><br/>
 <hr/>
-<button id="b1">Append</button>
-<button id="b2">Prepend</button>
-<button id="b3">Empty</button>
+<button id="b1">Add Product</button>
+<button id="b2">XXX</button>
+<button id="b3">XXX</button>
 <h2>Shopping List</h2>
 <ol id="myList">
 </ol>
 <script>
+
+var productes = [];
+
 $(document).ready(function(){
 	
-	var productes = [];
+	function createProduct(){
+
+		var r = $("#inputref").val();
+		var n = $("#inputnom").val();
+		var m = $("#selectmarca").val();
+		var c = $("#selectcategoria").val();
+		var p = $("#inputpvp").val();
+
+		var producte = new Producte(r,n,m,c,p);
+
+		return producte;
+
+	}
+
+	$("#b1").click(function(){
+
+		var p = createProduct();
+		productes.push(p);
+
+	});
 
 });
 </script>
