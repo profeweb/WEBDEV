@@ -20,7 +20,7 @@
 	PVP: <input type="number" id="inputpvp"/><br/>
 <hr/>
 <button id="b1">Add Product</button>
-<button id="b2">XXX</button>
+<button id="b2">Print List</button>
 <button id="b3">XXX</button>
 <h2>Shopping List</h2>
 <ol id="myList">
@@ -28,6 +28,10 @@
 <script>
 
 var productes = [];
+
+productes.push(new Producte("1124", "Iphone XS", "Apple", "Mòbil", 1200));
+productes.push(new Producte("1147", "Samsung L9", "Samsung", "Mòbil", 900));
+productes.push(new Producte("1155", "iPad Pro", "Apple", "Tablet", 800));
 
 $(document).ready(function(){
 	
@@ -40,16 +44,25 @@ $(document).ready(function(){
 		var p = $("#inputpvp").val();
 
 		var producte = new Producte(r,n,m,c,p);
-
 		return producte;
+	}
 
+
+	function printList(){
+		for(var i=0; i<productes.length; i++){
+			var info = productes[i].print();
+			var newLI = $("<li>").text(info); // var newLI = "<li>".info."</li>";
+			$("#myList").append(newLI);
+		}
 	}
 
 	$("#b1").click(function(){
-
 		var p = createProduct();
 		productes.push(p);
+	});
 
+	$("#b2").click(function(){
+		printList();
 	});
 
 });
