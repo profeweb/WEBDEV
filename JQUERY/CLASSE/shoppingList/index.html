@@ -3,6 +3,23 @@
 <head>
 	<script src="producte.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<style>
+	.Portatil {
+		color:red;
+	}
+
+	.SobreTaula {
+		color:green;
+	}
+
+	.Mobil {
+		color:blue;
+	}
+
+	.Tablet {
+		color:yellow;
+	}
+</style>
 </head>
 <body>
 	Referencia: <input type="text" id="inputref"/><br/>
@@ -16,12 +33,16 @@
 				<option value="Portatil">Portatil</option>
 				<option value="SobreTaula">SobreTaula</option>
 				<option value="Mobil">Mòbil</option>
+				<option value="Tablet">Tablet</option>
 			</select><br/>
 	PVP: <input type="number" id="inputpvp"/><br/>
 <hr/>
 <button id="b1">Add Product</button>
 <button id="b2">Print List</button>
 <button id="b3">Remove Product</button>
+<button id="b4">Filter by Category</button>
+<button id="b5">Order by Price Asc</button>
+<button id="b6">Order by Price Desc</button>
 <h2>Shopping List</h2>
 <ol id="myList">
 </ol>
@@ -29,8 +50,8 @@
 
 var productes = [];
 
-productes.push(new Producte("1124", "Iphone XS", "Apple", "Mòbil", 1200));
-productes.push(new Producte("1147", "Samsung L9", "Samsung", "Mòbil", 900));
+productes.push(new Producte("1124", "Iphone XS", "Apple", "Mobil", 1200));
+productes.push(new Producte("1147", "Samsung L9", "Samsung", "Mobil", 900));
 productes.push(new Producte("1155", "iPad Pro", "Apple", "Tablet", 800));
 
 $(document).ready(function(){
@@ -48,12 +69,16 @@ $(document).ready(function(){
 	}
 
 
-	function printList(){
+	function printList(cat){
 		$("#myList").empty();
 		for(var i=0; i<productes.length; i++){
 			var info = productes[i].print();
-			var newLI = $("<li>").text(info); // var newLI = "<li>".info."</li>";
-			$("#myList").append(newLI);
+			var liClass = productes[i].categ;
+			var newLI = $("<li>").text(info).addClass(liClass); // var newLI = "<li>".info."</li>";
+
+			if(cat==productes[i].categ || cat=="TOTS"){
+				$("#myList").append(newLI);
+			}
 		}
 	}
 
@@ -63,7 +88,7 @@ $(document).ready(function(){
 	});
 
 	$("#b2").click(function(){
-		printList();
+		printList("TOTS");
 	});
 
 	$("#b3").click(function(){
@@ -80,6 +105,25 @@ $(document).ready(function(){
 		if(b==0){
 			alert("NO HI HA CAP PRODUCTE AMB AQUESTA REF.");
 		}
+	});
+
+	$("#b4").click(function(){
+		var c = $("#selectcategoria").val();
+		printList(c);
+	});
+
+	$("#b5").click(function(){
+		productes.sort(function (a,b){
+			return a.pvp - b.pvp;
+		});
+		printList("TOTS");
+	});
+
+	$("#b6").click(function(){
+		productes.sort(function (a,b){
+			return b.pvp - a.pvp;
+		});
+		printList("TOTS");
 	});
 	
 
