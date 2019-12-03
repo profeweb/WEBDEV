@@ -49,9 +49,10 @@
 </ol>
 <script>
 
+var saldo = 2000;
 var productes = [];
 
-productes.push(new Producte("1124", "Iphone XS", "Apple", "Mobil", 1200));
+//productes.push(new Producte("1124", "Iphone XS", "Apple", "Mobil", 1200));
 productes.push(new Producte("1147", "Samsung L9", "Samsung", "Mobil", 900));
 productes.push(new Producte("1155", "iPad Pro", "Apple", "Tablet", 800));
 
@@ -85,7 +86,16 @@ $(document).ready(function(){
 
 	$("#b1").click(function(){
 		var p = createProduct();
-		productes.push(p);
+		var t = total();
+		var nt = parseInt(t) + parseInt(p.pvp);
+		console.log(t, nt);
+		if(nt<saldo){
+			productes.push(p);
+		}
+		else {
+			alert("NO MONEY ENOUGH");
+		}
+		printList("TOTS");
 	});
 
 	$("#b2").click(function(){
@@ -128,12 +138,17 @@ $(document).ready(function(){
 	});
 
 	$("#b7").click(function(){
+		var t = total();
+		alert("TOTAL: "+t+"€.")
+	});
+
+	function total(){
 		var total = 0;
 		for(var i=0; i<productes.length;i++){
 			total += productes[i].pvp;
 		}
-		alert("TOTAL: "+total+"€.")
-	});
+		return total;
+	}
 	
 
 });
