@@ -44,6 +44,7 @@
 <button id="b5">Order by Price Asc</button>
 <button id="b6">Order by Price Desc</button>
 <button id="b7">Sum Up</button>
+<button id="b8">Discount 10%</button>
 <h2>Shopping List</h2>
 <ol id="myList">
 </ol>
@@ -52,7 +53,7 @@
 var saldo = 2000;
 var productes = [];
 
-//productes.push(new Producte("1124", "Iphone XS", "Apple", "Mobil", 1200));
+productes.push(new Producte("1124", "Iphone XS", "Apple", "Mobil", 1200));
 productes.push(new Producte("1147", "Samsung L9", "Samsung", "Mobil", 900));
 productes.push(new Producte("1155", "iPad Pro", "Apple", "Tablet", 800));
 
@@ -88,12 +89,13 @@ $(document).ready(function(){
 		var p = createProduct();
 		var t = total();
 		var nt = parseInt(t) + parseInt(p.pvp);
-		console.log(t, nt);
-		if(nt<saldo){
+		var repetit = jaHiEs(p.ref);
+
+		if(nt<saldo  && !repetit){
 			productes.push(p);
 		}
 		else {
-			alert("NO MONEY ENOUGH");
+			alert("NO MONEY ENOUGH or REPEATED REF");
 		}
 		printList("TOTS");
 	});
@@ -142,12 +144,28 @@ $(document).ready(function(){
 		alert("TOTAL: "+t+"€.")
 	});
 
+	$("#b8").click(function(){
+		for(var i=0; i<productes.length;i++){
+			productes.discount(0.9);  // Discount 10%
+		}
+		printList("TOTS");
+	});
+
 	function total(){
 		var total = 0;
 		for(var i=0; i<productes.length;i++){
 			total += productes[i].pvp;
 		}
 		return total;
+	}
+
+	function jaHiEs(ref){
+		for(var i=0; i<productes.length;i++){
+			if(productes[i].ref==ref){
+				return true;
+			}
+		}
+		return false;
 	}
 	
 

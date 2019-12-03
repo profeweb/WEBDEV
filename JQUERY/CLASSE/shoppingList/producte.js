@@ -12,4 +12,9 @@ function Producte(ref, nom, marca, categ, pvp){
 		return this.ref+ " - "+ this.nom+ " - "+this.marca +" - "+this.categ+" - "+this.pvp;
 	}
 
+	this.discount = discount;
+	function discount(quant){
+		this.pvp *= quant;
+	}
+
 }
