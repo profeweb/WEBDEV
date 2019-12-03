@@ -49,6 +49,7 @@ $(document).ready(function(){
 
 
 	function printList(){
+		$("#myList").empty();
 		for(var i=0; i<productes.length; i++){
 			var info = productes[i].print();
 			var newLI = $("<li>").text(info); // var newLI = "<li>".info."</li>";
