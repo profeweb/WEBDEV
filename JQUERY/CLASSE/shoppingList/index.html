@@ -43,6 +43,7 @@
 <button id="b4">Filter by Category</button>
 <button id="b5">Order by Price Asc</button>
 <button id="b6">Order by Price Desc</button>
+<button id="b7">Sum Up</button>
 <h2>Shopping List</h2>
 <ol id="myList">
 </ol>
@@ -124,6 +125,14 @@ $(document).ready(function(){
 			return b.pvp - a.pvp;
 		});
 		printList("TOTS");
+	});
+
+	$("#b7").click(function(){
+		var total = 0;
+		for(var i=0; i<productes.length;i++){
+			total += productes[i].pvp;
+		}
+		alert("TOTAL: "+total+"€.")
 	});
 	
 
