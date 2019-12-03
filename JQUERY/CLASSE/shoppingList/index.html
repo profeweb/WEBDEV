@@ -45,7 +45,9 @@
 <button id="b6">Order by Price Desc</button>
 <button id="b7">Sum Up</button>
 <button id="b8">Discount 10%</button>
+<button id="b9">Edit Product</button>
 <h2>Shopping List</h2>
+<select id="listRefs"></select>
 <ol id="myList">
 </ol>
 <script>
@@ -56,6 +58,17 @@ var productes = [];
 productes.push(new Producte("1124", "Iphone XS", "Apple", "Mobil", 1200));
 productes.push(new Producte("1147", "Samsung L9", "Samsung", "Mobil", 900));
 productes.push(new Producte("1155", "iPad Pro", "Apple", "Tablet", 800));
+
+function createOptions(){
+		$("#listRefs").empty();
+		for(var i=0; i<productes.length; i++){
+			var rp = productes[i].ref;
+			var o = $("<option>").attr("value",rp).text(rp);
+			$("#listRefs").append(o);
+		}
+	}
+
+createOptions();
 
 $(document).ready(function(){
 	
@@ -70,6 +83,8 @@ $(document).ready(function(){
 		var producte = new Producte(r,n,m,c,p);
 		return producte;
 	}
+
+	
 
 
 	function printList(cat){
@@ -93,6 +108,7 @@ $(document).ready(function(){
 
 		if(nt<saldo  && !repetit){
 			productes.push(p);
+			createOptions();
 		}
 		else {
 			alert("NO MONEY ENOUGH or REPEATED REF");
@@ -115,6 +131,7 @@ $(document).ready(function(){
 			}
 		}
 		printList();
+		createOptions();
 		if(b==0){
 			alert("NO HI HA CAP PRODUCTE AMB AQUESTA REF.");
 		}
@@ -147,6 +164,19 @@ $(document).ready(function(){
 	$("#b8").click(function(){
 		for(var i=0; i<productes.length;i++){
 			productes.discount(0.9);  // Discount 10%
+		}
+		printList("TOTS");
+	});
+
+	$("#b9").click(function(){
+		var r = $("#listRefs").val();
+		for(var i=0; i<productes.length;i++){
+			if(r==productes[i].ref){
+				productes[i].nom = $("#inputnom").val();
+				productes[i].marca = $("#selectmarca").val();
+				productes[i].categ = $("#selectcategoria").val();
+				productes[i].pvp = $("#inputpvp").val();
+			}
 		}
 		printList("TOTS");
 	});
