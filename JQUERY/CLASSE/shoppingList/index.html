@@ -21,7 +21,7 @@
 <hr/>
 <button id="b1">Add Product</button>
 <button id="b2">Print List</button>
-<button id="b3">XXX</button>
+<button id="b3">Remove Product</button>
 <h2>Shopping List</h2>
 <ol id="myList">
 </ol>
@@ -65,6 +65,23 @@ $(document).ready(function(){
 	$("#b2").click(function(){
 		printList();
 	});
+
+	$("#b3").click(function(){
+		var r = $("#inputref").val();
+		var b = 0;
+		for(var i=0; i<productes.length; i++){
+			var rp = productes[i].ref;
+			if(r==rp){
+				productes.splice(i,1);
+				b = 1;
+			}
+		}
+		printList();
+		if(b==0){
+			alert("NO HI HA CAP PRODUCTE AMB AQUESTA REF.");
+		}
+	});
+	
 
 });
 </script>
