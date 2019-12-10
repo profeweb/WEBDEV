@@ -19,7 +19,11 @@
 		<ul id="bList"></ul>
 		<h3>Taula Sobrassada</h3>
 		<table id="sTable" border="1">
-			<tr><th>TROS</th><th>KG</th></tr>
+			<thead>
+				<tr><th>TROS</th><th>KG</th></tr>
+			</thead>
+			<tbody>
+			</tbody>
 		</table>
 		<hr/>
 		<script>
@@ -78,16 +82,17 @@
 			}
 
 			function showSobrassada(){
-				$("#sTable").empty();
+				$("#sTable tbody").empty();
 				for(var i=0; i<sobrassada.length; i++){
-					var info = sobrassada[i].printTros();
-					var nouTD = $("<td/>").text(info);
-					var nouTR = $("<tr/>");
+					var nom = sobrassada[i].nom;
+					var pes = sobrassada[i].kg;
+					var nouTD1 = $("<td/>").text(nom);
+					var nouTD2 = $("<td/>").text(pes);
+					var nouTR = $("<tr/>").append(nouTD1, nouTD2);
 					if(sobrassada[i].kg > 5){
 						nouTR.css("background-color", "red");
 					}
-					nouTR.append(nouTD);
-					$("#sTable").append(nouTR);
+					$("#sTable tbody").append(nouTR);
 				}
 			}
 
