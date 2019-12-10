@@ -14,6 +14,8 @@
 		<input type="button" id="b1" value="ADD"/>
 		<input type="button" id="b2" value="PRINT"/>
 		<input type="button" id="b3" value="COMPENSATE"/>
+		<input type="button" id="b4" value="TOTAL"/>
+		<input type="button" id="b5" value="SORT"/>
 		<hr/>
 		<h3>Llista Botifarrons</h3>
 		<ul id="bList"></ul>
@@ -32,7 +34,7 @@
 				
 				this.nom = n;
 				this.classe = c;
-				this.kg = k;
+				this.kg = parseFloat(k);
 
 				this.printTros = printTros;
 				function printTros(){
@@ -130,6 +132,25 @@
 					compensarPes();
 					showBotifarrons();
 					showSobrassada();
+				});
+
+				$("#b4").click(function(){
+					alert("El pes total és:"+calculaPes());
+				});
+
+				$("#b5").click(function(){
+
+					sobrassada.sort(function(a,b){
+						return a.kg - b.kg;
+					});
+
+					botifarrons.sort(function(a,b){
+						return a.kg - b.kg;
+					});
+
+					showBotifarrons();
+					showSobrassada();
+
 				});
 
 
