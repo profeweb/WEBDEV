@@ -1,0 +1,105 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>Matances</title>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	</head>
+	<body>
+		NOM: <input type="text" id="d1" /><span id="e1"></span><br/>
+		EDAT: <input type="number" id="d2" /><span id="e2"></span><br/>
+		EMAIL: <input type="text" id="d3" /><span id="e3"></span><br/>
+		SEXE: <select id="d4">
+					<option value="0">Tria un</option>
+					<option value="H">HOME</option>
+					<option value="D">DONA</option>
+				</select><span id="e4"></span><br/>
+		HOBBIES: <input type="checkbox" id="d5" />Futbol 
+				 <input type="checkbox" id="d6" />Lectura 
+				 <input type="checkbox" id="d7" />Escacs 
+				 <input type="checkbox" id="d8" />Aerobic 
+				 <span id="e5"></span>
+				 <br/>
+		UNIVERSITARI: <input type="radio" name="univ" id="d9" />Sí  
+					  <input type="radio" name="univ" id="d10" />No  
+					  <span id="e9"></span><br/>
+		<input type="button" id="b1" value="VALIDATE"/>
+		<script>
+
+
+			$(document).ready(function(){
+
+				$("#b1").click(function(){
+					
+					var n = $("#d1").val();
+					var c = $("#d2").val();
+					var k = $("#d3").val();
+
+					var t = new Tros(n, c, k);
+
+					afegirTros(t);
+				});
+
+
+				$("#b2").click(function(){
+					showBotifarrons();
+					showSobrassada();
+				});
+
+				$("#b3").click(function(){
+					compensarPes();
+					showBotifarrons();
+					showSobrassada();
+				});
+
+				$("#b4").click(function(){
+					alert("El pes total és:"+calculaPes());
+				});
+
+				$("#b5").click(function(){
+
+					sobrassada.sort(function(a,b){
+						return a.kg - b.kg;
+					});
+
+					botifarrons.sort(function(a,b){
+						return a.kg - b.kg;
+					});
+
+					showBotifarrons();
+					showSobrassada();
+
+				});
+
+
+			});
+		</script>
+<!--
+
+	Formulari per introduir la informació de matances:
+		Tros: (input text)
+		Classe: (select) sobrassada / botifarrons
+		Kg: (input number)
+
+	Definir la classe Tros
+
+	Definir dos Arrays per Sobrassada / Botifarrons
+
+	Afegir Tros a l'Array corresponent
+
+	Calcular el total del Pes sumant els dos arrays
+
+	Visualitzar cada array en un div diferent:
+
+		L'Array de Sobrassada en una taula TABLE
+
+			Les files TR amb un pes>5kg tenen color vermell
+
+		L'Array de Botifarrons en una llista UL
+
+			Els listItems amb pes < 5kg tenen el text dins un bold <b>
+
+	Compensar el pes dels trossos dels 2 arrays (restant 0.5 kg a tots els trossos)
+
+-->
+	</body>
+</html>
