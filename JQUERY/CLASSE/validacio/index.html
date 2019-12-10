@@ -25,81 +25,64 @@
 		<input type="button" id="b1" value="VALIDATE"/>
 		<script>
 
+			function validateName(){
+				var n = $("#d1").val();
+				if( n==null || n==""){
+					$("#d1").css("background-color", "red");
+					$("#e1").text("Camp obligatori!!!");
+				}
+				else {
+					$("#d1").css("background-color", "green");
+					$("#e1").text("Correcte!!");
+				}
+			}
+
+			function validateAge(){
+				
+				var a = parseInt($("#d2").val());
+
+				if(a>=18 && a<=67){
+					$("#d2").css("background-color", "green");
+					$("#e2").text("Correcte!!");
+				}
+				else {
+					$("#d2").css("background-color", "red");
+					$("#e2").text("Valor entre 18 i 67 !!!");
+				}
+			}
+
+			function validateEmail(){
+				var e = $("#d3").val();
+				var atpos=e.indexOf("@");
+				var dotpos=e.lastIndexOf(".");
+				if (atpos<1 || dotpos<atpos+2 || dotpos+2>=e.length){
+ 					$("#d3").css("background-color", "red");
+					$("#e3").text("Email !!!");
+ 				}
+ 				else {
+ 					$("#d3").css("background-color", "green");
+					$("#e3").text("Correcte!!");
+ 				}
+
+			}
+
+
+			function validateData(){
+				validateName();
+				validateAge();
+				validateEmail();
+			}
+
 
 			$(document).ready(function(){
 
 				$("#b1").click(function(){
 					
-					var n = $("#d1").val();
-					var c = $("#d2").val();
-					var k = $("#d3").val();
-
-					var t = new Tros(n, c, k);
-
-					afegirTros(t);
-				});
-
-
-				$("#b2").click(function(){
-					showBotifarrons();
-					showSobrassada();
-				});
-
-				$("#b3").click(function(){
-					compensarPes();
-					showBotifarrons();
-					showSobrassada();
-				});
-
-				$("#b4").click(function(){
-					alert("El pes total és:"+calculaPes());
-				});
-
-				$("#b5").click(function(){
-
-					sobrassada.sort(function(a,b){
-						return a.kg - b.kg;
-					});
-
-					botifarrons.sort(function(a,b){
-						return a.kg - b.kg;
-					});
-
-					showBotifarrons();
-					showSobrassada();
+					validateData();
 
 				});
-
 
 			});
 		</script>
-<!--
-
-	Formulari per introduir la informació de matances:
-		Tros: (input text)
-		Classe: (select) sobrassada / botifarrons
-		Kg: (input number)
-
-	Definir la classe Tros
-
-	Definir dos Arrays per Sobrassada / Botifarrons
-
-	Afegir Tros a l'Array corresponent
-
-	Calcular el total del Pes sumant els dos arrays
-
-	Visualitzar cada array en un div diferent:
-
-		L'Array de Sobrassada en una taula TABLE
-
-			Les files TR amb un pes>5kg tenen color vermell
-
-		L'Array de Botifarrons en una llista UL
-
-			Els listItems amb pes < 5kg tenen el text dins un bold <b>
-
-	Compensar el pes dels trossos dels 2 arrays (restant 0.5 kg a tots els trossos)
-
--->
 	</body>
 </html>
