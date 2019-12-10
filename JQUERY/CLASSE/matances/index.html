@@ -5,6 +5,131 @@
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	</head>
 	<body>
+		TROS: <input type="text" id="d1" /><br/>
+		CLASSE: <select id="d2">
+					<option value="S">Sobrassada</option>
+					<option value="B">Botifarrons</option>
+				</select><br/>
+		KG: <input type="number" id="d3" /><br/>
+		<input type="button" id="b1" value="ADD"/>
+		<input type="button" id="b2" value="PRINT"/>
+		<input type="button" id="b3" value="COMPENSATE"/>
+		<hr/>
+		<h3>Llista Botifarrons</h3>
+		<ul id="bList"></ul>
+		<h3>Taula Sobrassada</h3>
+		<table id="sTable">
+			<tr><th>TROS</th><th>KG</th></tr>
+		</table>
+		<hr/>
+		<script>
+
+			function Tros(n, c, k){
+				
+				this.nom = n;
+				this.classe = c;
+				this.kg = k;
+
+				this.printTros = printTros;
+				function printTros(){
+					return this.nom+" "+" "+this.kg;
+				}
+			}
+
+			var botifarrons = [];
+			var sobrassada = [];
+
+			function afegirTros(t){
+				if(t.classe=="S"){
+					sobrassada.push(t);
+					showSobrassada();
+				}
+				else if(t.classe=="B"){
+					botifarrons.push(t);
+					showBotifarrons();
+				}
+			}
+
+			function calculaPes(){
+				var total =  0;
+				for(var i=0; i<botifarrons.length; i++){
+					total += botifarrons[i].kg;
+				}
+				for(var i=0; i<sobrassada.length; i++){
+					total += sobrassada[i].kg;
+				}
+				return total;
+
+			}
+
+			function showBotifarrons(){
+				$("#bList").empty();
+				for(var i=0; i<botifarrons.length; i++){
+					var info = botifarrons[i].printTros();
+					if(botifarrons[i].kg<5){
+						var nouB = $("<b>").text(info);
+						var nouLI = $("<li>").append(nouB);
+					}
+					else {
+						var nouLI = $("<li>").text(info);
+					}
+					$("#bList").append(nouLI);
+				}
+			}
+
+			function showSobrassada(){
+				$("#sTable").empty();
+				for(var i=0; i<sobrassada.length; i++){
+					var info = sobrassada[i].printTros();
+					var nouTD = $("<td/>").text(info);
+					var nouTR = $("<tr/>");
+					if(sobrassada[i].kg > 5){
+						nouTR.css("background-color", "red");
+					}
+					nouTR.append(nouTD);
+					$("#sTable").append(nouTR);
+				}
+			}
+
+
+			function compensarPes(){
+				for(var i=0; i<botifarrons.length; i++){
+					botifarrons[i].kg -= 0.5;
+				}
+				for(var i=0; i<sobrassada.length; i++){
+					sobrassada[i].kg -= 0.5;
+				}
+			}
+
+
+			$(document).ready(function(){
+
+				$("#b1").click(function(){
+					
+					var n = $("#d1").val();
+					var c = $("#d2").val();
+					var k = $("#d3").val();
+
+					var t = new Tros(n, c, k);
+
+					afegirTros(t);
+				});
+
+
+				$("#b2").click(function(){
+					showBotifarrons();
+					showSobrassada();
+				});
+
+				$("#b3").click(function(){
+					compensarPes();
+					showBotifarrons();
+					showSobrassada();
+				});
+
+
+			});
+		</script>
 <!--
 
 	Formulari per introduir la informació de matances:
