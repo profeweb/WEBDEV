@@ -1,7 +1,7 @@
 <!DOCTYPE>
 <html>
 	<head>
-		<title>Matances</title>
+		<title>Validació Formulari</title>
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	</head>
 	<body>
@@ -19,8 +19,8 @@
 				 <input type="checkbox" id="d8" />Aerobic 
 				 <span id="e5"></span>
 				 <br/>
-		UNIVERSITARI: <input type="radio" name="univ" id="d9" />Sí  
-					  <input type="radio" name="univ" id="d10" />No  
+		UNIVERSITARI: <input type="radio" name="univ" id="d9" value="S" />Sí  
+					  <input type="radio" name="univ" id="d10" value="N" />No  
 					  <span id="e9"></span><br/>
 		<input type="button" id="b1" value="VALIDATE"/>
 		<script>
@@ -28,12 +28,11 @@
 			function validateName(){
 				var n = $("#d1").val();
 				if( n==null || n==""){
-					$("#d1").css("background-color", "red");
-					$("#e1").text("Camp obligatori!!!");
+					showError("#d1","#e1","Camp obligatori!!!");
+
 				}
 				else {
-					$("#d1").css("background-color", "green");
-					$("#e1").text("Correcte!!");
+					showOk("#d1","#e1");
 				}
 			}
 
@@ -42,12 +41,10 @@
 				var a = parseInt($("#d2").val());
 
 				if(a>=18 && a<=67){
-					$("#d2").css("background-color", "green");
-					$("#e2").text("Correcte!!");
+					showOk("#d2","#e2");
 				}
 				else {
-					$("#d2").css("background-color", "red");
-					$("#e2").text("Valor entre 18 i 67 !!!");
+					showError("#d2","#e2","Valor entre 18 i 67 !!!");
 				}
 			}
 
@@ -56,14 +53,51 @@
 				var atpos=e.indexOf("@");
 				var dotpos=e.lastIndexOf(".");
 				if (atpos<1 || dotpos<atpos+2 || dotpos+2>=e.length){
- 					$("#d3").css("background-color", "red");
-					$("#e3").text("Email !!!");
+					showError("#d3","#e3","Email !!!");
  				}
  				else {
- 					$("#d3").css("background-color", "green");
-					$("#e3").text("Correcte!!");
+ 					showOk("#d3","#e3");
  				}
+			}
 
+			function validateSex(){
+				var s = $("#d4").val();
+				if(s==0){
+					showError("#d4","#e4","Home o Dona !!!");
+				}
+				else {
+					showOk("#d4","#e4");
+				}
+			}
+
+			function validateHobbies(){
+				var n = $(":checked").length - 1;
+				if(n>=2 && n<4){
+					showOk("#e5","#e5");
+				}
+				else {
+					showError("#e5","#e5","2, 3 o 4!!!");
+				}
+			}
+
+			function validateUniversity(){
+
+				var u = $("input[name='univ']:checked").val();
+				if(u=="N"){
+					showOk("#e9", "#e9");
+				} else {
+					showError("#e9", "#e9", "No !!!")
+				}
+			}
+
+			function showError(idf, ids, m){
+				$(idf).css("background-color", "red");
+				$(ids).text(m);
+			}
+
+			function showOk(idf, ids){
+				$(idf).css("background-color", "green");
+				$(ids).text("Correcte!!");
 			}
 
 
@@ -71,6 +105,9 @@
 				validateName();
 				validateAge();
 				validateEmail();
+				validateSex();
+				validateHobbies();
+				validateUniversity();
 			}
 
 
