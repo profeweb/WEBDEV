@@ -11,7 +11,7 @@ $geojson = array(
    'features'  => array()
 );
 # Loop through rows to build feature arrays
-while($row = mysql_fetch_assoc($result)) {
+while($row = mysqli_fetch_assoc($result)) {
     $feature = array(
         'id' => $row['partnership_id'],
         'type' => 'Feature', 
