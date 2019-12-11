@@ -1,22 +1,17 @@
 <?php
 
-# Connect to MySQL database
-$conn = new PDO('mysql:host=localhost;dbname=mydatabase','myusername','mypassword');
-# However the User's Query will be passed to the DB:
-$sql = 'SELECT * from Oficines';
-# Try query or error
-$rs = $conn->query($sql);
-if (!$rs) {
-    echo 'An SQL error occured.\n';
-    exit;
-}
+$conn = new mysqli("localhost", "root", "password", "database");
+$stmt = $conn->prepare("SELECT * FROM oficina ORDER BY nom");
+$stmt->execute();
+$result = $stmt->get_result();
+
 # Build GeoJSON feature collection array
 $geojson = array(
    'type'      => 'FeatureCollection',
    'features'  => array()
 );
 # Loop through rows to build feature arrays
-while($row = mysql_fetch_assoc($dbquery)) {
+while($row = mysql_fetch_assoc($result)) {
     $feature = array(
         'id' => $row['partnership_id'],
         'type' => 'Feature', 
