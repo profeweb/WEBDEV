@@ -58,7 +58,7 @@
 				"kg": "378"
 			},
 			{
-				"product":"Chocolate",
+				"product":"Choco",
 				"color": "chocolate",
 				"kg": "592"
 			},
@@ -71,8 +71,10 @@
 
 	var svg = document.getElementById('meuDibuix');
 
+	var ns = "http://www.w3.org/2000/svg";
+
 	function createRect(x, y, w, h, c){
-		var rect = document.createElementNS("http://www.w3.org/2000/svg","rect");
+		var rect = document.createElementNS(ns,"rect");
 		rect.setAttributeNS(null, 'x', x);
 		rect.setAttributeNS(null, 'y', y);
 		rect.setAttributeNS(null, 'width', w);
@@ -85,7 +87,7 @@
 	}
 
 	function createText(x, y, s, txt, ang){
-		var text = document.createElementNS("http://www.w3.org/2000/svg","text");
+		var text = document.createElementNS(ns,"text");
 		text.setAttributeNS(null, 'x', x);
 		text.setAttributeNS(null, 'y', y);
 		text.setAttributeNS(null,"font-size",s);
