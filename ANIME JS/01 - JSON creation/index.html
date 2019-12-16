@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>JSON SVG Creation</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+	<div>
+	  	<h2>JSON SVG Creation</h2>
+	    <svg width="1200" height="850" id="meuDibuix">
+	    	<rect width="1200" height="850" style="fill:white; stroke:black"/>
+	    </svg>
+	</div>
+<script>
+
+	var jsonData = [
+			{
+				"product":"Potatoes",
+				"color": "brown",
+				"kg": "234"
+			},
+			{
+				"product":"Cheese",
+				"color": "yellow",
+				"kg": "534"
+			},
+			{
+				"product":"Meat",
+				"color": "red",
+				"kg": "457"
+			},
+			{
+				"product":"Veggys",
+				"color": "green",
+				"kg": "631"
+			},
+			{
+				"product":"Water",
+				"color": "blue",
+				"kg": "518"
+			},
+			{
+				"product":"Bread",
+				"color": "pink",
+				"kg": "268"
+			},
+			{
+				"product":"Fish",
+				"color": "aqua",
+				"kg": "411"
+			},
+			{
+				"product":"Coffe",
+				"color": "brown",
+				"kg": "378"
+			},
+			{
+				"product":"Chocolate",
+				"color": "chocolate",
+				"kg": "592"
+			},
+			{
+				"product":"Oil",
+				"color": "greenyellow",
+				"kg": "215"
+			}
+		];
+
+	var svg = document.getElementById('meuDibuix');
+
+	function createRect(x, y, w, h, c){
+		var rect = document.createElementNS("http://www.w3.org/2000/svg","rect");
+		rect.setAttributeNS(null, 'x', x);
+		rect.setAttributeNS(null, 'y', y);
+		rect.setAttributeNS(null, 'width', w);
+		rect.setAttributeNS(null, 'height', h);
+		rect.setAttributeNS(null, 'stroke', 'black');
+		rect.setAttributeNS(null, 'stroke-width', 1.5);
+		rect.setAttributeNS(null, 'fill', c);
+
+		return rect;
+	}
+
+	function createText(x, y, s, txt, ang){
+		var text = document.createElementNS("http://www.w3.org/2000/svg","text");
+		text.setAttributeNS(null, 'x', x);
+		text.setAttributeNS(null, 'y', y);
+		text.setAttributeNS(null,"font-size",s);
+		text.setAttributeNS(null,"transform", "rotate("+ang+" "+x+" "+y+")");
+		var textNode = document.createTextNode(txt);
+		text.appendChild(textNode);
+
+		return text;
+	}
+
+	function createBarDiagram(w){
+
+			for(var i in jsonData){
+
+				// Rectangles
+				var rect = createRect(100 + i*w, 100, w, jsonData[i].kg, jsonData[i].color);
+		        svg.appendChild(rect);
+
+		        // Text Product
+		        var textProduct = createText(100 + i*w, 70, 24, jsonData[i].product,0);
+				svg.appendChild(textProduct);
+
+				// Text Kg
+				var textKg = createText(100 + i*w + w/2, 100 + parseInt(jsonData[i].kg)+30, 18, jsonData[i].kg+ "Kg",90);
+				svg.appendChild(textKg);
+				
+			}
+	}
+
+	$(document).ready(function(){
+
+		createBarDiagram(100);
+
+	});
+
+</script>
+</body>
+</html>

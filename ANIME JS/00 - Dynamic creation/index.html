@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Dynamic SVG Creation</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+	<div>
+	  	<h2>Dynamic SVG Creation</h2>
+	    <svg width="1200" height="600" id="meuDibuix">
+	    	<rect width="1200" height="600" style="fill:cyan"/>
+	    </svg>
+	</div>
+<script>
+
+	var ps = [];
+
+	for(var i=0; i<50; i++){
+		var x = 50 + Math.random()*1100;
+		var y = 50 + Math.random()*500;
+		var r = 5 + Math.random()*20;
+		var p = [x, y, r];
+		ps.push(p);
+	}
+
+	var svg = document.getElementById('meuDibuix');
+
+	function createCircles(){
+
+			for(var i=0; i<ps.length; i++){
+
+				var circle = document.createElementNS("http://www.w3.org/2000/svg","circle");
+				circle.setAttributeNS(null, 'cx', ps[i][0]);
+				circle.setAttributeNS(null, 'cy', ps[i][1]);
+				circle.setAttributeNS(null, 'r', ps[i][2]);
+		        circle.setAttributeNS(null, 'stroke', 'rgb(150,170,190)');
+		        circle.setAttributeNS(null, 'stroke-width', 1.5);
+		        circle.setAttributeNS(null, 'fill', "yellow");
+
+		        svg.appendChild(circle);
+				
+			}
+	}
+
+	$(document).ready(function(){
+
+		createCircles();
+
+	});
+
+</script>
+</body>
+</html>
