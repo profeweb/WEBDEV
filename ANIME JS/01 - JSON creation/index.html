@@ -12,6 +12,17 @@
 	  	<h2>JSON SVG Creation</h2>
 	    <svg width="1200" height="850" id="meuDibuix">
 	    	<rect width="1200" height="850" style="fill:white; stroke:black"/>
+	    	<g id="diagram"></g>
+	    	<style>
+	    	        .fillOp {
+	    	            animation-name: fillOpacity;
+	    	            animation-duration: 4s;
+	    	        }
+	    	        @keyframes fillOpacity {
+	    	            0%   { opacity: 0; }
+	    	            100% { opacity: 1; }
+	    	        }
+	    	    </style>
 	    </svg>
 	</div>
 <script>
@@ -69,29 +80,48 @@
 			}
 		];
 
-	var svg = document.getElementById('meuDibuix');
+	var svg = document.getElementById('diagram');
 
 	var ns = "http://www.w3.org/2000/svg";
 
 	function createRect(x, y, w, h, c){
+		
 		var rect = document.createElementNS(ns,"rect");
+		
 		rect.setAttributeNS(null, 'x', x);
 		rect.setAttributeNS(null, 'y', y);
-		rect.setAttributeNS(null, 'width', w);
+		rect.setAttributeNS(null, 'rx', '15');
+		rect.setAttributeNS(null, 'ry', '15');
+		rect.setAttributeNS(null, 'width', w -5);
 		rect.setAttributeNS(null, 'height', h);
 		rect.setAttributeNS(null, 'stroke', 'black');
 		rect.setAttributeNS(null, 'stroke-width', 1.5);
 		rect.setAttributeNS(null, 'fill', c);
+		rect.setAttribute("class", "fillOp");
+
+		var anima = document.createElementNS(ns,"animate");
+		
+		anima.setAttributeNS(null, 'attributeName', 'height');
+		anima.setAttributeNS(null, 'from', '0');
+		anima.setAttributeNS(null, 'to', h);
+		anima.setAttributeNS(null, 'dur', '2.5s');
+
+		rect.appendChild(anima);
 
 		return rect;
 	}
 
-	function createText(x, y, s, txt, ang){
+	function createText(x, y, s, f, txt, ang){
+		
 		var text = document.createElementNS(ns,"text");
+		
 		text.setAttributeNS(null, 'x', x);
 		text.setAttributeNS(null, 'y', y);
 		text.setAttributeNS(null,"font-size",s);
+		text.setAttributeNS(null,"font-family",f);
 		text.setAttributeNS(null,"transform", "rotate("+ang+" "+x+" "+y+")");
+		text.setAttribute("class", "fillOp");
+		
 		var textNode = document.createTextNode(txt);
 		text.appendChild(textNode);
 
@@ -107,11 +137,11 @@
 		        svg.appendChild(rect);
 
 		        // Text Product
-		        var textProduct = createText(100 + i*w, 70, 24, jsonData[i].product,0);
+		        var textProduct = createText(100 + i*w, 70, 24, "Arial, Helvetica, sans-serif", jsonData[i].product, 0);
 				svg.appendChild(textProduct);
 
 				// Text Kg
-				var textKg = createText(100 + i*w + w/2, 100 + parseInt(jsonData[i].kg)+30, 18, jsonData[i].kg+ "Kg",90);
+				var textKg = createText(100 + i*w + w/2, 100 + parseInt(jsonData[i].kg)+30, 18, "monospace", jsonData[i].kg+ "Kg",90);
 				svg.appendChild(textKg);
 				
 			}
