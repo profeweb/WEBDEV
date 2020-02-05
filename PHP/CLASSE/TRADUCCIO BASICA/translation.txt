@@ -1,0 +1,9 @@
+english#inglés#anglès
+spanish#castellano#castellà
+catalan#catalan#català
+home#inicio#inici
+products#productos#productes
+shop#tienda#tenda
+login#identificar#identificar
+welcome to my site#Bienvenido a mi web#Benvingut a la meva web
+exit#salir#sortir

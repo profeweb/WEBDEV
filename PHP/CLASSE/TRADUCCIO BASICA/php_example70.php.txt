@@ -1,0 +1,69 @@
+<?php
+
+session_start();
+if((isset($_SESSION['idiom']))&&($_SESSION['idiom']=="ENG")){
+   $selectedIdiom="ENG";
+}
+else if((isset($_SESSION['idiom']))&&($_SESSION['idiom']=="ESP")){
+   $selectedIdiom="ESP";
+}
+else {
+   $selectedIdiom="CAT";
+}
+
+function createDictionary($f){
+  $array = array();
+  $i=0;
+  $file = fopen($f, "rb");
+  while (!feof($file) ) {
+    $line = fgets($file);
+    $array[$i] = explode('#', $line);
+    $i++;
+  }
+  fclose($file);
+  return $array;
+}
+
+function translate($dic, $word, $idiom){
+ switch($idiom){
+   case "ENG": $col=0; break;
+   case "ESP": $col=1; break;
+   default: $col=2;
+ }
+ $pos=0;
+ for($i=0; $i<count($dic)-1; $i++){
+   $words = $dic[$i];
+   if(($words[0]==$word)||($words[1]==$word)||($words[2]==$word)){ 
+      return $words[$col];
+   }
+ }
+ return $word;
+}
+
+$dic = createDictionary("translation.txt");
+
+?>
+<!DOCTYPE html>
+<html>
+<body>
+<form action="php_example70b.php" method="post">
+<select name="idiom">
+<option value="NONE">...</option>
+<option value="ENG" <?php if($selectedIdiom=="ENG") echo "selected=selected"; ?> >ENG</option>
+<option value="ESP" <?php if($selectedIdiom=="ESP") echo "selected=selected"; ?> >ESP</option>
+<option value="CAT" <?php if($selectedIdiom=="CAT") echo "selected=selected"; ?> >CAT</option>
+</select>
+<input type="submit" value="OK"/>
+</form>
+<?php
+ switch($selectedIdiom){
+   case "ENG": echo "<h1>WORDS</h1>"; break;
+   case "ESP": echo "<h1>PALABRAS</h1>"; break;
+   default: echo "<h1>PARAULES</h1>";
+ }
+foreach($dic as $word) {
+ echo "<p>".translate($dic,$word[0],$selectedIdiom)."</p>";
+}
+?>
+</body>
+</html>

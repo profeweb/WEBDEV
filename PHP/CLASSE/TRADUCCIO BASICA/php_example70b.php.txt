@@ -1,0 +1,14 @@
+<?php
+session_start();
+if($_POST['idiom']=="ENG") {
+  $_SESSION['idiom']="ENG";
+}
+else if($_POST['idiom']=="ESP") {
+  $_SESSION['idiom']="ESP";
+}
+else  {
+  $_SESSION['idiom']="CAT";
+}
+header('Location: php_example70.php');
+exit;
+?>
