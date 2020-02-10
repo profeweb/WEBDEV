@@ -10,7 +10,7 @@ class MyCard extends Component {
       			<Card>
 			        <CardImg top width="100%" src={this.props.photo} alt="Card image cap" />
 			        <CardBody>
-			            <CardTitle>{this.props.title}</CardTitle>
+			            <CardTitle> TITOL: {this.props.title}</CardTitle>
 			            <CardSubtitle>{this.props.subtitle}</CardSubtitle>
 			            <CardText>{this.props.text}</CardText>
 			            <Button href={this.props.url}>Button</Button>
