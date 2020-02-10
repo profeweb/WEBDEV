@@ -42,10 +42,10 @@ class App extends Component {
       }
 
       return (
-        <div class="App">
-        <div class="container">
+        <div className="App">
+        <div className="container">
             <h1>Table JSON React + Axios </h1>
-            <table  class="table table-striped table-bordered">
+            <table  className="table table-striped table-bordered">
                 <thead>
                   <tr><th>Hits</th></tr>
                 </thead>
