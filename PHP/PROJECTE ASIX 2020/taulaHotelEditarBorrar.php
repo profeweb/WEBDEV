@@ -2,8 +2,11 @@
 <html>
 <head>
 	<title>Table PHP+DataTable+Bootstrap</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
 	
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css"/>
+
 
 	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css"/>
 
@@ -52,8 +55,8 @@
 					echo "<td>".$row['poblacio']."</td>";
 					echo "<td>".$row['web']."</td>";
 					echo "<td>".$row['telefon']."</td>";
-					echo "<td><button type='button' class='btn btn-warning'>Editar</button></td>";
-					echo "<td><a href='borrarhotel.php?id=".$row['id']."'><button type='button' class='btn btn-danger'>Borrar</button></a></td>";
+					echo "<td><a href='editarhotel.php?id=".$row['id']."'><button type='button' class='btn btn-warning'><i class='fa fa-pencil' aria-hidden='true'></i> Editar</button></a></td>";
+					echo "<td><a href='borrarhotel.php?id=".$row['id']."'><button type='button' class='btn btn-danger'><i class='fa fa-trash' aria-hidden='true'></i> Borrar</button></a></td>";
 				echo "</tr>";
 			}
 		require('close.php');
