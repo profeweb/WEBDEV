@@ -40,6 +40,7 @@
 </head>
 <body>
 	<h1>Welcome SELECT.</h1>
+	<a href="formhotel.php"><button type="button" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Nou Hotel</button></a><br/><br/>
 	<table id='dt' class='table table-striped table-bordered' style='width:100%' >
 		<thead>
 			<tr><th>Hotel</th><th>Poble</th><th>Web</th><th>Telefon</th><th>Editar</th><th>Borrar</th></tr>
