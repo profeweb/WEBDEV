@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<script src="jquery-3.4.1.js"></script>
+	</head>
+	<body>
+
+		<h1> Heading 1</h1>
+
+		<p id="p1" class="a">Paragraph 1</p>
+		<p id="p2" class="a">Paragraph 2</p>
+		<p id="p3" class="b">Paragraph 3</p>
+		<p id="p4" class="b">Paragraph 4</p>
+		<p id="p5" class="b">Paragraph 5</p>
+
+		<input type="text" />
+
+		<button id="b1">Ps RED</button>
+
+		<script>
+			$(document).ready(function(){
+
+				$("#b1").click(function(){
+					$("p").css("background-color", "red");
+				});
+
+				$("input").focus(function(){
+					$(this).css("background-color", "red");
+				});
+
+				$("input").blur(function(){
+					$(this).css("background-color", "white");
+				});
+
+				$("#b1").mouseleave(function(){
+					$("p").css("background-color", "yellow");
+				});
+
+			});
+		</script>
+	</body>
+</html>
