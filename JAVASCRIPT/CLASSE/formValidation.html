@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Try-Catch</title>
+<script>
+
+	function validateForm(){
+
+		var x=document.forms["myForm"]["fname"].value;
+		if (x==null || x==""){
+ 			alert("First name must be filled out");
+ 			return false;
+ 		}
+	}
+</script>
+</head>
+<body>
+<h1>Example Form Validation</h1>
+<form name="myForm" 
+	  action="demo_form.php" 
+	  onsubmit="return validateForm()" method="post">
+First name: <input type="text" name="fname">
+<input type="submit" value="Submit">
+</form>
+</body>
+</html> 
