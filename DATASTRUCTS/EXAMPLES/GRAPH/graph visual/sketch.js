@@ -65,8 +65,8 @@ function draw() {
 	stroke(255, 0, 255);
 	strokeWeight(5);
 	rectMode(CENTER);
-	rect(mouseX, mouseY, 200, 50);
-  	//g.display();
+	//rect(mouseX, mouseY, 200, 50);
+  	g.display();
 }
 
 function dfs(){

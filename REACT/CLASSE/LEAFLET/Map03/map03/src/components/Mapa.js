@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Map, TileLayer, GeoJSON, FeatureGroup } from 'react-leaflet';
+import { Map, TileLayer, Popup, Marker } from 'react-leaflet';
 
 import './Mapa.css';
+import MyGeoJSON from './MyGeoJSON.js';
 
 
 
@@ -13,8 +14,7 @@ class Mapa extends Component {
     }
 
     render() {
-        console.log(this.props.rutes);
-        const rutes = this.props.rutes;
+
         const position = [this.props.lat, this.props.lng]
         
         return (
@@ -23,7 +23,7 @@ class Mapa extends Component {
                     attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                <GeoJSON key={1} data={rutes}></GeoJSON>
+                <MyGeoJSON />
             </Map>
         );
     }
