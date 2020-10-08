@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Template</title>
+<script>
+
+	function myFunction(){
+
+		var x=document.getElementById("demo").value;
+		var y=document.getElementById("mess");
+		
+		try {
+			
+			if(x=="") throw "empty";
+ 			if(isNaN(x)) throw "not a number";
+ 			if(x>10) throw "too high";
+ 			if(x<5) throw "too low";
+
+ 			y.innerHTML="Correct value";
+ 			y.style.color="#0F0";
+ 		}
+		catch(err) {
+ 			
+ 			y.innerHTML="Error: " + err + ".";
+ 			y.style.color="#F00";
+ 		}
+}
+</script>
+</head>
+<body>
+<h1>Example Try-Catch</h1>
+<p>Please input a number between 5 and 10:</p>
+<input id="demo" type="text">
+<button type="button" onclick="myFunction()">Test Input</button>
+<p id="mess"></p>
+</body>
+</html> 
