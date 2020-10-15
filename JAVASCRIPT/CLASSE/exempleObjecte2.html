@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Objects</title>
+<script>
+
+	function Company(nom){
+
+		this.nom = nom;
+		this.edatTop = 0;
+		this.numTreballadors = 0;
+		this.treballadors = new Array();
+
+		this.afegirTreballador = afegirTreballador;
+		function afegirTreballador(t){
+
+			this.treballadors[this.numTreballadors] = t;
+			this.numTreballadors++;
+
+			if(this.edatTop < t.edat){
+				this.edatTop = t.edat;
+			}
+		}
+
+
+		this.llistaTreballadors = llistaTreballadors;
+		function llistaTreballadors(){
+			document.write("<h1>Treballadors de "+this.nom+"</h1>");
+			document.write("<ul>");
+			for(var i=0; i<this.treballadors.length; i++){
+				document.write("<li>"+this.treballadors[i].print()+"</li>");
+			}
+			document.write("</ul>");
+		}
+
+
+	}
+
+	function treballador(nom, edat, carrec, salari){
+
+		this.nom = nom;
+		this.edat = edat;
+		this.carrec = carrec;
+		this.salari = salari;
+
+		this.pujarSalari = pujarSou;
+
+		function pujarSou(q){
+			this.salari += q;
+		}
+
+		this.print = print;
+		function print(){
+			return this.nom+","+this.edat+" anys, "+this.salari+"€";
+		}
+
+	}
+
+	var c = new Company("Apple INC");
+
+	var t1 = new treballador("Paco", 33, "Jefe", 1500);
+	c.afegirTreballador(t1);
+
+	var t2 = new treballador("Maria", 25, "Admin", 1800);
+	c.afegirTreballador(t2);
+
+	var t3 = new treballador("Pep", 65, "Programador", 1200);
+	c.afegirTreballador(t3);
+
+	document.write("Edat Màxima: "+c.edatTop);
+
+
+</script>
+</head>
+<body>
+<script>
+	c.llistaTreballadors();
+</script>
+</body>
+</html> 
