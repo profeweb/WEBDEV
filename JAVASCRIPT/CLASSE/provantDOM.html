@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Example</title>
+</head>
+<body>
+<div id="d1">
+	<p id="p1"> Hola bon dia!</p>
+	<p id="p2"> Bones tardes</p>
+</div>
+<script>
+
+	var newP = document.createElement("p");
+	newP.id="p3";
+	var newText = document.createTextNode("Hola");
+	newP.appendChild(newText);
+
+	var d = document.getElementById("d1");
+	d.appendChild(newP);
+
+	var p3 = document.getElementById("p3");
+	p3.style.color="#FF0000";
+
+	p3.onclick = function(){ changeText("Bye")};
+
+	function changeText(txt){
+		var p3 = document.getElementById("p3");
+		p3.innerText = txt;
+	}
+
+</script>
+</body>
+</html> 
