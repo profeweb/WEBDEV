@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Array Functions</title>
+<script>
+</script>
+</head>
+<body>
+	NOM:<input type="text" id="nom"/><br/>
+	EDAT:<input type="text" id="edat"/><br/>
+	SOU:<input type="text" id="sou"/><br/>
+	<button onclick="pushArray()">PUSH</button>
+	<button onclick="popArray()">POP</button>
+	<button onclick="shiftArray()">SHIFT</button>
+	<button onclick="unshiftArray()">UNSHIFT</button>
+	<button onclick="sortArrayAsc()">SORT SOU ASC</button>
+	<button onclick="sortArrayDesc()">SORT SOU DESC</button>
+	<hr/>
+	<p id="content"></p>
+<script>
+
+	var treballadors = new Array();
+
+	function treballador(nom, edat, salari){
+		
+		this.nom = nom;
+		this.edat = edat;
+		this.salari = salari;
+
+		this.pujarSalari = pujarSalari;
+		function pujarSalari(s){
+			this.salari = s;
+		}
+
+		this.print = print;
+		function print(){
+			return this.nom+", "+this.edat+"anys, "+this.salari+"€";
+		}
+	}
+
+
+	function pushArray(){
+		var n = document.getElementById("nom").value;
+		var e = document.getElementById("edat").value;
+		var s = parseFloat(document.getElementById("sou").value);
+		var t = new treballador(n, e, s);
+		treballadors.push(t);
+		treballadors.print();
+	}
+
+	function popArray(){
+		var x = treballadors.pop();
+		console.log("POP: ", x);
+		treballadors.print();
+	}
+
+	function shiftArray(){
+		var x = treballadors.shift();
+		console.log("SHIFT: ", x);
+		treballadors.print();
+	}
+
+	function unshiftArray(){
+		var x = document.getElementById("item").value;
+		treballadors.unshift(x);
+		treballadors.print();
+	}
+
+	function sortArrayAsc(){
+		treballadors.sort(function(a, b){ return a.salari - b.salari});
+		treballadors.print();
+	}
+
+	function sortArrayDesc(){
+		treballadors.sort(function(a, b){ return b.salari - a.salari});
+		treballadors.print();
+	}
+
+	Array.prototype.print = function() {
+		var txt="";
+		for(var i=0; i<this.length; i++){
+			txt+= this[i].print()+"<br/>";
+		}
+		document.getElementById("content").innerHTML = txt;
+	};
+
+	treballadors.print();
+
+</script>
+</body>
+</html> 
