@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Dimensions WINDOW</title>
+<script>
+</script>
+</head>
+<body>
+<div id="d"></div>
+<script>
+
+	txt = "";
+	txt = "<p>Browser CodeName: " + navigator.appCodeName + "</p>";
+	txt+= "<p>Browser Name: " + navigator.appName + "</p>";
+	txt+= "<p>Browser Version: " + navigator.appVersion + "</p>";
+	txt+= "<p>Cookies Enabled: " + navigator.cookieEnabled + "</p>";
+	txt+= "<p>Platform: " + navigator.platform + "</p>";
+	txt+= "<p>User-agent header: " + navigator.userAgent + "</p>";
+	txt+= "<p>User-agent language: " + navigator.systemLanguage +"</p>";
+
+    document.getElementById("d").innerHTML=txt;
+
+</script>
+</body>
+</html> 

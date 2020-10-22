@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Dimensions WINDOW</title>
+<script>
+</script>
+</head>
+<body>
+<div id="clock"></div>
+<button id="b1" onclick="stopRellotge()"> STOP CLOCK </button>
+<script>
+
+	
+	var r = window.setInterval(rellotge, 1000);
+
+    function rellotge(){
+    	var d = new Date();
+    	document.getElementById("clock").innerHTML=d;
+    }
+
+    function stopRellotge(){
+    	window.clearInterval(r);
+    }
+
+</script>
+</body>
+</html> 

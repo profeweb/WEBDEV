@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Dimensions WINDOW</title>
+<script>
+</script>
+</head>
+<body>
+<div id="clock"></div>
+<div id="alarma"></div>
+<button id="b1" onclick="stopRellotge()"> STOP CLOCK </button>
+<button id="b2" onclick="stopAlarma()"> STOP ALARMA </button>
+<script>
+
+	var alarmTime = 10; // 10 segons
+	var pendingTime = alarmTime;
+	
+	var r = window.setInterval(rellotge, 1000);
+
+	rellotge();
+
+	function rellotge(){
+    	var d = new Date();
+    	var txt = d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
+    	document.getElementById("clock").innerHTML= "HORA: "+txt;
+
+    	if(pendingTime>0){
+    		pendingTime--;
+    		document.getElementById("alarma").innerHTML = "ALARMA EN "+pendingTime+ " SEGONS.";
+    	}
+    }
+
+
+    var a = window.setTimeout(alarm, alarmTime*1000);
+
+    function alarm(){
+    	document.getElementById("alarma").innerHTML="ALARMA !!!!";
+    }
+
+    function stopRellotge(){
+    	window.clearInterval(r);
+    }
+
+    function stopAlarma(){
+    	window.clearTimeout(a);
+    }
+
+</script>
+</body>
+</html> 
