@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript forEach</title>
+<script>
+</script>
+</head>
+<body>
+<p id="demo"></p>
+<script>
+
+	var marques = ["Seat", "Volvo", "Ford", "Kia"];
+	marques.forEach(mostraInfo);
+
+	function mostraInfo(item, index){
+		document.write(index+" : "+item+"<br/>");
+	}
+
+	var marques2 = marques.map(afegeixPosicio);
+	console.log(marques2);
+
+	function afegeixPosicio(item, index, array){
+		return index+"/"+array.length+" : "+item;
+	}
+
+	var marques3 = marques.filter(mesLlargQue3);
+	console.log(marques3);
+
+	function mesLlargQue3(item, index, array){
+		return item.length > 3;
+	}
+
+	var stringMarques = marques.reduce(ajuntaMarques);
+	console.log(stringMarques);
+
+	function ajuntaMarques(total, item, index, array){
+		return total +", "+item;
+	}
+
+	var comencenS = marques.every(començaS);
+	console.log("Comencen per S: "+comencenS);
+
+	function començaS(value, index, array){
+		return value.indexOf("S")==1;
+	}
+
+
+</script>
+</body>
+</html> 

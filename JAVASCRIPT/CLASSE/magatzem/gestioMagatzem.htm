@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Gestió Magatzem</title>
+<script src="Paquet.js"></script>
+<script src="Estant.js"></script>
+<script src="Magatzem.js"></script>
+</head>
+<body>
+	<div id="content"></div>
+	<br/>
+	<div>
+		Posició: <input type="text" id="posicio" /><br/>
+		Codi Paquet: <input type="text" id="codi" /><br/>
+		Destinatari: <input type="text" id="destinatari" /><br/>
+		Pes (Kg): <input type="text" id="pes" /><br/><br/>
+		<button id="b1">ENTRADA</button>
+		<button id="b2">SORTIDA</button>
+		<button id="b3">CALCULAR PVP</button>
+		<button id="b4">ORDENA x PES</button>
+	</div>
+	<script>
+
+		var m = new Magatzem(10);
+		m.inicialitza();
+		m.mostraTaula();
+
+	</script>
+</body>
+</html> 
