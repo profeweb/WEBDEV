@@ -1,29 +1,122 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Gestió Magatzem</title>
-<script src="Paquet.js"></script>
-<script src="Estant.js"></script>
-<script src="Magatzem.js"></script>
+	<title>Gestió Magatzem</title>
+	<meta charset="UTF-8">
+	<script src="Paquet.js"></script>
+	<script src="Estant.js"></script>
+	<script src="Magatzem.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
 </head>
 <body>
+	<div class="container">
 	<div id="content"></div>
-	<br/>
 	<div>
-		Posició: <input type="text" id="posicio" /><br/>
-		Codi Paquet: <input type="text" id="codi" /><br/>
-		Destinatari: <input type="text" id="destinatari" /><br/>
-		Pes (Kg): <input type="text" id="pes" /><br/><br/>
-		<button id="b1">ENTRADA</button>
-		<button id="b2">SORTIDA</button>
-		<button id="b3">CALCULAR PVP</button>
-		<button id="b4">ORDENA x PES</button>
+		<div class="form-group row">
+    		<label for="posicio" class="col-sm-2 col-form-label">Posició: </label>
+    		<div class="col-sm-6">
+				<select id="posicio" class="form-control">
+				</select>
+			</div>
+		</div>
+		<div class="form-group row">
+    		<label for="codi" class="col-sm-2 col-form-label">Codi Paquet: </label>
+    		<div class="col-sm-6"><input type="text" id="codi"  class="form-control" />
+    		</div>
+    	</div>
+    	<div class="form-group row">
+    		<label for="posicio" class="col-sm-2 col-form-label">Destinatari: </label>
+    		<div class="col-sm-6">
+				<input type="text" id="destinatari"  class="form-control" />
+			</div>
+		</div>
+		<div class="form-group row">
+    		<label for="pes" class="col-sm-2 col-form-label">Pes (Kg): </label>
+    		<div class="col-sm-6">
+				<input type="text" id="pes"  class="form-control" />
+			</div>
+		</div>
+		<button class="btn btn-primary" id="b1" onclick="entrada();">ENTRADA</button>
+		<button class="btn btn-danger" id="b2" onclick="sortida();">SORTIDA</button>
+		<button class="btn btn-secondary" id="b3" onclick="quants();">NUM.LLIURES</button>
+		<button class="btn btn-secondary" id="b4" onclick="calcula();">CALCULAR PVP</button>
+		<button class="btn btn-secondary" id="b5" onclick="ordena();">ORDENA x PES</button>
+		<button class="btn btn-secondary" id="b6" onclick="mesVell();">MÉS VELL</button>
+	</div>
+	<br/>
+	<div id="log" class="alert alert-primary"></div>
 	</div>
 	<script>
 
 		var m = new Magatzem(10);
 		m.inicialitza();
 		m.mostraTaula();
+
+		optionsPosicio();
+
+		function optionsPosicio(){
+			var posicions = document.getElementById("posicio");
+			for(var i=0; i<m.estants.length; i++){
+				var option = document.createElement("option");
+				option.setAttribute("value", i);
+				var txtOption = document.createTextNode(i);
+				option.appendChild(txtOption);
+				posicions.append(option);
+			}
+		}
+
+		function quants(){
+			
+			var lliures = m.getNumLliures();
+			var ocupats = m.getNumOcupats();
+
+			var info ="<p> Estants Lliures: " + lliures + 
+					  ", Ocupats: "+ocupats+"</p>";
+			document.getElementById("log").innerHTML=info;
+
+			alert("NUM. ESTANTS LLIURES: " + lliures +" \n"+
+				  "NUM. ESTANTS OCUPATS: " + ocupats);
+		}
+
+		function entrada(){
+
+			document.getElementById("log").innerHTML="";
+
+			var pos = document.getElementById("posicio").value;
+			var codi = document.getElementById("codi").value;
+			var desti = document.getElementById("destinatari").value;
+			var pes = document.getElementById("pes").value;
+
+			var p = new Paquet(codi, desti, pes);
+			m.afegirPaquet(p, pos);
+
+		}
+
+		function sortida(){
+			document.getElementById("log").innerHTML="";
+			var pos = document.getElementById("posicio").value;
+			var p = m.recollirPaquet(pos);
+			console.log(p);
+		}
+
+		function calcula(){
+			document.getElementById("log").innerHTML="";
+			m.calculaPreus();
+		}
+
+		function ordena(){
+			document.getElementById("log").innerHTML="";
+			m.ordenaPes();
+			m.mostraTaula();
+		}
+
+		function mesVell(){
+			document.getElementById("log").innerHTML="";
+			var p = m.paquetMesVell();
+			if(p!=null){
+				document.getElementById("log").innerHTML+= p.getInfo();
+			}
+		}
 
 	</script>
 </body>
