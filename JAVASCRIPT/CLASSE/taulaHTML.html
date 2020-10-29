@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Taula HTML</title>
+<script>
+</script>
+</head>
+<body>
+<div id="demo"></div>
+<script>
+
+	var marques = ["Seat", "Volvo", "Ford", "Kia"];
+
+	var txt ="<h1>TAULA</h1>";
+	 	txt+="<table border='1'>";
+	 	txt+="<tr>";
+
+	 	for(var i=0; i<marques.length; i++){
+	 		txt+= "<th>"+i+"</th>";
+	 	}
+
+	 	txt+="</tr>";
+	 	txt+="<tr>";
+
+	 	for(var i=0; i<marques.length; i++){
+	 		txt+= "<td>"+marques[i]+"</td>";
+	 	}
+
+	 	txt+="</tr>";
+	 	txt+="</table>"
+
+	document.getElementById("demo").innerHTML = txt;
+
+
+</script>
+</body>
+</html> 
