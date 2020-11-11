@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>SHOW and HIDE</title>
+		<script src="jquery-3.4.1.js"></script>
+	</head>
+	<style>
+		#menu { display:none; background-color:green;}
+	</style>
+	<body>
+
+		<div id="menu">
+			<p id="p1" class="a">Paragraph 1</p>
+			<p id="p2" class="a">Paragraph 2</p>
+			<p id="p3" class="b">Paragraph 3</p>
+			<p id="p4" class="b">Paragraph 4</p>
+		</div>
+
+		<button id="b1">SLIDE DOWN</button>
+		<button id="b2">SLIDE UP</button>
+		<button id="b3">SLIDE TOGGLE</button>
+
+		<script>
+
+			$(document).ready(function(){
+
+				$("#b1").click(function(){
+					$("#menu").slideDown("slow");
+				});
+
+				$("#b2").click(function(){
+					$("#menu").slideUp("fast");
+				});
+
+				$("#b3").click(function(){
+					$("#menu").slideToggle(10000);
+				});
+
+				function impremeix(){
+					console.log("FAST");
+				}
+
+			});
+			
+		</script>
+	</body>
+</html>
