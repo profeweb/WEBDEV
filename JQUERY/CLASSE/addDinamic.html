@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+<h1>ADD JQUERY.</h1>
+<div id="contenidor"></div>
+<hr/>
+<button id="b1">ADD ITEMS</button>
+<button id="b2">REMOVE ALL ITEMS</button>
+
+<script>
+$(document).ready(function(){
+
+    var numDivs = 0;
+
+    $("button#b1").click(function(){
+
+        var nouDiv = $("<div/>").attr("id", "div"+numDivs);
+
+        var txt    = $("<input/>", { type : 'text',
+                                     id   : 'input_'+numDivs,
+                                     value: numDivs
+                                   }
+                      );
+
+        var b      = $("<button/>",{ id   : 'boto_'+ numDivs,
+                                     text : "Botó "+ numDivs,
+                                     click: function (){ 
+                                        $(this).parent().remove(); 
+                                      }
+                                    }
+                    );
+
+        nouDiv.append(txt, b);
+        $("#contenidor").append(nouDiv);
+
+        numDivs++;
+
+    });
+
+    $("button#b2").click(function(){
+        $("#contenidor").empty();
+        numDivs = 0;
+    });
+    
+});
+</script>
+</body>
+</html>

@@ -16,7 +16,7 @@ $(document).ready(function(){
     var vSelect1 = $("#s1").val();
     var vSelect2 = $("#s2").val();
 
-    var eSeleccionat = $("#"+vSelect1);
+    var eSeleccionat = (vSelect1 == "p") ? $(vSelect1) : $("#"+vSelect1);
     var eTraversing;
     
     if(vSelect2=="parent"){
@@ -59,7 +59,7 @@ $(document).ready(function(){
     	eTraversing = $("p").first();
     }
     else if(vSelect2=="last"){
-    	eTraversing = $("p").last();
+    	eTraversing = eSeleccionat.last();
     }
     else if(vSelect2=="eq"){
     	eTraversing = $("p:eq(2)").last();
@@ -117,6 +117,7 @@ $(document).ready(function(){
 		    	 <label><i class="fa fa-arrows"></i> <b>SELECTOR:</b></label>
 				<select id="s1"  class="form-control mb-2">
 					<option value="div1">DIV1</option>
+					<option value="p">P</option>
 					<option value="p1">P1</option>
 					<option value="p2">P2</option>
 					<option value="p3">P3</option>
