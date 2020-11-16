@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+	<h1>Load JSON JQUERY + AJAX.</h1>
+	<hr/>
+	OPERAND 1: <input type="text" id="operand1"/><br/>
+	OPERAND 2: <input type="text" id="operand2"/><br/>
+	<button id="b1"> + </button>
+	<button id="b2"> - </button>
+	<button id="b3"> X </button>
+	<button id="b4"> / </button>
+	<hr/>
+	<div id="resultat">
+	</div>
+
+	<script>
+	$(document).ready(function(){
+
+	  $("#b1").click(function(){
+	    
+	    var v1 = $("#operand1").val();
+	    var v2 = $("#operand2").val();
+
+	    $.getJSON("calculadora.php", 
+	    		  {num1: v1, num2: v2, op:"SUMA"}, printResultat);
+  	  });
+
+  	  $("#b2").click(function(){
+	    
+	    var v1 = $("#operand1").val();
+	    var v2 = $("#operand2").val();
+
+	    $.getJSON("calculadora.php", 
+	    		  {num1: v1, num2: v2, op:"RESTA"}, printResultat);
+  	  });
+
+  	  $("#b3").click(function(){
+	    
+	    var v1 = $("#operand1").val();
+	    var v2 = $("#operand2").val();
+
+	    $.getJSON("calculadora.php", 
+	    		  {num1: v1, num2: v2, op:"MULTIPLICA"}, printResultat);
+  	  });
+
+  	  $("#b4").click(function(){
+	    
+	    var v1 = $("#operand1").val();
+	    var v2 = $("#operand2").val();
+
+	    $.getJSON("calculadora.php", 
+	    		  {num1: v1, num2: v2, op:"DIVISIO"}, printResultat);
+  	  });
+
+	  function printResultat(data){
+	  	console.log( "JSON Data: " + data );
+    			$("#resultat").html("RESULTAT: "+data);
+	  }
+
+	});
+	</script>
+</body>
+</html>
