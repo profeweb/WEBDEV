@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONCESSIONARI>
+  <MARCA>
+    <ID>1</ID>
+    <NOM>SEAT</NOM>
+    <FLOTA>
+      <COTXE>
+        <MODEL>IBIZA SX</MODEL>
+        <PORTES>3</PORTES>
+        <COLOR>VERMELL</COLOR>
+        <PREU>12500</PREU>
+      </COTXE>
+      <COTXE>
+        <MODEL>LEON CL</MODEL>
+        <PORTES>5</PORTES>
+        <COLOR>BLANC</COLOR>
+        <PREU>14950</PREU>
+      </COTXE>
+    </FLOTA>
+  </MARCA>
+  <MARCA>
+    <ID>2</ID>
+    <NOM>FORD</NOM>
+    <FLOTA>
+      <COTXE>
+        <MODEL>FIESTA</MODEL>
+        <PORTES>3</PORTES>
+        <COLOR>BLANC</COLOR>
+        <PREU>9500</PREU>
+      </COTXE>
+      <COTXE>
+        <MODEL>MEGANE</MODEL>
+        <PORTES>5</PORTES>
+        <COLOR>NEGRE</COLOR>
+        <PREU>25350</PREU>
+      </COTXE>
+      <COTXE>
+        <MODEL>ESCORT</MODEL>
+        <PORTES>5</PORTES>
+        <COLOR>VERMELL</COLOR>
+        <PREU>24350</PREU>
+      </COTXE>
+    </FLOTA>
+  </MARCA>
+</CONCESSIONARI>
+
