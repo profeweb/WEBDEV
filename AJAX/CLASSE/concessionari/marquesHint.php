@@ -1,6 +1,6 @@
 <?php
 
-$conn = new mysqli("localhost", "root", "mitjanit3", "concesionari");
+$conn = new mysqli("localhost", "root", "", "concesionari");
 $stmt = $conn->prepare("SELECT * FROM marca ORDER BY nom");
 $stmt->execute();
 $result = $stmt->get_result();
