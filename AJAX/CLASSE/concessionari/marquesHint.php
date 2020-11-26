@@ -10,8 +10,6 @@ while($row = mysqli_fetch_array($result)) {
 	array_push($a, $row['nom']);
 }
 
-$a = array_column($result, 'nom');
-
 $q = $_REQUEST["q"];
 $hint = "";
 
