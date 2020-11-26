@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Models Cotxes (PHP)</h2>
+<select id="marca" onchange="showTable(this.value);"></select>
+<div id="models"></div>
+ 
+<script>
+
+	var xhttp = xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+	  		document.getElementById("marca").innerHTML=this.responseText;
+  		}
+	};
+	xhttp.open("GET", "marquesOptions.php", true);
+	xhttp.send();
+
+	function showTable(str) {
+		if (str.length == 0) { 
+    		document.getElementById("models").innerHTML = "";
+    		return;
+  		}
+		var xhttp = xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+	  		document.getElementById("models").innerHTML=this.responseText;
+  			}
+		};
+		xhttp.open("GET", "modelsTable.php?marca="+str, true);
+		xhttp.send();
+	}
+
+</script>
+
+</body>
+</html>
