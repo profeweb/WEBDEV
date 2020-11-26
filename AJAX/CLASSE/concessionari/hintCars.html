@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Hint Cotxes (PHP)</h2>
+<input type="text" name="marca" onkeyup="showHint(this.value)"/>
+<div id="hint"></div>
+ 
+<script>
+
+	function showHint(str) {
+		if (str.length == 0) { 
+    		document.getElementById("hibt").innerHTML = "";
+    		return;
+  		}
+		var xhttp = xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+	  		document.getElementById("hint").innerHTML=this.responseText;
+  			}
+		};
+		xhttp.open("GET", "marquesHint.php?q="+str, true);
+		xhttp.send();
+	}
+
+</script>
+
+</body>
+</html>
