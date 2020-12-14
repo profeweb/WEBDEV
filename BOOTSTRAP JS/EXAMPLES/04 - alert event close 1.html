@@ -24,6 +24,7 @@ $(document).ready(function(){
     $(".close").click(function(){
         $("#myAlert").alert("close");
     });
+
     $("#myAlert").on('close.bs.alert', function(){
         alert('The alert message is about to be closed.');
     });

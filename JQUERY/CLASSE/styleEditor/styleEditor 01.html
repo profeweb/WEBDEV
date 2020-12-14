@@ -57,6 +57,7 @@
 			var pSelected = null;
 
 			$("#b1").click(function () {
+
 				var t = $("#txt").val();
 				var c = $("#selcolor").val();
 				var f = $("#selfont").val();
@@ -74,6 +75,18 @@
 			});
 
 			$("#b2").click(function(){
+				var t = $("#txt").val();
+				var ps = $("#container p");
+				console.log(ps);
+				pSelected = null;
+				
+				for(i=0; i<ps.length; i++){
+					console.log(ps[i]);
+					if(ps[i].text()==t){
+						var idP = "#"+ps[i].att("id");
+						pSelected = $(idP);
+					}
+				}
 				if(pSelected!=null){
 					var t = $("#txt").val();
 					var c = $("#selcolor").val();
