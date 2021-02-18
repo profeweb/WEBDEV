@@ -10,7 +10,7 @@ class App extends Component {
         super();
 
         this.state = {
-            title: 'React Clicker'
+            title: 'React Clicker v2'
         };
      }
 
