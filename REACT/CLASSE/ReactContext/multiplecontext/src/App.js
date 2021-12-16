@@ -16,7 +16,6 @@ class App extends Component {
 
       const {signedInUser, theme} = this.props;
 
-      // App component that provides initial context values
       return (
         <ThemeContext.Provider value={theme}>
           <UserContext.Provider value={signedInUser}>
