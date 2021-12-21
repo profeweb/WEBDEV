@@ -1,0 +1,53 @@
+<html>
+<head>
+<style>
+.myList {width:280px;float:left; margin: 10px; background-color:#AFA; padding:0px 5px; border-radius: 5px;}
+#d1 {width:50%; float:left; background-color:#DDD;}
+#d2 {width:50%; float:left; background-color:#DDD;}
+.normalItem {background-color:#AAFFAA;}
+.redItem {background-color:#FF0000;}
+.greenItem {background-color:#00FF00;}
+.blueItem {background-color:#0000FF;}
+</style>
+</head>
+<body>
+<h1>LIST MANAGER</h1>
+<div id="d1">
+<form action="#">
+<fieldset>
+<legend>LIST</legend>
+<b>LIST: </b><select id="slist"></select>
+<b>NAME: </b><input type="text" id="tname" value="" size="10" />
+<br/><br/>
+<button id="b1">ADD</button>
+<button id="b2">EDIT</button>
+<button id="b3">EMPTY LIST</button>
+<button id="b4">REMOVE</button>
+</fieldset>
+</form>
+</div>
+<div id="d2">
+<form action="#">
+<fieldset>
+<legend>LIST ITEMS</legend>
+<b>ITEM: </b><select id="sitems"></select>
+<b>TEXT: </b><input type="text" id="titem" value="" size="10" />
+<b>STYLE: </b><select id="sstyle">
+<option value="normalItem">NORMAL</option>
+<option value="redItem">RED</option>
+<option value="greenItem">GREEN</option>
+<option value="blueItem">BLUE</option>
+</select>
+<br/><br/>
+<button id="b5">APPEND</button>
+<button id="b6">PREPEND</button>
+<button id="b7">EDIT</button>
+<button id="b8">REMOVE</button>
+</fieldset>
+</form>
+</div>
+<hr/>
+<div id="lists">
+</div>
+</body>
+</html>

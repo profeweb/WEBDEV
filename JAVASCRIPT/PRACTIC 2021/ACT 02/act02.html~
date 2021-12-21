@@ -1,0 +1,117 @@
+<html>
+<head>
+<script>
+
+var ncars=0;
+var labels = new Array("A","B","C");
+var parking = new Array(new Array("","",""), new Array("","",""), new Array("","",""));
+
+
+function initSelect(){
+
+	var opt ="";
+	for(i=0; i<parking.length; i++){
+		for(j=0; j<parking[0].length; j++){
+			var num = i +""+ j;
+			var txt = labels[i] + j;
+			opt +="<option value='"+num+"'>"+txt+"</option>";
+		}
+	}
+	document.getElementById("s1").innerHTML=opt;
+}
+
+function initParking(){
+	for(i=0; i<parking.length; i++){
+		for(j=0; j<parking[0].length; j++){
+			parking[i][j] = "EMPTY";
+		}
+	}
+}
+
+function addCar(){
+	var car = document.getElementById("t1").value;
+	var sel = document.getElementById("s1").value;
+	var row = parseInt(sel[0]);
+	var column = parseInt(sel[1]);
+	if(parking[column][row]=="EMPTY"){
+		parking[column][row] = car;
+		ncars++;
+		showParking();
+		//writeHistory("parked",row, column);
+	}
+	else {
+		alert("PARKING IS OCCUPIED");
+	}
+}
+
+function removeCar(){
+	var car = document.getElementById("t1").value;
+	var sel = document.getElementById("s1").value;
+	var row = parseInt(sel[0]);
+	var column = parseInt(sel[1]);
+	if(parking[column][row]!="EMPTY"){
+		//writeHistory("removed",row, column);
+		parking[column][row] = "EMPTY";
+		ncars--;
+		showParking();
+	}
+	else {
+		alert("PARKING IS EMPTY");
+	}
+}
+
+function numCars(){
+	alert("NUM CARS: "+ncars+".");
+}
+
+function showParking(){
+
+	var txt = "<table border='1'><tr><th></th><th>A</th><th>B</th><th>C</th></tr>";
+	for(var i=0; i<parking.length; i++){
+		txt +="<tr><th>"+i+"</th>";
+		for(var j=0; j<parking[0].length; j++){
+			if(parking[i][j]=="EMPTY"){
+				txt+= "<td><img src='empty.png'/><br/>&nbsp;</td>";
+			}
+			else {
+				txt+= "<td style='text-align:center;'><img src='car.png'/><br/>"+ parking[i][j]+"</td>";
+			}
+		}
+		txt += "</tr>";
+	}
+	txt += "</table>";
+	document.getElementById("taula").innerHTML=txt;
+
+}
+
+</script>
+<style>
+#taula {width:50%;float:left;}
+#historial {width:50%; margin:0px 0px 0px 500px; background-color:yellow;}
+</style>
+</head>
+<body>
+<h1>PARKING</h1>
+<form action="#" style="background-color:#AAAAAA;">
+<fieldset>
+<legend>Parking Admininstration</legend>
+<b>PLATE NUMBER:</b> <input type="text" id="t1" value="" size="5" />
+<b>PARKING PLACE:</b> <select id="s1"></select>
+<button id="b1" onClick="addCar();">PARK IN</button>
+<button id="b2" onClick="removeCar();">PARK OUT</button>
+<button id="b3" onClick="numCars();">NUM CARS</button>
+</fieldset>
+</form>
+<hr/>
+<div id="taula">
+</div>
+<div id="historial">
+<h1>Historial</h1>
+</div>
+<script>
+	initParking();
+	initSelect();
+	showParking();
+</script>
+</body>
+</html>
